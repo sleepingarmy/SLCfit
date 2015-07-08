@@ -1,0 +1,3 @@
+class Biking < Activity
+
+end
