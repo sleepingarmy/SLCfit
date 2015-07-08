@@ -1,14 +1,15 @@
 class WeeksController < ApplicationController
   before_action :find_user
-  before_action :find_activites 
+  before_action :find_week
   before_action :find_goal
+  before_action :find_activity
 
   def show
-    @week = Week.find_by(id: params[:id])
+    @activities = @week.activities
   end
 
   def edit
-    
+    @week = Week.find_by(id: params[:id])
   end
 
   def update
@@ -25,8 +26,8 @@ class WeeksController < ApplicationController
     @user = current_user
   end
 
-  def find_activities
-    @activities = Activity.find_by(id: params[:id])
+  def find_activity
+    @activity = @goal.activities.find_by(id: params[:id])
   end
 
   def find_goal
@@ -35,5 +36,12 @@ class WeeksController < ApplicationController
 
   def week_params
     params.require(:week).permit(:activities)
+  end
+
+  def find_week
+    @week = Week.find_by(id: params[:id])
+    unless @week
+      render(text: 'Week not found', status: 404)
+    end
   end
 end
