@@ -26,8 +26,12 @@ class WeeksController < ApplicationController
     @user = current_user
   end
 
+  def find_week
+    @week = @goal.week.find_by(id: params[:id])
+  end
+
   def find_activity
-    @activity = @goal.activities.find_by(id: params[:id])
+    @activity = @week.activities.find_by(id: params[:id])
   end
 
   def find_goal
