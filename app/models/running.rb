@@ -1,0 +1,3 @@
+class Running < Activity
+  
+end
