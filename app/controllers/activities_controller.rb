@@ -39,9 +39,9 @@ class ActivitiesController < ApplicationController
   end
 
   private
-     def set_activity
-       @activity = type_class.find(params[:id])
-     end
+    def set_activity
+     @activity = type_class.find(params[:id])
+    end
 
     def set_type
       @type = type
@@ -56,6 +56,6 @@ class ActivitiesController < ApplicationController
     end
 
     def activity_params
-      params.require(type.underscore.to_sym).permit(:type) 
+      params.require(type.underscore.to_sym).permit(:type)
     end
 end
