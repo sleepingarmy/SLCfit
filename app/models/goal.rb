@@ -1,3 +1,4 @@
 class Goal < ActiveRecord::Base
-  belongs_to :User
+  belongs_to :user
+  has_many :weeks
 end
