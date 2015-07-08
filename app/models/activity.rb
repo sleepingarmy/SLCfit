@@ -6,19 +6,21 @@ class Activity < ActiveRecord::Base
      %w(Running Biking Swimming Hiking)
    end
 
-   def self.runnings
+   def self.running
      where(type: 'Running')
    end
 
-   def self.bikings
+   def self.biking
      where(type: 'Biking')
    end
 
-   def self.swimmings
+   def self.swimming
      where(type: 'Swimming')
    end
 
-   def self.hikings
+   def self.hiking
      where(type: 'Hiking')
    end
+
+   
 end
