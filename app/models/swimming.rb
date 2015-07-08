@@ -1,0 +1,3 @@
+class Swimming < Activity
+
+end
