@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'goals/resources'
+
   get 'welcome/index'
 
   devise_for :users
@@ -9,6 +11,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :weeks
+
+  resources :goals
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
