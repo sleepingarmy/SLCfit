@@ -48,4 +48,13 @@ ActiveRecord::Schema.define(version: 20150708220132) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "weeks", force: :cascade do |t|
+    t.integer  "goal_id"
+    t.string   "name"
+    t.string   "week_begin"
+    t.string   "week_end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
