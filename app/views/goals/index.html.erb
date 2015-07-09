@@ -1,10 +1,13 @@
-<%= link_to 'New Goal', new_goal_path%>
-
-
+<%= image_tag current_user.image(:thumb) %>
+<%= current_user.username %>
 <% @goals.each do |goal|  %>
 
   <h3><%= goal.description %></h3>
   <p><%= goal.reason%></p>
   <p><%= goal.time_frame %></p>
+<%= link_to 'Edit', edit_goal_path(goal.id) %> |
+<%= link_to 'Delete', goal_path(goal.id), method: :delete, data: {confirm: "Are you sure?"}%>
 
 <% end %>
+<br>
+<%= link_to 'New Goal', new_goal_path %>
