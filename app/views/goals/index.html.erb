@@ -1,1 +1,10 @@
 <%= link_to 'New Goal', new_goal_path%>
+
+
+<% @goals.each do |goal|  %>
+
+  <h3><%= goal.description %></h3>
+  <p><%= goal.reason%></p>
+  <p><%= goal.time_frame %></p>
+
+<% end %>
