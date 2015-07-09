@@ -1,9 +1,9 @@
 class GoalsController < ApplicationController
   before_action :find_user
-  before_action :find_goal, only: [:edit, :show, :update]
+  before_action :find_goal, only: [:edit, :show, :update, :create]
 
   def index
-    @goals = Goal.where(@user.id == current_user.id)
+    @goals = Goal.where(user_id: current_user.id)
   end
 
   def show
@@ -20,7 +20,7 @@ class GoalsController < ApplicationController
   end
 
   def create
-    @goal = Goal.create(goal_params)
+    @goal = current_user.goals.new(goal_params)
     if @goal.save
       flash[:notice] = "Your goal was successfully created!"
       redirect_to(goals_path)
