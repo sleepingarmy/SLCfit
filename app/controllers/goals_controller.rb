@@ -3,7 +3,7 @@ class GoalsController < ApplicationController
   before_action :find_goal, only: [:edit, :show, :update]
 
   def index
-    @goals = Goal.all
+    @goals = Goal.where(@user.id == current_user.id)
   end
 
   def show
