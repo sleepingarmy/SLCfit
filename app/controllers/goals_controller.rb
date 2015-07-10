@@ -1,6 +1,6 @@
 class GoalsController < ApplicationController
   before_action :find_user
-  before_action :find_goal, only: [:edit, :show, :update]
+  before_action :find_goal, only: [:edit, :show, :update, :create, :destroy]
 
   def index
     @goals = Goal.where(user_id: current_user.id)
@@ -13,6 +13,10 @@ class GoalsController < ApplicationController
   end
 
   def update
+    if @goal.update(goal_params)
+      flash[:notice] = "Your goal was successfully updated!"
+      redirect_to(goals_path)
+    end
   end
 
   def new
@@ -28,7 +32,12 @@ class GoalsController < ApplicationController
   end
 
   def destroy
+    @goal.destroy
+    respond_to do |format|
+    format.html { redirect_to goals_path, notice: 'Item was successfully destroyed.' }
+    end
   end
+
 
 
   private
@@ -38,7 +47,7 @@ class GoalsController < ApplicationController
   end
 
   def find_goal
-    @goal = current_user.goals.find_by(id: params[:id])
+    @goal = Goal.find_by(id: params[:id])
     #  unless @goal
     #    render (text: 'goal not found', status: 404)
     #  end

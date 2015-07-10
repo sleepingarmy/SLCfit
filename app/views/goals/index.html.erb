@@ -1,10 +1,20 @@
-<%= link_to 'New Goal', new_goal_path%>
-
-
+<div>
+<%= image_tag current_user.image(:thumb) %>
+<%= current_user.username %>
 <% @goals.each do |goal|  %>
 
   <h3><%= goal.description %></h3>
   <p><%= goal.reason%></p>
   <p><%= goal.time_frame %></p>
+<%= link_to 'Edit', edit_goal_path(goal.id) %> |
+<%= link_to 'Delete', goal_path(goal.id), method: :delete, data: {confirm: "Are you sure?"}%>
 
 <% end %>
+<br>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<%= link_to 'New Goal', new_goal_path %>
+</div>
