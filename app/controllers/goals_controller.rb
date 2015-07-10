@@ -1,6 +1,6 @@
 class GoalsController < ApplicationController
   before_action :find_user
-  before_action :find_goal, only: [:edit, :show, :update, :create]
+  before_action :find_goal, only: [:edit, :show, :update]
 
   def index
     @goals = Goal.where(user_id: current_user.id)
