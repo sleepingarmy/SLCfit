@@ -5,7 +5,7 @@
       <%= current_user.username %>
       <% @goals.each do |goal|  %>
 
-        <h3><%= goal.description %></h3>
+        <h3><%= link_to goal.description, goal_weeks_path(goal.id) %></h3>
         <p><%= goal.reason%></p>
         <p><%= goal.time_frame %></p>
       <%= link_to 'Edit', edit_goal_path(goal.id) %> |
