@@ -4,4 +4,11 @@ class WelcomeController < ApplicationController
       redirect_to goals_path
     end
   end
+
+  def about
+  end
+
+  def contact
+  end
+
 end
