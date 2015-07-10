@@ -4,6 +4,16 @@ class WeeksController < ApplicationController
   before_action :find_goal
   before_action :find_activity
 
+  def index
+    week_array = [1..@goal.time_frame].to_a
+    week_array.each do |number|
+      x = @goal.weeks.new
+      x.save
+    end
+    @weeks = @goal.weeks
+    binding.pry
+  end
+
   def show
     @activities = @week.activities
   end
