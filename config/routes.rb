@@ -14,9 +14,11 @@ Rails.application.routes.draw do
 
   get '/contact' => 'welcome#contact'
 
-  resources :weeks
-
-  resources :goals
+  resources :goals do 
+    resources :weeks do
+      resources :activities
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
