@@ -1,3 +1,4 @@
+<div>
 <%= image_tag current_user.image(:thumb) %>
 <%= current_user.username %>
 <% @goals.each do |goal|  %>
@@ -10,4 +11,10 @@
 
 <% end %>
 <br>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 <%= link_to 'New Goal', new_goal_path %>
+</div>
