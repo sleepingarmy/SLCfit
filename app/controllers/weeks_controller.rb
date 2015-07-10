@@ -1,10 +1,11 @@
 class WeeksController < ApplicationController
   before_action :find_user
-  before_action :find_week
+  #before_action :find_week
   before_action :find_goal
-  before_action :find_activity
+  #before_action :find_activity
 
   def index
+    binding.pry
     week_array = [1..@goal.time_frame].to_a
     week_array.each do |number|
       x = @goal.weeks.new
@@ -45,7 +46,7 @@ class WeeksController < ApplicationController
   end
 
   def find_goal
-    @goal = Goal.find_by(id: params[:id])
+    @goal = Goal.find_by(id: params[:goal_id])
   end
 
   def week_params
