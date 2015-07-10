@@ -37,9 +37,7 @@ class GoalsController < ApplicationController
     format.html { redirect_to goals_path, notice: 'Item was successfully destroyed.' }
     end
   end
-
-
-
+  
   private
 
   def goal_params
