@@ -11,5 +11,30 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ActivitiesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:activity) {FactoryGirl.create(:item)}
+
+  describe "#format_action" do
+    it "returns correct formatted aciton" do
+      expect(helper.format_action("test")).to eq("test_")
+    end
+  end
+
+  describe "#format_sti" do
+    it "returns correct formatted sti with action and/or activity" do
+      expect(helper.format_sti("test", "type", "activity")).to eq("test_type")
+    end
+
+    it "returns correct formatted sti without action and activity" do
+      expect(helper.format_sti(nil, "type", nil)).to eq("types")
+    end
+  end
+
+  # describe "#sti_activity_path" do
+  #   it "returns correct activity path" do
+  #     expect(helper.sti_activity_path("type", "activity", "test")).to eq("")
+  #   end
+  # end
 end
+
+
+
