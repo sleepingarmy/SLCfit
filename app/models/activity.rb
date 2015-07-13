@@ -1,5 +1,5 @@
 class Activity < ActiveRecord::Base
-  belongs_to :week
+  belongs_to :week, dependent: :destroy
   self.inheritance_column = :type
 
    def self.types
@@ -21,6 +21,4 @@ class Activity < ActiveRecord::Base
    def self.hiking
      where(type: 'Hiking')
    end
-
-   
 end

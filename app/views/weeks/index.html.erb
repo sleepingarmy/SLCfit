@@ -3,7 +3,7 @@
 <h3>Your Weeks:</h3>
 <% number = 1 %>
 <% @weeks.each do |week| %>
-  <%= link_to "Week #{number}", goal_week_path(week.goal_id, week.id), class: "btn btn-primary" %>
+  <%= link_to "Week #{number}", goal_week_activities_path(week.goal_id, week.id), class: "btn btn-primary" %>
   <% number += 1 %>
   <br>
 <% end %>
