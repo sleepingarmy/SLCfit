@@ -9,7 +9,7 @@ class WeeksController < ApplicationController
   end
 
   def show
-
+    @activities = @week.activities
   end
 
   def edit
