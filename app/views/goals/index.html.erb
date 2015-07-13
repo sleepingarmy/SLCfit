@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div><%= image_tag current_user.image(:thumb) %>
+      <%= current_user.username %>
+      <% @goals.each do |goal|  %>
+
+        <h3><%= link_to goal.description, goal_weeks_path(goal.id) %></h3>
+        <p><%= goal.reason%></p>
+        <p><%= goal.time_frame %></p>
+      <%= link_to 'Edit', edit_goal_path(goal.id) %> |
+      <%= link_to 'Delete', goal_path(goal.id), method: :delete, data: {confirm: "Are you sure?"}%>
+      <% end %>
+      </div>
+  </div>
+    <div class="col-md-4">
+
+    
+    <br>
+
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+    <%= link_to 'New Goal', new_goal_path %>
+</div>
+</div>
