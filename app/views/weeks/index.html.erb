@@ -1,1 +1,9 @@
-Yeah bitch
+<h1><%= @goal.description %></h1>
+<h2>You have <%= @goal.time_frame %> weeks to complete this goal</h2>
+<h3>Your Weeks:</h3>
+<% number = 1 %>
+<% @weeks.each do |week| %>
+  <%= link_to "Week #{number}", goal_week_path(week.goal_id, week.id), class: "btn btn-primary" %>
+  <% number += 1 %>
+  <br>
+<% end %>
