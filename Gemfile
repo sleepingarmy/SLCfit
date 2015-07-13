@@ -38,7 +38,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 group :test do
   gem 'shoulda-matchers'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'simplecov', :require => false
 end
 
