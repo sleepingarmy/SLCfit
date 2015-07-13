@@ -1,0 +1,7 @@
+<h1>Activities for Week</h1>
+<% @activities.each do |activity|  %>
+  <%= activity.type %>
+  <br>
+<% end %>
+<%= link_to "Add Activity", new_goal_week_activity_path(@goal.id, @week.id), class: 'btn btn-primary' %>
+<%= link_to "Weeks", goal_weeks_path(@goal.id), class: "btn btn-primary" %>

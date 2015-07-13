@@ -1,2 +1,5 @@
 <%= "Week id: #{@week.goal_id} Goal id: #{@week.id}" %>
+<% @activities.each do |activity| %>
+  <%= activity.type %>
+<% end %>
 <%= link_to "Add Activity", new_goal_week_activity_path(@week.goal_id, @week.id) %>

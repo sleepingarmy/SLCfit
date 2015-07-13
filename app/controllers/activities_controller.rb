@@ -1,9 +1,12 @@
 class ActivitiesController < ApplicationController
   before_action :set_type
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
+  #before_action :find_week
 
   def index
-    @activities = type_class.all
+    @week = Week.find_by(id: params[:week_id])
+    @goal= Goal.find_by(id: params[:goal_id])
+    @activities = Activity.all.where(:week_id => @week.id)
   end
 
   def show
@@ -26,13 +29,18 @@ class ActivitiesController < ApplicationController
   end
 
   def new
+    @goal= Goal.find_by(id: params[:goal_id])
+    @week= Week.find_by(id: params[:week_id])
     @activity = type_class.new
   end
 
   def create
-    @activity = Activity.new(activity_params)
+    @goal= Goal.find_by(id: params[:goal_id])
+    @week= Week.find_by(id: params[:week_id])
+    @activity = @week.activities.new(activity_params)
+
     if @activity.save
-      redirect_to @activity, notice: "#{type} was successfully created."
+      redirect_to goal_week_activities_path(@goal.id, @week.id), notice: "#{type} was successfully created."
     else
       render action: 'new'
     end
@@ -56,6 +64,13 @@ class ActivitiesController < ApplicationController
     end
 
     def activity_params
-      params.require(type.underscore.to_sym).permit(:type)
+      params.require(type.underscore.to_sym).permit(:type, :week_id)
+    end
+
+    def find_week
+      @week = Week.find_by(id: params[:id])
+      unless @week
+        render(text: 'Week not found', status: 404)
+      end
     end
 end
