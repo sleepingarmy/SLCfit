@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'devise'
 gem "paperclip", "~> 4.3"
-gem 'factory_girl'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -39,7 +38,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 group :test do
   gem 'shoulda-matchers'
-
+  gem 'factory_girl'
   gem 'simplecov', :require => false
 end
 
