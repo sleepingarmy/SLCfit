@@ -40,6 +40,7 @@
       <% if user_signed_in? %>
       
         <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Account', edit_user_registration_path %></li>
         <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
         <!-- <li><a href=" # ">Logout</a></li> -->
         </ul>
@@ -51,6 +52,8 @@
         </ul>
 
       <% end %>
+  
+
 
       <!-- <ul class="nav navbar-nav navbar-right"> -->
         
