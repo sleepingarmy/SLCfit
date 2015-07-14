@@ -1,3 +1,34 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#index { 
+  background: url(slc_landscape_cloudy.png) 50% 0 repeat fixed; min-height: 1000px;
+  height: 1000px; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative;
+
+}
+
+#about { 
+  background: url(pushup_dudes.png) 50% 0 repeat fixed; min-height: 1000px;
+  height: 1000px; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative;
+
+}
+
+#contact { 
+  background: url(yoga_dude.png) 50% 0 repeat fixed; min-height: 1000px;
+  height: 1000px; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative;
+
+}

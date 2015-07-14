@@ -1,15 +1,10 @@
 class WeeksController < ApplicationController
   before_action :find_user
-  #before_action :find_week
+  before_action :find_week, only: [:show]
   before_action :find_goal
   #before_action :find_activity
 
   def index
-    week_array = [1..@goal.time_frame].to_a
-    week_array.each do |number|
-      x = @goal.weeks.new
-      x.save
-    end
     @weeks = @goal.weeks
   end
 
