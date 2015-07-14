@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div><%= image_tag current_user.image(:thumb) %>
       <%= current_user.username %>
       <% @goals.each do |goal|  %>
@@ -13,10 +13,8 @@
       <% end %>
       </div>
   </div>
-    <div class="col-md-4">
-
-    
-    <br>
+    <div class="col-md-3">
+      <br>
 
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="http://code.highcharts.com/modules/exporting.js"></script>
@@ -25,4 +23,7 @@
     </div>
     <%= link_to 'New Goal', new_goal_path %>
 </div>
+<div class="col-md-3">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
 </div>

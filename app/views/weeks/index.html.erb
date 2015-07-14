@@ -1,9 +1,78 @@
-<h1><%= @goal.description %></h1>
-<h2>You have <%= @goal.time_frame %> weeks to complete this goal</h2>
-<h3>Your Weeks:</h3>
-<% number = 1 %>
-<% @weeks.each do |week| %>
-  <%= link_to "Week #{number}", goal_week_activities_path(week.goal_id, week.id), class: "btn btn-primary" %>
-  <% number += 1 %>
-  <br>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h1><%= @goal.description %></h1>
+      <h2>You have <%= @goal.time_frame %> weeks to complete this goal</h2>
+      <h3>Your Weeks:</h3>
+      <% number = 1 %>
+      <% @weeks.each do |week| %>
+      <%= link_to "Week #{number}", goal_week_activities_path(week.goal_id, week.id), class: "btn btn-primary" %>
+      <% number += 1 %>
+      <br>
+      <% end %>
+    </div>
+  <div class="col-md-4">
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/data.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+    <table id="datatable">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Hiking</th>
+          <th>Running</th>
+          <th>Gym</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Mon</th>
+          <td>75</td>
+          <td></td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <th>Tues</th>
+          <td></td>
+          <td>0</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <th>Wed</th>
+          <td>60</td>
+          <td>25</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <th>Thurs</th>
+          <td></td>
+          <td>25</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Fri</th>
+          <td></td>
+          <td>15</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Sat</th>
+          <td>120</td>
+          <td></td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <th>Sun</th>
+          <td></td>
+          <td></td>
+          <td>25</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
+</div>
+</div>
