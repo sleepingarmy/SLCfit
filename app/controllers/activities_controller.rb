@@ -6,6 +6,7 @@ class ActivitiesController < ApplicationController
   def index
     @week = Week.find_by(id: params[:week_id])
     @goal= Goal.find_by(id: params[:goal_id])
+    binding.pry
     @activities = Activity.all.where(:week_id => @week.id)
   end
 

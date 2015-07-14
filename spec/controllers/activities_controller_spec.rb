@@ -2,10 +2,12 @@ require 'rails_helper'
 
 RSpec.describe ActivitiesController, type: :controller do
 let(:activity) {FactoryGirl.create(:activity)}
+let(:week) {FactoryGirl.create(:week)}
+let(:goal) {FactoryGirl.create(:goal)}
 
   describe "GET #index" do
     it "returns http success" do
-      get :index, goal_id: 1, week_id: 1
+      get :index, goal_id: goal.id, week_id: week.id
       expect(response).to have_http_status(:success)
     end
   end
