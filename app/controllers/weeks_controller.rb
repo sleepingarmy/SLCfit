@@ -5,17 +5,17 @@ class WeeksController < ApplicationController
   #before_action :find_activity
 
   def index
-    binding.pry
     week_array = [1..@goal.time_frame].to_a
     week_array.each do |number|
       x = @goal.weeks.new
       x.save
     end
     @weeks = @goal.weeks
-    binding.pry
   end
 
   def show
+    @week = Week.find_by(id: params[:week_id])
+    binding.pry
     @activities = @week.activities
   end
 
