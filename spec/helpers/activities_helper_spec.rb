@@ -29,12 +29,9 @@ RSpec.describe ActivitiesHelper, type: :helper do
     end
   end
 
-  # describe "#sti_activity_path" do
-  #   it "returns correct activity path" do
-  #     expect(helper.sti_activity_path("type", "activity", "test")).to eq("")
-  #   end
-  # end
+  describe "#sti_activity_path" do
+    it "returns correct activity path" do
+      expect(helper.sti_activity_path("type", "activity", "test")).to eq("test_type_path")
+    end
+  end
 end
-
-
-
