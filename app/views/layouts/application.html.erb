@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SlcFit</title>
+  <title>SLCfit</title>
   <%= stylesheet_link_tag    'application', media: 'all'%>
-  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application'%>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
       <div class="col-sm-12">
         <header>
@@ -15,19 +15,10 @@
         </header>
     </div>
  </div>
-  <% if user_signed_in? %>
-  <ul>
-    <li><%= link_to 'Account', edit_user_registration_path %></li>
-    <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-  </ul>
-<% else %>
-  <ul>
-    <li><%= link_to 'Sign up', new_user_registration_path %></li>
-    <li><%= link_to 'Sign in', new_user_session_path %></li>
-  </ul>
-<% end %>
+
 
 <%= yield %>
+
 
 </body>
 </html>
