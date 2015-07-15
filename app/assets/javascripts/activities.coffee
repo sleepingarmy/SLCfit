@@ -1,7 +1,7 @@
 $(document).ready ->
 
   $("#log-activities-button").click ->
-    $('#activities-table tbody .activity-row').each ->
+    $('.activity-row').each ->
       $tableRow = $(@)
       activityId = $tableRow.data().activityId
       activityDate = $tableRow.find('.date').val()
@@ -27,12 +27,12 @@ $(document).ready ->
         $("#activity_display").html(data)
 
   $('#myModal').on 'shown.bs.modal', ->
-    $activitiesTableBody = $('#activities-table tbody')
-    $activitiesTableBody.empty()
+    $activitiesHolder = $('#activities-holder')
+    $activitiesHolder.empty()
     $(".activity-check:checked").each ->
       $.ajax '/activity_tr',
         type: 'GET'
         data:
           id: $(@).data().activityId
         success: (data) ->
-          $activitiesTableBody.append(data)
+          $activitiesHolder.append(data)
