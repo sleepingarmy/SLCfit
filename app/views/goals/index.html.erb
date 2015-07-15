@@ -1,13 +1,12 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2">
       <div class="row side-nav">
         <%= render(partial: 'shared/side_nav') %>
       </div>
     </div>
     <div class="col-md-9">
-      <div><%= image_tag current_user.image(:thumb) %>
-      <%= current_user.username %>
+      
       <% @goals.each do |goal|  %>
 
         <h3><%= link_to goal.description, goal_weeks_path(goal.id) %></h3>
@@ -17,7 +16,7 @@
       <%= link_to 'Delete', goal_path(goal.id), method: :delete, data: {confirm: "Are you sure?"}%>
       <% end %>
       </div>
-    </div>
+
   <!--   <div class="col-md-4">
 
     
