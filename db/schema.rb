@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20150714232147) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "complete",    default: false
-    t.date     "date"
+    t.date     "date"b
     t.integer  "duration"
     t.text     "description"
   end
