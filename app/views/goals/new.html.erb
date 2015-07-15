@@ -15,7 +15,7 @@
   <div class="form-group">
     <%=  f.label('Time Frame (Weeks)') %>
     <br>
-    <%= f.text_field :time_frame %>
+    <%= f.select :time_frame, options_for_select(1..52) %> 
   </div>
 
   <button type="submit" class="btn btn-default">Create Goal</button>
