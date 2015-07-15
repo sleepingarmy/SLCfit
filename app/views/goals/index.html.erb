@@ -1,6 +1,11 @@
-<div>
+<div class="container" >
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3">
+      <div class="row side-nav">
+        <%= render(partial: 'shared/side_nav') %>
+      </div>
+    </div>
+    <div class="col-md-4">
       <div><%= image_tag current_user.image(:thumb) %>
       <%= current_user.username %>
       <% @goals.each do |goal|  %>
@@ -11,16 +16,18 @@
       <%= link_to 'Edit', edit_goal_path(goal.id) %> |
       <%= link_to 'Delete', goal_path(goal.id), method: :delete, data: {confirm: "Are you sure?"}%>
       <% end %>
+    <%= link_to 'New Goal', new_goal_path %>
       </div>
-  </div>
-    <div class="col-md-6">
-      <br>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    </div>
+  <!--   <div class="col-md-4">
+
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="http://code.highcharts.com/modules/exporting.js"></script>
 
     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     </div>
-    <%= link_to 'New Goal', new_goal_path %>
+    </div> -->
+
+  </div>
 </div>
-</div>
+
