@@ -1,6 +1,6 @@
-<div class="container">
+<div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div><%= image_tag current_user.image(:thumb) %>
       <%= current_user.username %>
       <% @goals.each do |goal|  %>
@@ -13,11 +13,9 @@
       <% end %>
       </div>
   </div>
-    <div class="col-md-4">
-
-    
-    <br>
-
+    <div class="col-md-6">
+      <br>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="http://code.highcharts.com/modules/exporting.js"></script>
 
