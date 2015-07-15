@@ -5,8 +5,9 @@
         <%= render(partial: 'shared/side_nav') %>
       </div>
     </div>
-    <div class="col-md-9"><h1>Edit Goal</h1>
-
+    <div class="col-md-9">
+      <h2>Edit Goal</h2>
+      <hr />
       <%= form_for @goal, url: goal_path(@goal.id) do |f| %>
 
         <div class="form-group">
