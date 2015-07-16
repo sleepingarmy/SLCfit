@@ -1,3 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="row side-nav">
+        <%= render(partial: 'shared/side_nav') %>
+      </div>
+    </div>
+    <div class="col-sm-10">
+
+
+
 <div id="activity_display">
   <%= render partial: "activities_display", locals: {activities_not_complete: @activities_not_complete, activities_complete: @activities_complete} %>
 </div>
@@ -35,4 +46,7 @@
       </div>
     </div>
   </div>
+</div>
+</div>
+</div>
 </div>
