@@ -13,11 +13,6 @@
 <body>
   <header>
     <% if user_signed_in? %>
-      <div class="container-fluid">
-        <div class="side-nav">
-          <p>blah</p>
-      </div>
-    </div>
     <% else %>
       <%= render(partial: 'shared/top_nav') %>
     <% end %>
