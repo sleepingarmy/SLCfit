@@ -9,22 +9,20 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
   <!-- google fonts -->
   <link href='http://fonts.googleapis.com/css?family=Poiret+One|Pacifico|Raleway:400,100,200,300,500,600,700' rel='stylesheet' type='text/css'>
-
 </head>
 <body>
-
 <div class="container-fluid header">
   <header class="header">
-
       <% if user_signed_in? %>
           <div id="weather" class="pull-right col-sm-2"></div>
       <% else %>
         <%= render(partial: 'shared/top_nav') %>
       <% end %>
   </header>
+<div class="container-fluid ">
 </div>
-
- <div class="container-fluid bg-img-width">
+</div>
+<div class="container-fluid bg-img-width">
   </div>
 
   <div class="container-fluid">
@@ -42,13 +40,7 @@
       // html += '<li class="currently">'+weather.currently+'</li>';
       // html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
 
-      $("#weather").html(html);
-    },
-    error: function(error) {
-      $("#weather").html('<p>'+error+'</p>');
-    }
-  })();
-</script>
 
-</body>
-</html>
+
+    </body>
+    </html>
