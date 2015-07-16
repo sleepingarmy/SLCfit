@@ -24,6 +24,17 @@
       <%= yield %>
     </div>
    
+        <div id="weather" class="pull-right col-sm-2"></div>
+        <% else %>
+        <%= render(partial: 'shared/top_nav') %>
+        <% end %>
+      </header>
+    </div>
+
+    <div class="container-fluid bg-img-width">
+      <%= yield %>
+    </div>
+
     <script type="text/javascript">
     $(document).ready(function() {
     $.simpleWeather({
