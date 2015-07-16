@@ -1,34 +1,40 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2">
-      <div class="row side-nav">
-        <%= render(partial: 'shared/side_nav') %>
+<div class="row">
+  <div class="col-sm-2">
+      <%= render(partial: 'shared/side_nav') %>
+  </div>
+  <div class="col-sm-10 scroll">
+    <div class="row">
+      <div class="container">
+        <h2 class="page-header">Edit Goal</h2>
+
+        <%= form_for @goal, url: goal_path(@goal.id) do |f| %>
+
+          <div class="form-group">
+            <%= f.label :description %>
+            <%= f.text_area :description, class: "custom-input" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :reason %>
+            <%= f.text_area :reason, class: "custom-input"  %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :time_frame %>
+            <%= f.select :time_frame, options_for_select(1..52), class: "custom-input"  %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Save Changes", class: "custom-submit" %>
+          </div>
+
+        <% end %>
       </div>
     </div>
-    <div class="col-md-9"><h1>Edit Goal</h1>
-
-      <%= form_for @goal, url: goal_path(@goal.id) do |f| %>
-
-        <div class="form-group">
-          <%= f.label :description %>
-          <%= f.text_field :description %>
-        </div>
-        <div class="form-group">
-          <%= f.label :reason %>
-          <%= f.text_field :reason %>
-        </div>
-        <div class="form-group">
-          <%= f.label :time_frame %>
-          <%= f.select :time_frame, options_for_select(1..52) %>
-        </div>
-        <div class="form-group">
-          <%= f.submit "Save Changes" %>
-        </div>
-
-      <% end %>
-
-    </div>
   </div>
+</div>
+<div class="row footer">
+  <p>footer</p>
 </div>
 
 

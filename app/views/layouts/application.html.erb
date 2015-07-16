@@ -11,22 +11,22 @@
 
 </head>
 <body>
+<div class="container-fluid">
   <header>
+      <% if user_signed_in? %>
 
-    <div class="container-fluid">
-        <% if user_signed_in? %>
-
-        <% else %>
-          <%= render(partial: 'shared/top_nav') %>
-        <% end %>
-    </div>
+      <% else %>
+        <%= render(partial: 'shared/top_nav') %>
+      <% end %>
   </header>
+</div>
 
   <div class="container-fluid bg-img-width">
   </div>
   
+  <div class="container-fluid">
     <%= yield %>
-
+  </div>
 
 </body>
 </html>
