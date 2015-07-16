@@ -1,8 +1,10 @@
 <h1>Complete Activities for Week</h1>
 <% activities_complete.each do |activity|  %>
-  <%= activity.type %>
-  <%= activity.date %>
-  <%= activity.duration %>
+  I went <%= activity.type %> on
+  <%= activity.date %> for
+  <%= activity.duration %> minutes
+  <br>
+  Description:
   <%= activity.description %>
   <br>
   <br>
