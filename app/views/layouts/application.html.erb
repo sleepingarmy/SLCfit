@@ -5,7 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= csrf_meta_tags %>
   <%= javascript_include_tag 'application'%>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
   <!-- google fonts -->
   <link href='http://fonts.googleapis.com/css?family=Poiret+One|Pacifico|Raleway:400,100,200,300,500,600,700' rel='stylesheet' type='text/css'>
 
@@ -13,16 +14,46 @@
 <body>
   <header>
     <% if user_signed_in? %>
+    
     <% else %>
       <%= render(partial: 'shared/top_nav') %>
     <% end %>
   </header>
 <div class="container-fluid bg-img-width">
-    
-</div>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <header>
+          <%= render(partial: 'shared/top_nav') %>
+        </header>
+    </div>
+ </div>
 
+
+</div>
+<div id="weather"></div>
 <%= yield %>
 
+<script type="text/javascript">
+  $.simpleWeather({
+    location: 'Salt Lake City, UT',
+    woeid: '',
+    unit: 'f',
+    success: function(weather) {
+      html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+      html += '<li class="currently">'+weather.currently+'</li>';
+      html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
+
+      $("#weather").html(html);
+    },
+    error: function(error) {
+      $("#weather").html('<p>'+error+'</p>');
+    }
+  })();
+</script>
 
 </body>
 </html>
