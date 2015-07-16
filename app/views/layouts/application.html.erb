@@ -5,12 +5,23 @@
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= csrf_meta_tags %>
   <%= javascript_include_tag 'application'%>
+<<<<<<< HEAD
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
+=======
+
+  <!-- google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One|Pacifico|Raleway:400,100,200,300,500,600,700' rel='stylesheet' type='text/css'>
+
+>>>>>>> ccfad533b76e00f0487cb39998bbcf629947c1ba
 </head>
 <body>
   <header>
-    <%= render(partial: 'shared/top_nav') %>
+    <% if user_signed_in? %>
+      
+    <% else %>
+      <%= render(partial: 'shared/top_nav') %>
+    <% end %>
   </header>
 <div class="container-fluid bg-img-width">
 

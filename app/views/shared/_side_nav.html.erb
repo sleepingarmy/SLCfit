@@ -1,0 +1,33 @@
+<h1 class="line"><%= link_to 'SLCfit', goals_path %></h1>
+
+<div class="side-nav">
+  <div class="line">
+    <p><%= image_tag current_user.image(:thumb), class: "profile-pic" %></p>
+    <p><%= current_user.username %></p>
+    
+  </div>
+  <ul>
+    <li class="line"><%= link_to 'Home', new_goal_path %></li>
+  
+    <li class="line"><%= link_to 'My Goals', goals_path %></li>
+  
+    <li class="line"><%= link_to 'New Goal', new_goal_path %></li>
+  </ul>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  <p class="small-nav"><%= link_to 'Account Settings', edit_user_registration_path %></p>
+  <p class="small-nav"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
+  <p>&copy; 2015</p>
+</div>
+
+
