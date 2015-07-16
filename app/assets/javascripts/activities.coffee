@@ -7,6 +7,7 @@ $(document).ready ->
       activityDate = $tableRow.find('.date').val()
       activityDuration = $tableRow.find('.duration').val()
       activityDescription = $tableRow.find('.description').val()
+
       if(activityDate isnt "" and activityDuration isnt "" and activityDescription isnt "")
         $.ajax "/update_activity",
           type: 'PUT'
@@ -19,6 +20,7 @@ $(document).ready ->
             console.log data
           error: (data) ->
             console.log data
+
     $('#myModal').modal('hide')
     $.ajax '/activity_display',
       type: 'GET'
