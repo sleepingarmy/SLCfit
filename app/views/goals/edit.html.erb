@@ -1,23 +1,34 @@
-<h1>Edit Goal</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="row side-nav">
+        <%= render(partial: 'shared/side_nav') %>
+      </div>
+    </div>
+    <div class="col-md-9"><h1>Edit Goal</h1>
 
-<%= form_for @goal, url: goal_path(@goal.id) do |f| %>
+      <%= form_for @goal, url: goal_path(@goal.id) do |f| %>
 
-  <div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-  <div class="form-group">
-    <%= f.label :reason %>
-    <%= f.text_field :reason %>
-  </div>
-  <div class="form-group">
-    <%= f.label :time_frame %>
-    <%= f.number_field :time_frame %>
-  </div>
-  <div class="form-group">
-    <%= f.submit "Save Changes" %>
-  </div>
+        <div class="form-group">
+          <%= f.label :description %>
+          <%= f.text_field :description %>
+        </div>
+        <div class="form-group">
+          <%= f.label :reason %>
+          <%= f.text_field :reason %>
+        </div>
+        <div class="form-group">
+          <%= f.label :time_frame %>
+          <%= f.select :time_frame, options_for_select(1..52) %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Save Changes" %>
+        </div>
 
-<% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
 
 

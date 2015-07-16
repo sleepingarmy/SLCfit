@@ -1,23 +1,34 @@
-<%= form_for @goal do |f| %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="row side-nav">
+        <%= render(partial: 'shared/side_nav') %>
+      </div>
+    </div>
+    <div class="col-md-9"><%= form_for @goal do |f| %>
 
-  <div class="form-group">
-    <%=  f.label('Description') %>
-    <br>
-    <%= f.text_area :description %>
+      <div class="form-group">
+        <%=  f.label('Description') %>
+        <br>
+        <%= f.text_area :description %>
+      </div>
+
+      <div class="form-group">
+        <%=  f.label('Reason') %>
+        <br>
+        <%= f.text_area :reason %>
+      </div>
+
+      <div class="form-group">
+        <%=  f.label('Time Frame (Weeks)') %>
+        <br>
+        <%= f.select :time_frame, options_for_select(1..52) %> 
+      </div>
+
+      <button type="submit" class="btn btn-default">Create Goal</button>
+
+    <% end %>
+    
+    </div>
   </div>
-
-  <div class="form-group">
-    <%=  f.label('Reason') %>
-    <br>
-    <%= f.text_area :reason %>
-  </div>
-
-  <div class="form-group">
-    <%=  f.label('Time Frame (Weeks)') %>
-    <br>
-    <%= f.text_field :time_frame %>
-  </div>
-
-  <button type="submit" class="btn btn-default">Create Goal</button>
-
-<% end %>
+</div>
