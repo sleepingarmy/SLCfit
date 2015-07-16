@@ -5,24 +5,33 @@
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= csrf_meta_tags %>
   <%= javascript_include_tag 'application'%>
-
   <!-- google fonts -->
   <link href='http://fonts.googleapis.com/css?family=Poiret+One|Pacifico|Raleway:400,100,200,300,500,600,700' rel='stylesheet' type='text/css'>
 
-</head>
-<body>
-  <header>
-    <% if user_signed_in? %>
-    <% else %>
+  </head>
+  <body>
+    <header>
+      <% if user_signed_in? %>
+      <% else %>
       <%= render(partial: 'shared/top_nav') %>
-    <% end %>
-  </header>
-<div class="container-fluid bg-img-width">
-    
-</div>
+      <% end %>
+    </header>
+    <div class="container-fluid bg-img-width">
+    </div>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <header>
+            <%= render(partial: 'shared/top_nav') %>
+          </header>
+        </div>
+      </div>
 
-<%= yield %>
+
+      <%= yield %>
 
 
-</body>
-</html>
+    </body>
+    </html>
