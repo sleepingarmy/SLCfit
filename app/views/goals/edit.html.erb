@@ -1,18 +1,33 @@
-<div class="row">
-  <div class="col-sm-2">
-      <%= render(partial: 'shared/side_nav') %>
-  </div>
-  <div class="col-sm-10 scroll text-center">
-    <div class="row">
-      <div class="container">
-        <h2 class="page-header">Edit Goal</h2>
 
-        <%= form_for @goal, url: goal_path(@goal.id) do |f| %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="row side-nav">
+        <%= render(partial: 'shared/side_nav') %>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <h2>Edit Goal</h2>
+      <hr />
+      <%= form_for @goal, url: goal_path(@goal.id) do |f| %>
 
-          <div>
-            <p><%= f.label ("what's your goal?") %></p>
-            <p><%= f.text_area :description, class: "custom-input" %></p>
-          </div>
+        <div class="form-group">
+          <%= f.label :description %>
+          <%= f.text_field :description %>
+        </div>
+        <div class="form-group">
+          <%= f.label :reason %>
+          <%= f.text_field :reason %>
+        </div>
+        <div class="form-group">
+          <%= f.label :time_frame %>
+          <%= f.select :time_frame, options_for_select(1..52) %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Save Changes" %>
+        </div>
+
+      <% end %>
 
           <div class="form-group">
             <p><%= f.label('why do you want to acheive this goal?') %></p>
