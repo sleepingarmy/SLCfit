@@ -2,14 +2,27 @@
 
 .side-nav {
   text-align: center;
-  background-color: #FFBF65;
+  background-image: url(running_dude_copy.png);
   border-radius: 2px;
   min-height: 1000px;
   min-width: 200px;
   /*position: fixed;*/
   margin-top: 0px;
   padding-top: 0px;
+
+  min-height: 650px;
+  /*min-width: 200px;*/
+  /*position: fixed;*/
+  /*margin-top: 0px;*/
+  /*padding-top: 0px;*/
 }
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
 
 /* FONTS */
 
@@ -32,6 +45,9 @@ h3 {
   border-radius: 50px;
 }
 
+
+/* LINKS */
+
 a {
   color: purple;
 }
@@ -41,14 +57,36 @@ a:hover {
   text-decoration: none;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
+.header {
+  background-color: #e3e3e3;
+  text-align: center;
+  padding-top: 10px;
 }
 
-.background, .background:hover {
+.scroll {
+  height: 650px;
+  overflow: scroll;
+  margin-bottom: 0px;
+  padding-bottom:0px;
+}
+
+.footer {
+  background-color: black;
+  bottom: 0;
 
 }
 
+.custom-input {
+  border-radius: 50px;
+  border-style: solid;
+  width: 500px;
+  padding: 10px;
+
+}
+
+
+.custom-submit {
+  border-radius: 50px;
+  background-color: white;
+}
 
