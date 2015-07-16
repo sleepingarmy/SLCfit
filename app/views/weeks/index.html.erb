@@ -14,7 +14,7 @@
       <div class="item week-item-container text-center <%= index.zero? ? 'active' : '' %>">
         <%= link_to goal_week_activities_path(week.goal_id, week.id), class: 'week-item-link' do %>
         
-          <h3 class="btn btn-success week-item-text background-carousel"><%= "Week #{index + 1}"%></h3>
+          <h3 class="btn btn-default week-item-text background-carousel"><%= "Week #{index + 1}"%></h3>
         <% end %>
       </div>
     <% end %>
