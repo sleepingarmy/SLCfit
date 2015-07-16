@@ -1,8 +1,10 @@
-<tr class='activity-row' data-activity-id="<%= activity.id %> ">
-  <td><%= activity.type %></td>
-  <td><input type='date' class='date' value="<%= Time.now.strftime('%Y-%m-%d') %>"></td>
-  <td><input type='number' class='duration'/></td>
-  <td><textarea class='description'></textarea></td>
-</tr>
-
+<div class='activity-row row' data-activity-id="<%= activity.id %> ">
+  <div class="row">
+    <label class="col-xs-12 col-sm-3 activity-type"><%= activity.type %></label>
+  </div>
+  <input  type='date' class='date col-xs-12 col-sm-4' value="<%= Time.now.strftime('%Y-%m-%d') %>">
+  <input  type='number' class='duration col-xs-12 col-sm-4' placeholder="Duration (minutes)"/>
+  <textarea class='description col-xs-12 col-sm-4' placeholder="Description"></textarea>
+</div>
+<hr />
 <input type='hidden' class="week-id" value="<%= activity.week_id %>" />
