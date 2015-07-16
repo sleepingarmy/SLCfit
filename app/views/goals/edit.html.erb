@@ -11,24 +11,6 @@
       <hr />
       <%= form_for @goal, url: goal_path(@goal.id) do |f| %>
 
-        <div class="form-group">
-          <%= f.label :description %>
-          <%= f.text_field :description %>
-        </div>
-        <div class="form-group">
-          <%= f.label :reason %>
-          <%= f.text_field :reason %>
-        </div>
-        <div class="form-group">
-          <%= f.label :time_frame %>
-          <%= f.select :time_frame, options_for_select(1..52) %>
-        </div>
-        <div class="form-group">
-          <%= f.submit "Save Changes" %>
-        </div>
-
-      <% end %>
-
           <div class="form-group">
             <p><%= f.label('why do you want to acheive this goal?') %></p>
             <p><%= f.text_area :reason, class: "custom-input"  %></p>
@@ -51,5 +33,3 @@
 <div class="row footer">
   <p>footer</p>
 </div>
-
-
