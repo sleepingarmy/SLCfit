@@ -1,35 +1,23 @@
-
-<div class="container-fluid">
   <div class="row">
     <div class="col-sm-2">
-      <div class="row side-nav">
+
         <%= render(partial: 'shared/side_nav') %>
+    </div>
+    <div class="col-sm-10 scroll text-center">
+      <div class="row">
+        <h2 class="page-header">My Goals</h2>
+        <h3>stuff</h3>
+        <% @goals.each do |goal|  %>
+
+          <h3>you want to <%= link_to goal.description, goal_weeks_path(goal.id) %></h3>
+          <p><%= goal.reason%></p>
+          <p>you have <%= goal.time_frame %> weeks to complete this goal.</p>
+          <%= link_to 'Edit', edit_goal_path(goal.id) %> |
+          <%= link_to 'Delete', goal_path(goal.id), method: :delete, data: {confirm: "Are you sure?"}%>
+        <% end %>
       </div>
     </div>
-    <div class="col-sm-10">
-      <h2 class="page-header">My Goals</h2>
-      <h3>stuff</h3>
-      <% @goals.each do |goal|  %>
-
-        <h3>you want to <%= link_to goal.description, goal_weeks_path(goal.id) %></h3>
-        <p><%= goal.reason%></p>
-        <p>you have <%= goal.time_frame %> weeks to complete this goal.</p>
-        <%= link_to 'Edit', edit_goal_path(goal.id) %> |
-        <%= link_to 'Delete', goal_path(goal.id), method: :delete, data: {confirm: "Are you sure?"}%>
-      <% end %>
-    </div>
   </div>
-
-<!--   <div class="col-md-4">
-
-  <script src="http://code.highcharts.com/highcharts.js"></script>
-  <script src="http://code.highcharts.com/modules/exporting.js"></script>
-
-  <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-  </div>
-  </div> -->
-</div>
-</div>
 <div class="row footer">
   <p>footer</p>
 </div>
