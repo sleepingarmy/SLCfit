@@ -19,34 +19,38 @@
         <%= render(partial: 'shared/top_nav') %>
       <% end %>
   </header>
-<div class="container-fluid ">
+  <div class="container-fluid ">
+
+  </div>
 </div>
-</div>
+
 <div class="container-fluid bg-img-width">
-  </div>
+</div>
+
  <div class="container-fluid bg-img-width">
+  <%= yield %>
+</div>
 
-    <%= yield %>
-  </div>
+  <script type="text/javascript">
+  $(document).ready(function() {
+  $.simpleWeather({
+    location: 'Salt Lake City, UT',
+    woeid: '',
+    unit: 'f',
+    success: function(weather) {
+      html = '<p><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</p>';
+      html += '<ul><li>'+weather.title+'</li></ul>';
+      // html += '<li class="currently">'+weather.currently+'</li>';
+      // html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
+      $("#weather").html(html);
+    },
+    error: function(error) {
+      $("#weather").html('<p>'+error+'</p>');
+    }
+  });
+  });
+  </script>
 
 
-<script type="text/javascript">
-$(document).ready(function() {
-$.simpleWeather({
-  location: 'Salt Lake City, UT',
-  woeid: '',
-  unit: 'f',
-  success: function(weather) {
-    html = '<p><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</p>';
-    $("#weather").html(html);
-  },
-  error: function(error) {
-    $("#weather").html('<p>'+error+'</p>');
-  }
-});
-});
-</script>
-
-
-    </body>
-    </html>
+</body>
+</html>
