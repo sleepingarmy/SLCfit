@@ -1,24 +1,63 @@
+<<<<<<< HEAD
+=======
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="row side-nav">
+        <%= render(partial: 'shared/side_nav') %>
+      </div>
+    </div>
+    <div class="col-sm-10">
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <% @weeks.count.times do |num|%>
-      <li data-target="#carousel-example-generic"data-slide-to="<%= num.to_s %>"class="<%= num.zero? ? 'active' : '' %>"></li>
-    <% end %>
-  </ol>
+      <h1><%= @goal.description %></h1>
+      <h2>You have <%= @goal.time_frame %> weeks to complete this goal</h2>
+      <h3>Your Weeks:</h3>
+
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <% @weeks.count.times do |num|%>
+            <li data-target="#carousel-example-generic"data-slide-to="<%= num.to_s %>"class="<%= num.zero? ? 'active' : '' %>"></li>
+          <% end %>
+        </ol>
+>>>>>>> d8965b2c82f5ae1b1e163a0955783c67416daa75
 
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <% @weeks.each_with_index do |week, index| %>
-      <div class="item week-item-container text-center <%= index.zero? ? 'active' : '' %>">
-        <%= link_to goal_week_activities_path(week.goal_id, week.id), class: 'week-item-link' do %>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <% @weeks.each_with_index do |week, index| %>
+            <div class="item week-item-container text-center <%= index.zero? ? 'active' : '' %>">
+              <%= link_to goal_week_activities_path(week.goal_id, week.id), class: 'week-item-link' do %>
+              
+                <h3 class="btn btn-primary week-item-text background"><%= "Week #{index + 1}"%></h3>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+            
+      <!--       <img src="..." alt="...">
+            <div class="carousel-caption"> -->
+            
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
         
+<<<<<<< HEAD
           <h3 class="btn btn-default week-item-text background-carousel"><%= "Week #{index + 1}"%></h3>
         <% end %>
+=======
+>>>>>>> d8965b2c82f5ae1b1e163a0955783c67416daa75
       </div>
-    <% end %>
+    </div>
   </div>
+<<<<<<< HEAD
       
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -33,3 +72,7 @@
 <h1><%= @goal.description %></h1>
 <h2>You have <%= @goal.time_frame %> weeks to complete this goal</h2>
 <h3>Your Weeks:</h3>
+=======
+</div>
+
+>>>>>>> d8965b2c82f5ae1b1e163a0955783c67416daa75
