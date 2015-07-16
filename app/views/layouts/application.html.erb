@@ -12,20 +12,22 @@
 
 </head>
 <body>
+
 <div class="container-fluid header">
   <header class="header">
 
       <% if user_signed_in? %>
-          <div id="weather" class="pull right"></div>
+          <div id="weather" class="pull right col-sm-2"></div>
       <% else %>
         <%= render(partial: 'shared/top_nav') %>
       <% end %>
   </header>
 </div>
 
-  <div class="container-fluid bg-img-width">
+ <div class="container-fluid bg-img-width">
   </div>
-  
+ 
+
   <div class="container-fluid">
     
     <%= yield %>
