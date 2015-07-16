@@ -6,11 +6,16 @@
         <%= render(partial: 'shared/side_nav') %>
       </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 text-center">
       <h2>Edit Goal</h2>
       <hr />
       <%= form_for @goal, url: goal_path(@goal.id) do |f| %>
-
+          
+          <div>
+            <p><%= f.label("what's your goal?") %></p>
+            <p><%= f.text_area :description, class: "custom-input"%></p>
+          </div>
+          
           <div class="form-group">
             <p><%= f.label('why do you want to acheive this goal?') %></p>
             <p><%= f.text_area :reason, class: "custom-input"  %></p>
