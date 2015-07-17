@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   has_many :goals
+  has_many :biometrics
 end

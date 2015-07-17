@@ -1,12 +1,22 @@
 Rails.application.routes.draw do
+  get 'biometrics/index'
+
+  get 'biometrics/show'
+
+  get 'biometrics/edit'
+
+  get 'biometrics/new'
+
   get 'goals/resources'
 
   get 'welcome/index'
 
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
@@ -19,6 +29,8 @@ Rails.application.routes.draw do
       resources :activities
     end
   end
+
+  resources :biometrics
 
   put '/update_activity' => 'activities#update'
   get '/activity_tr' => 'activities#activity_tr'

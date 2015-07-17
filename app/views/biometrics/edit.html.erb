@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="row side-nav">
+        <%= render(partial: 'shared/side_nav') %>
+      </div>
+    </div>
+    <div class="col-md-9 text-center">
+      <h2>Edit Data</h2>
+      <hr />
+      <%= form_for @biometric, url: biometric_path(@biometric.id) do |f| %>
+          
+          <div>
+            <p><%= f.label("what's your biometric?") %></p>
+            <p><%= f.text_area :description, class: "custom-input"%></p>
+          </div>
+          
+          <div class="form-group">
+            <p><%= f.label('why do you want to acheive this biometric?') %></p>
+            <p><%= f.text_area :reason, class: "custom-input"  %></p>
+          </div>
+
+          <div class="form-group">
+            <p><%= f.label('time frame (weeks)') %></p>
+            <p><%= f.select :time_frame, options_for_select(1..52), class: "custom-input"  %></p>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Save Changes", class: "custom-submit" %>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row footer">
+  <p>footer</p>
+</div>
+
