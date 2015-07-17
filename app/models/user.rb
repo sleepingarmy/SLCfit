@@ -8,17 +8,4 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   has_many :goals
-
-  #delayed jobs stuff
-  def self.create_by_csv(file)
-    file = params[:file].tempfile
-    CSV.parse(File.read(file), headers: true, header_converters: :symbol).each do |row|
-      next if User.find_by(email: row[:email].strip)
-      user = User.new(email: row[:email], username: row[:username], first_name: row[:first_name], last_name: row[:last_name])
-      if user.save
-        #email the user with info
-      else
-        #email admin about  failures
-      end
-  end
 end
