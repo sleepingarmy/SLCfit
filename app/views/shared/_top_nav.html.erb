@@ -30,7 +30,7 @@
         </li> -->
       </ul>
 
-      <form class="navbar-form navbar-right" role="search">
+<!--       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" name="username" placeholder="Username">
         </div>
@@ -38,15 +38,28 @@
           <input type="text" class="form-control" name="password" placeholder="Password">
         </div>
         <button type="submit" class="btn btn-default">Sign In</button>
-      </form>
+      </form> -->
+
+      <ul class="navbar-form navbar-right">
+              <li>
+                <%= form_for(:user, :url => session_path(:user)) do |f| %>
+                <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-warning' %>
+                <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
+                <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+                <%= f.submit 'Sign in', class: 'btn btn-default' %>
+                <%= link_to "Forgot your password?", new_password_path(:user), class: 'sr-only' %>
+                <% end %>
+              </li>
+            </ul>
+  
 
       
         
       
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="<%= new_user_registration_path %>">Sign Up</a></li>
-          <li><a href="<%= new_user_session_path %>">Login</a></li>
-        </ul>
+<!--         <ul class="nav navbar-nav navbar-right">
+          <li><a href="<%#= new_user_registration_path %>">Sign Up</a></li>
+          <li><a href="<%#= new_user_session_path %>">Login</a></li>
+        </ul> -->
 
   
 
