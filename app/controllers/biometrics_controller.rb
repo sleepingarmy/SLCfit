@@ -5,6 +5,13 @@ class BiometricsController < ApplicationController
   def index
     @biometrics = Biometric.all.sort_by_created_at
 
+    @bio_array = [['date', 'weight'], ]
+
+    @biometrics.each do |bio|
+      biodate = bio.updated_at.strftime "%A %D"
+      bioweight = bio.weight
+      @bio_array << [biodate, bioweight]
+    end
   end
 
   def show

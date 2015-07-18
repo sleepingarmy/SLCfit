@@ -21,30 +21,6 @@
      </header>
    </div>
 
-  <head>
-    <title>SLCfit</title>
-    <%= stylesheet_link_tag    'application', media: 'all'%>
-    <%= csrf_meta_tags %>
-    <%= javascript_include_tag 'application'%>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
-    <!-- google fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Poiret+One|Pacifico|Raleway:400,100,200,300,500,600,700' rel='stylesheet' type='text/css'>
-    <!-- font awesome -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  </head>
-  <body>
-
-    <div class="container-fluid header">
-      <header class="header">
-        <% if user_signed_in? %>
-            <div id="weather" class="pull-right col-sm-2"></div>
-        <% else %>
-          <%= render(partial: 'shared/top_nav') %>
-        <% end %>
-      </header>
-    </div>
-
    <div class="container-fluid bg-img-width">
      <%= yield %>
    </div>
