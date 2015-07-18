@@ -1,34 +1,25 @@
-<div class="row side-nav">
-  <h1><%= link_to 'SLCfit', goals_path %></h1>
-  <div class="line">
-    <p><%= image_tag current_user.image(:thumb), class: "profile-pic" %></p>
-    <p><%= current_user.username %></p>
-    
-  </div>
-  <ul>
-    <li class="line"><%= link_to 'my goals', goals_path %></li>
-  
-    <li class="line"><%= link_to 'new goal', new_goal_path %></li>
-    
-    <li class="line"><%= link_to 'my biometrics', biometrics_path %></li>
-
-    <li class="line"><%= link_to 'new biometric', new_biometric_path %></li>
+<!-- Sidebar -->
+<a href="#menu-toggle" class="btn btn-default hidden-lg hidden-md" id="menu-toggle"><i class="fa fa-bars"></i></a>
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+      <h1><%= link_to 'SLCfit', goals_path %></h1>
+    </li>
+    <li>
+      <p><%= image_tag current_user.image(:thumb), class: "profile-pic" %></p>
+      <p><%= current_user.username %></p>
+    </li>
+    <li><%= link_to 'My Goals', goals_path %></li>
+    <li><%= link_to 'New Goal', new_goal_path %></li>
+    <li>
+      <a href="#">Events</a>
+    </li>
+    <li><%= link_to 'Account Settings', edit_user_registration_path %></li>
+    <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+    <li>
+      <a href="#">Contact</a>
+    </li>
   </ul>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  
-  <p class="small-nav"><%= link_to 'Account Settings', edit_user_registration_path %></p>
-  <p class="small-nav"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
-  <p>&copy; 2015</p>
 </div>
 
 
