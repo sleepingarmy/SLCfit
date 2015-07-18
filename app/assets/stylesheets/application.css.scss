@@ -1,18 +1,11 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import "font-awesome";
+@import "bootstrap-custom";
+@import "simple-side";
+@import "activities";
+@import "goals";
+@import "users";
+@import "weeks";
+@import "welcome";
 
 
 .bg-img-width {
@@ -63,21 +56,20 @@ body {
 /*  WEATHER */
 
 #weather {
-  width: 500px;
+  width: auto;
   margin: 0px auto;
   text-align: center;
   text-transform: uppercase;
 
+    i {
+      color: white;
+      font-family: weather;
+      font-size: 50px;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 1.0;
+    }
 
-}
-
-i {
-  color: black;
-  font-family: weather;
-  font-size: 50px;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1.0;
 }
 
 .icon-0:before { content: ":"; }
@@ -130,8 +122,8 @@ i {
 .icon-47:before { content: "S"; }
 
 #weather p {
-  margin: 0 0 8px;
-  color: black;
+  margin: 0 0 0px;
+  color: white;
   font-size: 30px;
   font-weight: 300;
   text-align: right;
@@ -155,4 +147,11 @@ i {
 
 #weather .currently {
   margin: 0 20px;
+}
+
+.header {
+  min-height: 65px;
+  background-color: $site-bg-purple;
+  text-align: center;
+  padding-top: 5px;
 }
