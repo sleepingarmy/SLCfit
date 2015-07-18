@@ -36,14 +36,28 @@ html {
   background-size: cover;
 }
 
+/* FONTS */
+
+
+h2 {
+   font-family: 'Pacifico', cursive;
+   cursor: pointer;
+   font-size: 50px;
+}
+
+/*h3 {
+  font-family: 'Poiret One', cursive;
+}
+*/
 body {
   padding: 0;
   font: 13px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Raleway', sans-serif;
+  padding-top: 30px;
 }
 
-h2 {
-  font-size: 50px;
-}
+
+/*  WEATHER */
 
 #weather {
   width: 500px;
@@ -117,7 +131,7 @@ i {
   color: black;
   font-size: 30px;
   font-weight: 300;
-  text-align: center;
+  text-align: right;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
