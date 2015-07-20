@@ -19,12 +19,12 @@
       <header class="header">
         <% if user_signed_in? %>
             <marquee id="weather" class="col-sm-2 banner text-center" style="margin-left: 2.5%"></marquee>
+            <div id="weather" class="pull-right col-sm-2"></div>
             <%= render(partial: 'shared/side_nav') %>
 <!--             <%#= render(partial: 'shared/flash') %>
  -->        <% end %>
       </header>
     </div>
-
     <div id="page-content-wrapper">
      <div class="container-fluid bg-img-width">
        <%= yield %>
@@ -42,8 +42,7 @@
         woeid: '',
         unit: 'f',
         success: function(weather) {
-          html = '<p><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp + "&nbsp&nbsp&nbsp&nbsp";
-          html += weather.title+'</p>';
+          html = '<p><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</p>';
           $("#weather").html(html);
         },
         error: function(error) {
