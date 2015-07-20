@@ -31,7 +31,6 @@
           <p>user data for <%= bio.updated_at.strftime "%A %D %Y" %></p>
           <hr>
           <p>age: <%= bio.age %></p>
-          <p>height: <%= bio.height.divmod(12).first %>"<%= bio.height.divmod(12).second %>'</p>
           <p>weight: <%= bio.weight %>lbs.</p>
           <% if bio.mile_speed != nil %>
             <p>you can run a mile in <%= bio.mile_speed %>minutes.</p>
@@ -50,5 +49,3 @@
   <p>footer</p>
 <<<<<<< HEAD
 </div> -->
-
-
