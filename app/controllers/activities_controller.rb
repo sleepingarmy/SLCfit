@@ -40,7 +40,7 @@ class ActivitiesController < ApplicationController
     @activity = @week.activities.new(activity_params)
 
     if @activity.save
-      redirect_to goal_week_activities_path(@goal.id, @week.id), notice: "#{type} was successfully created."
+      redirect_to goal_weeks_path(@goal.id)
     else
       render action: 'new'
     end
