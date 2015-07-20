@@ -5,5 +5,4 @@ class Biometric < ActiveRecord::Base
     order(:created_at)
   end
 
-  validates_presence_of :height
 end

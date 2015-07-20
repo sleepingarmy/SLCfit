@@ -2,17 +2,13 @@
   <% if current_user.biometrics.count == 0 %>
     <%= form_for @biometric do |f| %>
       <h2 class="page-header">Initial Biometric Data</h2>
-      <p>this is your initial data!  we won't ask you for your birthday or height after this.</p>
-      <br>
-      <div>
-        <h4><%= f.label("when is your birthday?") %></h4>
-        <p><%= f.date_select :birthday, {:start_year => Time.now.year, :end_year => Time.now.year - 100}%></p>
-      </div>
-      <br>
-      <div id="height">
-        <h4><%= f.label('how tall are you?') %></h4>
-        <p><%= f.text_field :height, placeholder: "inches (5 feet is 60 inches)", class: "custom-input" %></p>
-      </div>
+      <h3>this is your initial data!  we won't ask you for your birthday or height after this.</h3>
+      <% if @info %>
+        <p>You are <%= current_user.info.height %>" tall and probably 44 years old.  
+         <%= link_to 'Edit', main_app.edit_info_path(@info.id) %></p>
+       <% else %>
+        <h3>It seems you don't have any basic user data. Enter new data <%= link_to 'here', main_app.new_info_path %>.</h3>  
+      <% end %>
       <br>
       <div>
         <h4><%= f.label('how much do you weigh?(pounds)') %></h4>
@@ -26,7 +22,7 @@
       </div>
       <br>
       <div>
-        <h4><%= f.label('how fast can you run a mile?') %></h4>
+        <h4><%= f.label('how much can you deadlift?') %></h4>
         <p><%= f.label('hate lifting heavy things?  leave it blank!') %></p>
         <p><%= f.text_field :lift_weight, placeholder: "pounds", class: "custom-input" %> 
       </div>
@@ -37,8 +33,14 @@
     <% end %>
   <% else %>
     <%= form_for @biometric do |f| %>
-      <h2 class="page-header">New biometric</h2>
-      <p>update your current data here!</p>
+      <h2 class="page-header">New Biometric</h2>
+      <h3>update your current data here!</h3>
+      <% if @info %>
+        <p>You are <%= current_user.info.height %>" tall and probably 44 years old.  
+         <%= link_to 'Edit', main_app.edit_info_path(@info.id) %></p>
+       <% else %>
+        <h3>It seems you don't have any basic user data. Enter new data <%= link_to 'here', main_app.new_info_path %>.</h3>  
+      <% end %>
       <br>
       <div>
         <h4><%= f.label('how much do you weigh?(pounds)') %></h4>
@@ -52,7 +54,7 @@
       </div>
       <br>
       <div>
-        <h4><%= f.label('how fast can you run a mile?') %></h4>
+        <h4><%= f.label('how much can you deadlift?') %></h4>
         <p><%= f.label('hate lifting heavy things?  leave it blank!') %></p>
         <p><%= f.text_field :lift_weight, placeholder: "pounds", class: "custom-input" %> 
       </div>
