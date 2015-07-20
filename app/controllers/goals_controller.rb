@@ -31,7 +31,7 @@ class GoalsController < ApplicationController
           week.save
         end
       flash[:notice] = "Your goal was successfully created!"
-      redirect_to(plan_of_action_path)
+      redirect_to(plan_of_action_path(@goal.id))
     end
   end
 

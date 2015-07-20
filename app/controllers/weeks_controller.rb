@@ -3,8 +3,6 @@ class WeeksController < ApplicationController
   before_action :find_week, only: [:show, :update]
   before_action :find_goal
 
-  #before_action :find_activity
-
   def index
     @weeks = @goal.weeks
   end
@@ -27,7 +25,25 @@ class WeeksController < ApplicationController
   end
 
   def plan_of_action
-    #@weeks = @goal.weeks
+    @weeks = @goal.weeks
+
+    activities = @goal.weeks.first.activities
+    @activities = activities.map do |activity|
+        activity.type
+    end
+    @activities.uniq!
+  end
+
+  def create_plan
+    per_week = params[:week][:per_week].to_i
+    @goal.weeks.each do |week|
+      per_week.times do
+        activity = week.activities.new(type: params[:week][:type])
+        activity.save
+      end
+    end
+    redirect_to plan_of_action_path(@goal.id)
+
   end
 
   private
@@ -50,6 +66,10 @@ class WeeksController < ApplicationController
     unless @week
       render(text: 'Week not found', status: 404)
     end
+  end
+
+  def activity_params
+    params.require(type.underscore.to_sym).permit(:type, :week_id)
   end
 
 end
