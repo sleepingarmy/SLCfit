@@ -7,7 +7,7 @@
     </li>
     <li>
       <p><%= image_tag current_user.image(:thumb), class: "profile-pic" %></p>
-      <h2 class='side-nav-username'><%= current_user.username %></h2>
+      <h3 class='side-nav-username'><%= current_user.username %></h3>
     </li>
     <li><%= link_to 'My Goals', main_app.goals_path %></li>
     <li><%= link_to 'New Goal', main_app.new_goal_path %></li>
