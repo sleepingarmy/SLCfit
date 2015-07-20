@@ -47,6 +47,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
+  gem 'sendgrid'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
