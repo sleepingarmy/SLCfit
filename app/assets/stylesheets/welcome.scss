@@ -51,7 +51,7 @@
 
 /*Fetaures Div Styles*/
 #features {
-  background-color: #ededed;
+  background-color: #f8f8f8;
 }
 
 #header-logo {
@@ -70,9 +70,9 @@
   padding-top: 0px;
 }
 
-.content-row, .features-row {
+.row .features-row {
   margin-left: -50px;
-  margin-right: 50px;
+  margin-right: 60px;
 }
 
 .text-center {
@@ -96,6 +96,7 @@
 }
 
 .margin-features {
+  margin-left: 0;
   padding-left: 50px; 
   padding-right: 50px;
 }
