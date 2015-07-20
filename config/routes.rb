@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   put '/update_activity' => 'activities#update'
   get '/activity_tr' => 'activities#activity_tr'
   get '/activity_display' => 'activities#display'
+  get '/plan_of_action'  => 'weeks#plan_of_action'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

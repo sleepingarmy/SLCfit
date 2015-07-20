@@ -6,7 +6,6 @@
     <div class="col-sm-10 scroll text-center">
       <div class="row">
         <h2 class="page-header">My Goals</h2>
-        <h3>stuff</h3>
         <% @goals.each do |goal|  %>
 
           <h3>you want to <%= link_to goal.description, goal_weeks_path(goal.id) %></h3>
@@ -21,5 +20,3 @@
 <div class="row footer">
   <p>footer</p>
 </div>
-
-

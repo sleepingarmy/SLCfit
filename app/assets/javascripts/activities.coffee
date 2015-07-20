@@ -22,6 +22,7 @@ $(document).ready ->
             console.log data
 
     $('#myModal').modal('hide')
+
     $.ajax '/activity_display',
       type: 'GET'
       data:

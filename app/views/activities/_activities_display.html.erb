@@ -1,4 +1,3 @@
-<h1>Complete Activities for Week</h1>
 <% activities_complete.each do |activity|  %>
   I went <%= activity.type %> on
   <%= activity.date %> for
@@ -10,12 +9,14 @@
   <br>
 <% end %>
 
-<h1>Non-Complete Activities for Week</h1>
+
+<h3>Activities to Complete</h3>
+<hr>
 <% activities_not_complete.each do |activity|  %>
   <input class="activity-check" data-activity-id="<%= activity.id %>" type="checkbox">
-  <span class="activity-type-text">
+  <div class="activity-type-text">
     <%= activity.type %>
-  </span>
+  </div>
   <br>
   <br>
 <% end %>

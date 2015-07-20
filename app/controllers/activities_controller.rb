@@ -28,7 +28,7 @@ class ActivitiesController < ApplicationController
     redirect_to activities_url
   end
 
-  def new
+  def _new
     @goal= Goal.find_by(id: params[:goal_id])
     @week= Week.find_by(id: params[:week_id])
     @activity = type_class.new

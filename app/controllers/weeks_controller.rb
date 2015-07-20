@@ -2,6 +2,7 @@ class WeeksController < ApplicationController
   before_action :find_user
   before_action :find_week, only: [:show, :update]
   before_action :find_goal
+
   #before_action :find_activity
 
   def index
@@ -25,15 +26,16 @@ class WeeksController < ApplicationController
     end
   end
 
+  def plan_of_action
+    @weeks = @goal.weeks
+  end
+
   private
 
   def find_user
     @user = current_user
   end
 
-  # def find_activity
-  #   @activity = @week.activities.find_by(id: params[:id])
-  # end
 
   def find_goal
     @goal = Goal.find_by(id: params[:goal_id])
@@ -49,4 +51,5 @@ class WeeksController < ApplicationController
       render(text: 'Week not found', status: 404)
     end
   end
+
 end
