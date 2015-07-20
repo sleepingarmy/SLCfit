@@ -1,38 +1,68 @@
 <div class="col-md-12 text-center">
- <%= form_for @biometric do |f| %>
-   <h2 class="page-header">New biometric</h2>
-    <p>this is your current data!</p>
-     <div>
-       <h4><%= f.label("how old are you?") %></h4>
-       <p><%= f.text_field :age, class: "custom-input"%></p>
-     </div>
-
-     <div>
-       <h4><%= f.label('how tall are you?') %></h4>
-       <p><%= f.text_field :height, placeholder: "inches (5 feet is 60 inches)", class: "custom-input" %></p>
-     </div>
-
-     <div>
-       <h4><%= f.label('how much do you weigh?(pounds)') %></h4>
-       <p><%= f.select :weight, options_for_select(70..300), class: "custom-input" %></p> 
-     </div>
+  <% if current_user.biometrics.count == 0 %>
+    <%= form_for @biometric do |f| %>
+      <h2 class="page-header">Initial Biometric Data</h2>
+      <h3>this is your initial data!  we won't ask you for your birthday or height after this.</h3>
+      <% if @info %>
+        <p>You are <%= current_user.info.height %>" tall and probably 44 years old.  
+         <%= link_to 'Edit', main_app.edit_info_path(@info.id) %></p>
+       <% else %>
+        <h3>It seems you don't have any basic user data. Enter new data <%= link_to 'here', main_app.new_info_path %>.</h3>  
+      <% end %>
       <br>
-     <div>
-       <h4><%= f.label('how fast can you run a mile?') %></h4>
-       <p><%= f.label('psst...hate running?  leave it blank!') %></p>
-       <%= f.text_field :mile_speed, placeholder: "minutes", class: "custom-input" %>
-     </div>
+      <div>
+        <h4><%= f.label('how much do you weigh?(pounds)') %></h4>
+        <p><%= f.select :weight, options_for_select(70..300), class: "custom-input" %></p> 
+      </div>
       <br>
-     <div>
-      <h4><%= f.label('how fast can you run a mile?') %></h4>
-       <p><%= f.label('hate lifting heavy things?  leave it blank!') %></p>
-       <p><%= f.text_field :lift_weight, placeholder: "pounds", class: "custom-input" %> 
-     </div>
+      <div>
+        <h4><%= f.label('how fast can you run a mile?') %></h4>
+        <p><%= f.label('psst...hate running?  leave it blank!') %></p>
+        <%= f.text_field :mile_speed, placeholder: "minutes", class: "custom-input" %>
+      </div>
       <br>
-     <div class="form-group">
-       <%= f.submit "create biometric", class: "custom-submit" %>
-     </div>
-
-   <% end %>
- </div>
+      <div>
+        <h4><%= f.label('how much can you deadlift?') %></h4>
+        <p><%= f.label('hate lifting heavy things?  leave it blank!') %></p>
+        <p><%= f.text_field :lift_weight, placeholder: "pounds", class: "custom-input" %> 
+      </div>
+      <br>
+      <div class="form-group">
+        <%= f.submit "save data", class: "custom-submit" %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= form_for @biometric do |f| %>
+      <h2 class="page-header">New Biometric</h2>
+      <h3>update your current data here!</h3>
+      <% if @info %>
+        <p>You are <%= current_user.info.height %>" tall and probably 44 years old.  
+         <%= link_to 'Edit', main_app.edit_info_path(@info.id) %></p>
+       <% else %>
+        <h3>It seems you don't have any basic user data. Enter new data <%= link_to 'here', main_app.new_info_path %>.</h3>  
+      <% end %>
+      <br>
+      <div>
+        <h4><%= f.label('how much do you weigh?(pounds)') %></h4>
+        <p><%= f.select :weight, options_for_select(70..300), class: "custom-input" %></p> 
+      </div>
+      <br>
+      <div>
+        <h4><%= f.label('how fast can you run a mile?') %></h4>
+        <p><%= f.label('psst...hate running?  leave it blank!') %></p>
+        <%= f.text_field :mile_speed, placeholder: "minutes", class: "custom-input" %>
+      </div>
+      <br>
+      <div>
+        <h4><%= f.label('how much can you deadlift?') %></h4>
+        <p><%= f.label('hate lifting heavy things?  leave it blank!') %></p>
+        <p><%= f.text_field :lift_weight, placeholder: "pounds", class: "custom-input" %> 
+      </div>
+      <br>
+      <div class="form-group">
+        <%= f.submit "create biometric", class: "custom-submit" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 

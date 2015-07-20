@@ -7,13 +7,6 @@ Rails.application.routes.draw do
   # We ask that you don't use the :as option here, as Forem relies on it being the default of "forem"
   mount Forem::Engine, :at => '/forums'
 
-  get 'biometrics/index'
-
-  get 'biometrics/show'
-
-  get 'biometrics/edit'
-
-  get 'biometrics/new'
 
   get 'goals/resources'
 
@@ -39,6 +32,7 @@ Rails.application.routes.draw do
   end
 
   resources :biometrics
+  resources :infos
 
   put '/update_activity' => 'activities#update'
   get '/activity_tr' => 'activities#activity_tr'
