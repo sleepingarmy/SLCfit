@@ -1,6 +1,6 @@
 <div class='activity-row row' data-activity-id="<%= activity.id %> ">
   <div class="row">
-    <label class="col-xs-12 col-sm-3 activity-type"><%= activity.type %></label>
+    <label class="col-xs-12 col-sm-3 activity-type">Went <%= activity.type %></label>
   </div>
   <input  type='date' class='date col-xs-12 col-sm-4' value="<%= Time.now.strftime('%Y-%m-%d') %>">
   <input  type='number' class='duration col-xs-12 col-sm-4' placeholder="Duration (minutes)"/>

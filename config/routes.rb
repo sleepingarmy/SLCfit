@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  # This line mounts Forem's routes at /forums by default.
+  # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.
+  # If you would like to change where this extension is mounted, simply change the :at option to something different.
+  #
+  # We ask that you don't use the :as option here, as Forem relies on it being the default of "forem"
+  mount Forem::Engine, :at => '/forums'
+
   get 'biometrics/index'
 
   get 'biometrics/show'
@@ -16,7 +24,7 @@ Rails.application.routes.draw do
   }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  
+
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
@@ -35,6 +43,9 @@ Rails.application.routes.draw do
   put '/update_activity' => 'activities#update'
   get '/activity_tr' => 'activities#activity_tr'
   get '/activity_display' => 'activities#display'
+  get '/plan_of_action/:goal_id'  => 'weeks#plan_of_action', as: :plan_of_action
+  post '/create_plan/:goal_id/' => 'weeks#create_plan', as: :create_plan
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
