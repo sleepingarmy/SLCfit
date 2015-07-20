@@ -3,7 +3,7 @@
   <h3><%= @goal.description %></h3>
   <h3>You have <%= @goal.time_frame %> weeks to complete this goal</h3>
 
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <div id="carousel-example-generic" class="carousel slide data-interval= "false"" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <% @weeks.count.times do |num|%>

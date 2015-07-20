@@ -3,6 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+/*Before action when User clicks chevron more arrow to place div in correct position...*/
+#features:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -50px; 
+  height: 75px; 
+  visibility: hidden; 
+}
+/*End before action styles*/
+
+/*Parallax Scrolling Sections*/
 #home { 
   background: url(SLC_view.png) 50% 0 repeat fixed; min-height: 1000px;
   height: 1000px; 
@@ -11,6 +22,11 @@
   max-width: 1920px; 
   position: relative;
 
+}
+
+.fa-chevron-down {
+  margin-top: 375px;
+  color: white;
 }
 
 #features-img { 
@@ -32,7 +48,9 @@
   position: relative;
 
 }
+/*End Parallax Sections*/
 
+/*Fetaures Div Styles*/
 #features {
   background-color: #f8f8f8;
 }
@@ -45,18 +63,19 @@
 }
 
 .content {
-  height: 500px;
-
+  height: 430px; 
+    @media screen and (max-width: 480px){
+      height: 730px;
+  }
 }
 
 .content-row {
-  padding-top: 50px;
+  padding-top: 0px;
 }
-.content-row, .features-row {
-  left-margin: 150px;
-  right-margin: 150px;
-  left-padding: 150px;
-  right-padding: 150px;
+
+.row .features-row {
+  margin-left: -50px;
+  margin-right: 60px;
 }
 
 .text-center {
@@ -64,16 +83,9 @@
 }
 
 
-.fa-chevron-down {
-  margin-top: 375px;
-  color: white;
-}
-
-.padding-bottom {
-  padding-bottom: 50px;
-}
-
 #features-heading {
+  padding-top: 15px;
+  padding-bottom: 20px;
   font-size: 60px;
   font-weight: bold;
 }
@@ -86,7 +98,55 @@
   min-height: 20px;
 }
 
-.feature-span {
-  margin-left: -100px;
+.margin-features {
+  margin-left: 0;
+  padding-left: 50px; 
+  padding-right: 50px;
 }
+/*End Features div*/
+
+/*Dashboard Views Div*/
+.dashboard-content {
+  margin-top: 100px;
+  margin-left: 600px;
+  width: 600px;
+  height: 400px;
+  background-color: #f8f8f8;
+  border-radius: 50px;
+}
+/*Dashboard View End*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
