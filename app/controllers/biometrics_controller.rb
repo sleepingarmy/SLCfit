@@ -1,14 +1,15 @@
 class BiometricsController < ApplicationController
   before_action :find_user
   before_action :find_biometric
+  before_action :find_user
 
   def index
-    @biometrics = Biometric.all.sort_by_created_at
+    @biometrics = Biometric.where(user_id: current_user.id).sort_by_created_at
 
     @bio_array = [['date', 'weight'], ]
 
     @biometrics.each do |bio|
-      biodate = bio.updated_at.strftime "%A %D"
+      biodate = bio.created_at.strftime "%a %D"
       bioweight = bio.weight
       @bio_array << [biodate, bioweight]
     end
@@ -51,6 +52,9 @@ class BiometricsController < ApplicationController
 
   def find_user
     @user = current_user
+    unless @user
+      redirect_to root_path
+    end
   end
 
   def find_biometric
