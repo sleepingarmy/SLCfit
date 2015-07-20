@@ -5,14 +5,14 @@
    <p>this is your current data!</p>
    <br>
    <div>
-     <h4 id="age"><%= f.label("how old are you?") %></h4>
-     <p><%= f.text_field :age, class: "custom-input"%></p>
+     <h4><%= f.label("when is your birthday?") %></h4>
+     <p><%= f.date_select :birthday, {:start_year => Time.now.year, :end_year => Time.now.year - 100}%></p>
    </div>
    <br>
-   <div>
-     <h4 id="age"><%= f.label("how old are you?") %></h4>
-     <p><%= f.text_field :age, class: "custom-input"%></p>
-   </div>
+   <!-- <div>
+     <h4 id="age"><%#= f.label("how old are you?") %></h4>
+     <p><%#= f.text_field :age, class: "custom-input"%></p>
+   </div> -->
    <br>
    <div id="height">
      <h4><%= f.label('how tall are you?') %></h4>
