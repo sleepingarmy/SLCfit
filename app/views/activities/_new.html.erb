@@ -1,4 +1,5 @@
-<%= form_for @activity, url: goal_week_activities_path(@goal.id, @week.id) do |f| %>
+
+<%= form_for :activity, url: goal_week_activities_path(@goal.id, locals[:week_id]) do |f| %>
 
   <div class="form-group">
     <%=  f.label('Type') %>
