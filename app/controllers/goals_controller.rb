@@ -31,7 +31,7 @@ class GoalsController < ApplicationController
           week.save
         end
       flash[:notice] = "Your goal was successfully created!"
-      redirect_to(goals_path)
+      redirect_to(plan_of_action_path(@goal.id))
     end
   end
 
@@ -50,9 +50,6 @@ class GoalsController < ApplicationController
 
   def find_goal
     @goal = Goal.find_by(id: params[:id])
-    #  unless @goal
-    #    render (text: 'goal not found', status: 404)
-    #  end
   end
 
   def find_user

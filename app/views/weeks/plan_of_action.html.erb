@@ -1,0 +1,28 @@
+<h2>How are you going to obtain this goal?</h2>
+<h3>Your plan of action: </h3>
+
+<%= form_for :week,  url: create_plan_path(@goal.id) do |f| %>
+
+  <div class="form-group">
+    <%=  f.label('Type') %>
+    <br>
+    <%= f.select :type, Activity.types %>
+  </div>
+
+  <div class="form-group">
+    <%=  f.label('Times Per Week') %>
+    <br>
+    <%= f.select :per_week, (1..7).to_a %>
+  </div>
+
+  <button type="submit" class="btn btn-default">Add Activity</button>
+
+<% end %>
+
+<% @activities.each do |activity|%>
+  <p>
+    You have added <%= activity %>
+  </p>
+<% end %>
+
+<%= link_to 'Finish', goal_weeks_path(@goal.id), class: "btn btn-primary"  %>
