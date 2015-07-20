@@ -4,4 +4,5 @@ class Biometric < ActiveRecord::Base
   def self.sort_by_created_at
     order(:created_at)
   end
+
 end

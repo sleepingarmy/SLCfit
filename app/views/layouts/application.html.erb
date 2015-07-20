@@ -16,9 +16,9 @@
   <body>
   <div id="wrapper">
     <div class="container-fluid header">
-      <header class="header weather-header">
+      <header class="header">
         <% if user_signed_in? %>
-            <marquee id="weather" class="col-sm-2 banner"></marquee>
+            <marquee id="weather" class="col-sm-2 banner text-center" style="margin-left: 2.5%"></marquee>
             <%= render(partial: 'shared/side_nav') %>
 <!--             <%#= render(partial: 'shared/flash') %>
  -->        <% end %>
