@@ -13,6 +13,7 @@ class BiometricsController < ApplicationController
       bioweight = bio.weight
       @bio_array << [biodate, bioweight]
     end
+
   end
 
   def show
@@ -32,6 +33,7 @@ class BiometricsController < ApplicationController
       redirect_to biometrics_path
     else
       flash[:error] = "oops!  something went wrong."
+      redirect_to biometrics_path
     end
   end
 
@@ -47,7 +49,7 @@ class BiometricsController < ApplicationController
   private
 
   def bio_params
-    params.require(:biometric).permit(:age, :height, :weight, :mile_speed, :lift_weight)
+    params.require(:biometric).permit(:birthday, :age, :height, :weight, :mile_speed, :lift_weight)
   end
 
   def find_user

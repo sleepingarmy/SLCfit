@@ -22,14 +22,14 @@
   <div class="col-sm-12 text-center">
     <!-- <div class="row"> -->
       <h1>my bio data</h1>
-      <p>look at all your progress!</p>
+      <p>track your progress!</p>
       <div id="chart_div" style="width: 900px; height: 500px;"></div>
       <hr>
     <!-- </div> -->
     <!-- <div class="row"> -->
       <% @biometrics.each do |bio| %>
         <div class="col-sm-3 bio-div text-left">
-          <p>user data for <%= bio.created_at.strftime "%A %D %Y" %></p>
+          <p>metrics <%= bio.created_at.strftime "%A %D %Y" %></p>
           <hr>
           <p>age: <%= bio.age %></p>
           <p>height: <%= bio.height.divmod(12).first %>"<%= bio.height.divmod(12).second %>'</p>
