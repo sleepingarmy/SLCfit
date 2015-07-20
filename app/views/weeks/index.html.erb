@@ -1,35 +1,79 @@
-<div class="row">
 
-  <div class="">
+<div class="col-sm-10">
+  <h3><%= @goal.description %></h3>
+  <h3>You have <%= @goal.time_frame %> weeks to complete this goal</h3>
 
-    <h1><%= @goal.description %></h1>
-    <h3>You have <%= @goal.time_frame %> weeks to complete this goal</h3>
-    <!-- <h3>Your Weeks:</h3> -->
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <% @weeks.count.times do |num|%>
+        <li data-target="#carousel-example-generic"data-slide-to="<%= num.to_s %>"class="<%= num.zero? ? 'active' : '' %>"></li>
+      <% end %>
+    </ol>
 
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <% @weeks.count.times do |num|%>
-          <li data-target="#carousel-example-generic"data-slide-to="<%= num.to_s %>"class="<%= num.zero? ? 'active' : '' %>"></li>
-        <% end %>
-      </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <% @weeks.each_with_index do |week, index| %>
+        <div class="item week-item-container text-center <%= index.zero? ? 'active' : '' %>">
+          <% activities_complete = Activity.all.where(:week_id => week.id, :complete => true) %>
+          <% activities_not_complete = Activity.all.where(:week_id => week.id, :complete => false) %>
+          <h3><%= "Week #{index + 1}" %></h3>
+          <%= render partial: "activities/activities_display", locals: {activities_not_complete: activities_not_complete, activities_complete: activities_complete, week: week} %>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Log Activities</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%= index %>">Add Activities</button>
+
+          <%= link_to goal_week_activities_path(week.goal_id, week.id), class: 'week-item-link' do %>
+          <% end %>
+        </div>
 
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <% @weeks.each_with_index do |week, index| %>
-          <div class="item week-item-container text-center <%= index.zero? ? 'active' : '' %>">
-            <%= link_to goal_week_activities_path(week.goal_id, week.id), class: 'week-item-link' do %>
-            
-              <h3 class="btn btn-primary week-item-text background"><%= "Week #{index + 1}"%></h3>
-            <% end %>
+          <!-- Add Activity Modal -->
+          <div class="container-fluid">
+            <div class="modal fade" id="myModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add Activities</h4>
+                  </div>
+                  <div class="modal-body">
+                    <%= render "activities/new", locals: {week_id: week.id} %>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="add-activities-button" class="btn btn-primary">Add Activities</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        <% end %>
+
+      <% end %>
+
+
+
+      <!-- Log Modal -->
+      <div class="container-fluid">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Log Activities</h4>
+              </div>
+              <div class="modal-body">
+                <div id="activities-holder">
+
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="log-activities-button" class="btn btn-primary">Sumbit Log</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-          
-    <!--       <img src="..." alt="...">
-          <div class="carousel-caption"> -->
-          
 
       <!-- Controls -->
       <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
