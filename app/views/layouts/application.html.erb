@@ -42,7 +42,8 @@
         woeid: '',
         unit: 'f',
         success: function(weather) {
-          html = '<p><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</p>';
+          html = '<p><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp + '&nbsp&nbsp&nbsp&nbsp';
+          html += weather.title + '</p>';
           $("#weather").html(html);
         },
         error: function(error) {
