@@ -1,43 +1,33 @@
-
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2">
-      <div class="row side-nav">
-        <%= render(partial: 'shared/side_nav') %>
-      </div>
-    </div>
-    <div class="col-md-10"><%= form_for @goal do |f| %>
-      <h2 class="page-header">New Goal</h1>
-      <div class="form-group">
-        <%=  f.label('Description') %>
-        <br>
-        <%= f.text_area :description %>
-      </div>
+ <div class="row">
+   <div class="text-center scroll">
+     <%= form_for @goal do |f| %>
+       <h2 class="page-header">New Goal</h2>
 
-          <div>
-            <p><%= f.label("what's your goal?") %></p>
-            <p><%= f.text_area :description, class: "custom-input"%></p>
-          </div>
+         <div>
+           <p><%= f.label("what's your goal?") %></p>
+           <p><%= f.text_area :description, class: "custom-input"%></p>
+         </div>
 
-          <div>
-            <p><%= f.label('why do you want to acheive this goal?') %></p>
-            <p><%= f.text_area :reason, class: "custom-input" %></p>
-          </div>
+         <div>
+           <p><%= f.label('why do you want to acheive this goal?') %></p>
+           <p><%= f.text_area :reason, class: "custom-input" %></p>
+         </div>
 
-          <div>
-            <%= f.label('time frame (weeks)') %>
-            <%= f.select :time_frame, options_for_select(1..52), class: "form-control custom-input" %> 
-          </div>
+         <div>
+           <%= f.label('time frame (weeks)') %>
+           <%= f.select :time_frame, options_for_select(1..52), class: "form-control custom-input" %> 
+         </div>
 
-          <div class="form-group">
-            <%= f.submit "Create Goal", class: "custom-submit" %>
-          </div>
+         <div class="form-group">
+           <%= f.submit "Create Goal", class: "custom-submit" %>
+         </div>
 
-        <% end %>
-      </div>
-   </div>
+       <% end %>
+     </div>
   </div>
 </div>
 <div class="row footer">
-  <p>footer</p>
+ <p>footer</p>
 </div>
+

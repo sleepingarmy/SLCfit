@@ -27,7 +27,7 @@ class WeeksController < ApplicationController
   end
 
   def plan_of_action
-    @weeks = @goal.weeks
+    #@weeks = @goal.weeks
   end
 
   private

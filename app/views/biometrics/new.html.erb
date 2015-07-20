@@ -1,0 +1,38 @@
+<div class="col-md-12 text-center">
+ <%= form_for @biometric do |f| %>
+   <h2 class="page-header">New biometric</h2>
+    <p>this is your current data!</p>
+     <div>
+       <h4><%= f.label("how old are you?") %></h4>
+       <p><%= f.text_field :age, class: "custom-input"%></p>
+     </div>
+
+     <div>
+       <h4><%= f.label('how tall are you?') %></h4>
+       <p><%= f.text_field :height, placeholder: "inches (5 feet is 60 inches)", class: "custom-input" %></p>
+     </div>
+
+     <div>
+       <h4><%= f.label('how much do you weigh?(pounds)') %></h4>
+       <p><%= f.select :weight, options_for_select(70..300), class: "custom-input" %></p> 
+     </div>
+      <br>
+     <div>
+       <h4><%= f.label('how fast can you run a mile?') %></h4>
+       <p><%= f.label('psst...hate running?  leave it blank!') %></p>
+       <%= f.text_field :mile_speed, placeholder: "minutes", class: "custom-input" %>
+     </div>
+      <br>
+     <div>
+      <h4><%= f.label('how fast can you run a mile?') %></h4>
+       <p><%= f.label('hate lifting heavy things?  leave it blank!') %></p>
+       <p><%= f.text_field :lift_weight, placeholder: "pounds", class: "custom-input" %> 
+     </div>
+      <br>
+     <div class="form-group">
+       <%= f.submit "create biometric", class: "custom-submit" %>
+     </div>
+
+   <% end %>
+ </div>
+

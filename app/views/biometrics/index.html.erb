@@ -1,0 +1,54 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var bio_data = <%=raw @bio_array %>;
+    var data = google.visualization.arrayToDataTable(bio_data);
+    var options = {
+      title: 'Weight Tracker',
+      hAxis: {title: 'Date',  titleTextStyle: {color: '#333'}},
+      vAxis: {minValue: 0}
+    };
+
+    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+
+  <div class="col-sm-12 text-center">
+    <div class="row">
+      <h1>my bio data</h1>
+      <p>look at all your progress!</p>
+      <p><%= link_to 'new biometric', new_biometric_path %></p>
+      <p><%= @bio_data %></p>
+      <div id="chart_div" style="width: 900px; height: 500px;"></div>
+      <hr>
+    </div>
+    <div class="row">
+      <% @biometrics.each do |bio| %>
+        <div class="col-sm-3 bio-div text-left">
+          <p>user data for <%= bio.updated_at.strftime "%A %D %Y" %></p>
+          <hr>
+          <p>age: <%= bio.age %></p>
+          <p>height: <%= bio.height.divmod(12).first %>"<%= bio.height.divmod(12).second %>'</p>
+          <p>weight: <%= bio.weight %>lbs.</p>
+          <% if bio.mile_speed != nil %>
+            <p>you can run a mile in <%= bio.mile_speed %>minutes.</p>
+          <% end %>
+          <% if bio.lift_weight != nil %>
+            <p>you can lift <%= bio.lift_weight %>lbs.</p>
+          <% end %>
+          <%= link_to 'Delete', biometric_path(bio.id), method: :delete, data: {confirm: "Are you sure?"}%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row footer">
+  <p>footer</p>
+</div>
+
+
+

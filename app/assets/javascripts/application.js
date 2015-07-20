@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require moment
+//= require forem
 //= require_tree .
 
 
@@ -35,3 +35,8 @@
     });
   };
 })();
+
+
+
+// Smooth scroll
+// $('.inner-link').smoothScroll({offset: -96, speed: 800});

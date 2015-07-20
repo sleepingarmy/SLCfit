@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/models/user.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/models/user.rb": [
         1,
         null,
         null,
@@ -14,7 +14,7 @@
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/activities_helper.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/helpers/activities_helper.rb": [
         1,
         null,
         1,
@@ -32,23 +32,23 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/application_helper.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/goals_helper.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/helpers/goals_helper.rb": [
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/weeks_helper.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/helpers/weeks_helper.rb": [
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/welcome_helper.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/controllers/activities_controller.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/controllers/activities_controller.rb": [
         1,
         1,
         1,
@@ -133,7 +133,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/controllers/application_controller.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -147,7 +147,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/controllers/goals_controller.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/controllers/goals_controller.rb": [
         1,
         1,
         1,
@@ -211,7 +211,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/controllers/weeks_controller.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/controllers/weeks_controller.rb": [
         1,
         1,
         1,
@@ -265,7 +265,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/controllers/welcome_controller.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/controllers/welcome_controller.rb": [
         1,
         1,
         1,
@@ -281,7 +281,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/models/activity.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/models/activity.rb": [
         1,
         1,
         1,
@@ -307,13 +307,13 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/models/goal.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/models/goal.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/models/week.rb": [
+      "/Users/HP/Dev/dpl15/Sites/slc_fit/app/models/week.rb": [
         1,
         1,
         1,
@@ -322,6 +322,6 @@
         null
       ]
     },
-    "timestamp": 1437056095
+    "timestamp": 1437148532
   }
 }
