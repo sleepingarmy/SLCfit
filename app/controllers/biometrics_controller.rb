@@ -11,19 +11,21 @@ class BiometricsController < ApplicationController
       redirect_to infos_path
     end
 
-    @bio_array = [['date', 'weight', 'bmi'], ]
+    @bio_array = [['date', 'weight'], ]
 
     @biometrics.each do |bio|
       biodate = bio.created_at.strftime "%a %D"
       bioweight = bio.weight
-      biobmi = bio.weight * 703 / current_user.info.height ** 2
-      @bio_array << [biodate, bioweight, biobmi]
+      @bio_array << [biodate, bioweight]
     end
 
-    string_year = current_user.info.birthday.strftime "%Y" 
-    @year = string_year.to_i
+    @bmi_array = [['date', 'bmi'], ]
 
-
+    @biometrics.each do |bio|
+      biodate = bio.created_at.strftime "%a %D"
+      biobmi = bio.weight * 703 / current_user.info.height ** 2
+      @bmi_array << [biodate, biobmi]
+    end
   end
 
   def show

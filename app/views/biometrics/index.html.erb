@@ -9,12 +9,34 @@
     var options = {
       title: 'Weight Tracker',
       hAxis: {title: 'Date',  type: 'string', titleTextStyle: {color: '#333 '}},
-      vAxis: {title: 'Weight', type: 'integer', minValue: 0},
+      vAxis: {title: 'Weight', type: 'integer', minValue: 50, maxValue: 200},
       legend: {position: 'top', alignment: 'end', textStyle: {color: 'black'}},
-      chartArea: {left: 250, top: 150, width: '100%', height: '50%'}
+      colors: ['purple']
+      // chartArea: {left: 250, top: 150, width: '100%', height: '50%'}
     };
 
     var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var bmi_data = <%=raw @bmi_array %>;
+    var data = google.visualization.arrayToDataTable(bmi_data);
+
+    var options = {
+      title: 'Body Mass Index Tracker',
+      hAxis: {title: 'Date',  type: 'string', titleTextStyle: {color: '#333 '}},
+      vAxis: {title: 'BMI', type: 'integer', minValue: 0, maxValue: 50},
+      legend: {position: 'top', alignment: 'end', textStyle: {color: 'black'}},
+      colors:['yellow']
+      // chartArea: {left: 250, top: 150, width: '100%', height: '50%'}
+    };
+
+    var chart = new google.visualization.AreaChart(document.getElementById('bmi_chart_div'));
     chart.draw(data, options);
   }
 </script>
@@ -26,7 +48,14 @@
       <h3><%= flash[:error] %></h3>
       <hr>
       <% if @biometrics %>
-        <div id="chart_div" style="width: 900px; height: 500px;"></div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div id="chart_div" style="width: 500px; height: 500px;"></div>
+        </div>
+        <div class="col-sm-6">
+          <div id="bmi_chart_div" style="width: 500px; height: 500px;"></div>
+        </div>
+      </div>
       <% else %>
         <p>please create a new biometric!</p>
       <% end %>
