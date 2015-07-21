@@ -5,3 +5,37 @@ textarea.description {
 .activity-row {
   margin-bottom: 10px;
 }
+
+
+.square{
+    border-left:1px solid #000;
+    border-right:1px solid #000;
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+    height: 200px;
+    width: 12%;
+}
+
+// @media (max-width: 1108px){
+//   .square{
+//     width: 11.8%;
+//   }
+// }
+
+.act-button{
+  color: white;
+  background-color: #403871;
+}
+
+.underline{
+  border-bottom: 1px solid;
+}
+
+.calender-week{
+  color: white;
+  background-color: #403871;
+}
+
+.progress-bar{
+  background-color: #20293F;
+}
