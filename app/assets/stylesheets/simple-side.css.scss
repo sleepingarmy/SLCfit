@@ -133,8 +133,8 @@
     
     }
 .side-nav-button:hover {
-        background-color: green;
+        background-color: purple;
 }
-.side-nav-buttont:focus {
-    background-color: blue;
+.side-nav-button:focus {
+    background-color: $site-bg-light-purple;
 }

@@ -14,7 +14,7 @@
           <% end %>
         <% end %>
       </div>
-    <% end %>
+    <% end %> 
 
     <div class='contents'>
       <div class='user col-md-2'>
@@ -29,14 +29,14 @@
       </div>
 
       <div class='contents col-md-7'>
+        <h4><%= forem_format(post.text) %></h4>
         <a href='#post-<%= post.id %>'>
           <%= post_time_tag(post) %>
         </a>
-        <%= forem_format(post.text) %>
 
         <% if post.reply_to %>
           <div class='in-reply-to'>
-            <%= link_to "#{t("forem.post.in_reply_to")} #{post.reply_to.user.forem_name}", "#post-#{post.reply_to.id}" %>
+            <h5><%= link_to "#{t("forem.post.in_reply_to")} #{post.reply_to.user.forem_name}", "#post-#{post.reply_to.id}" %></h5>
           </div>
         <% end %>
 
@@ -44,20 +44,21 @@
           <div class='btn-group'>
             <% if can?(:reply, post.topic) %>
               <% if post.topic.can_be_replied_to? %>
-                <%= link_to t('reply', :scope => 'forem.topic'), forem.new_forum_topic_post_path(post.forum, post.topic, :reply_to_id => post.id), :class => "btn btn-primary" %>
-                <%= link_to t('quote', :scope => 'forem.topic'), forem.new_forum_topic_post_path(post.forum, post.topic, :reply_to_id => post.id, :quote => true), :class => "btn btn-success" %>
+                <%= link_to t(' ', :scope => 'forem.topic'), forem.new_forum_topic_post_path(post.forum, post.topic, :reply_to_id => post.id), :class => "fa fa-comment-o" %>
+                <%= link_to t(' ', :scope => 'forem.topic'), forem.new_forum_topic_post_path(post.forum, post.topic, :reply_to_id => post.id, :quote => true), :class => "fa fa-quote-right" %>
               <% end %>
             <% end %>
             <% if post.owner_or_admin?(forem_user) %>
               <% if can?(:edit_post, post.topic.forum) %>
-                <%= link_to t('edit', :scope => 'forem.post'), forem.edit_forum_topic_post_path(post.forum, post.topic, post), :class => "btn btn-info" %>
+                <%= link_to t(' ', :scope => 'forem.post'), forem.edit_forum_topic_post_path(post.forum, post.topic, post), :class => "fa fa-pencil" %>
               <% end %>
               <% if can?(:destroy_post, post.topic.forum) %>
-                <%= link_to t('delete', :scope => 'forem.topic'), forem.forum_topic_post_path(post.forum, post.topic, post), :method => :delete, data: { :confirm => t("are_you_sure") }, :class => "btn btn-danger" %>
+                <%= link_to t(" ", :scope => 'forem.topic'), forem.forum_topic_post_path(post.forum, post.topic, post), :method => :delete, data: { :confirm => t("are_you_sure") }, :class => "fa fa-trash" %>
               <% end %>
             <% end %>
           </div>
         <% end %>
+        <hr>
       </div>
     </div>
   </div>
