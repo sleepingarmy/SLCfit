@@ -127,3 +127,14 @@
     color: white;
     text-decoration: underline;
 }
+
+.side-nav-button {
+    background-color: $site-bg-light-purple;
+    
+    }
+.side-nav-button:hover {
+        background-color: green;
+}
+.side-nav-buttont:focus {
+    background-color: blue;
+}
