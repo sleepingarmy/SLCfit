@@ -20,10 +20,12 @@ class ApplicationController < ActionController::Base
   protected
 
   def layout_by_resource
-    if devise_controller? || params[:controller] == "welcome"
-      "splash"
+    if params[:controller] == 'registrations' && action_name == 'edit'
+      'application'
     elsif  params[:controller] == "forem"
       Forem.layout
+    elsif devise_controller? && action_name != 'edit' || params[:controller] == "welcome"
+      "splash"
     else
       "application"
     end
