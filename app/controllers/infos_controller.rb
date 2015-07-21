@@ -1,5 +1,5 @@
 class InfosController < ApplicationController
-  before_action :find_info, except: [:new]
+  before_action :find_info, except: [:new, :index]
   before_action :find_user
 
   def index
@@ -50,7 +50,7 @@ class InfosController < ApplicationController
   end
 
   def info_params
-    params.require(:info).permit(:birthday, :age, :height)
+    params.fetch(:info, {}).permit(:birthday, :age, :height)
   end
 
 end
