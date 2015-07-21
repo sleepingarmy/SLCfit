@@ -15,12 +15,16 @@ class ActivitiesController < ApplicationController
 
   def update
     activity = Activity.find_by(id: params[:id])
-    activity.date= params[:date]
+    date = params[:date]
+    activity.date= date
+    activity.day_of_week = date.to_date.strftime('%a').downcase
     activity.duration= params[:duration]
     activity.description= params[:description]
     activity.complete= true
     activity.save
+
     render :nothing => true
+
   end
 
   def destroy
@@ -72,12 +76,12 @@ class ActivitiesController < ApplicationController
     end
 
     def activity_params
-      params.require(type.underscore.to_sym).permit(:type, :week_id)
+      params.require(type.underscore.to_sym).permit(:type, :week_id, :day_of_week)
     end
 
     def activity_data
       @week = Week.find_by(id: params[:week_id])
-      @activities_complete = Activity.all.where(:week_id => @week.id, :complete => true)
-      @activities_not_complete = Activity.all.where(:week_id => @week.id, :complete => false)
+      @activities_complete = @week.activities.complete
+      @activities_not_complete = @week.activities.not_complete
     end
 end

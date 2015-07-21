@@ -5,6 +5,7 @@ class WeeksController < ApplicationController
 
   def index
     @weeks = @goal.weeks
+    
   end
 
   def show
