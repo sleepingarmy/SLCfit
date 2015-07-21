@@ -33,10 +33,11 @@
     <% end %>
   <% else %>
     <%= form_for @biometric do |f| %>
-      <h2 class="page-header">New Biometric</h2>
-      <h3>update your current data here!</h3>
+      <h2>New Biometric</h2>
+      <p>update your current data here!</p>
+      <hr>
       <% if @info %>
-        <p>You are <%= current_user.info.height %>" tall and probably 44 years old.  
+        <p>You are <%= current_user.info.height %>" tall and <%= Time.now.year - @year %> years old.  
          <%= link_to 'Edit', main_app.edit_info_path(@info.id) %></p>
        <% else %>
         <h3>It seems you don't have any basic user data. Enter new data <%= link_to 'here', main_app.new_info_path %>.</h3>  

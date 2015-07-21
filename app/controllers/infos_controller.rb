@@ -17,7 +17,7 @@ class InfosController < ApplicationController
     @info = Info.new(info_params)
     @info.user_id = current_user.id
     if @info.save
-      flash[:notice] = "succsex!"
+      flash[:notice] = "success!"
     else
       flash[:error] = "oops!"
     end
@@ -29,7 +29,6 @@ class InfosController < ApplicationController
 
   def update
     if @info.update(info_params)
-      binding.pry
       flash[:notice] = "succsex!"
       redirect_to new_biometric_path
     else
