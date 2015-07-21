@@ -1,13 +1,10 @@
 
-<div class="col-sm-10">
   <h3><%= @goal.description %></h3>
-  <h3>You have <%= @goal.time_frame %> weeks to complete this goal</h3>
-
-  <div id="carousel-example-generic" class="carousel slide data-interval= "false"" data-ride="carousel">
+  <div id="carousel-example-generic" class="text-center carousel slide data-interval= "false"" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <% @weeks.count.times do |num|%>
-        <li data-target="#carousel-example-generic"data-slide-to="<%= num.to_s %>"class="<%= num.zero? ? 'active' : '' %>"></li>
+        <li data-target="#carousel-example-generic"data-slide-to="<%#= num.to_s %>"class="<%#= num.zero? ? 'active' : '' %>"></li>
       <% end %>
     </ol>
 
@@ -15,12 +12,9 @@
     <div class="carousel-inner" role="listbox">
       <% @weeks.each_with_index do |week, index| %>
         <div class="item week-item-container text-center <%= index.zero? ? 'active' : '' %>">
-          <% activities_complete = Activity.all.where(:week_id => week.id, :complete => true) %>
-          <% activities_not_complete = Activity.all.where(:week_id => week.id, :complete => false) %>
-          <h3><%= "Week #{index + 1}" %></h3>
-          <%= render partial: "activities/activities_display", locals: {activities_not_complete: activities_not_complete, activities_complete: activities_complete, week: week} %>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Log Activities</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%= index %>">Add Activities</button>
+          <% activities_complete = week.activities.complete %>
+          <% activities_not_complete = week.activities.not_complete %>
+          <%= render partial: "activities/activities_display", locals: {activities_not_complete: activities_not_complete, activities_complete: activities_complete, week: week, index: index} %>
 
           <%= link_to goal_week_activities_path(week.goal_id, week.id), class: 'week-item-link' do %>
           <% end %>
@@ -86,4 +80,3 @@
       </a>
     </div>
   </div>
-</div>
