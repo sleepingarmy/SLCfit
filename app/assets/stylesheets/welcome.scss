@@ -21,7 +21,6 @@
   width: 100%; 
   max-width: 1920px; 
   position: relative;
-
 }
 
 #slc-logo-img {
@@ -30,6 +29,13 @@
   margin-left: auto;
   margin-right: auto;
   padding-top: 20px;
+}
+
+#header-logo {
+  padding-top: 100px;
+  text-align: center;
+  font-size: 100px;
+  color: white;
 }
 
 .fa-chevron-down {
@@ -54,20 +60,12 @@
   width: 100%; 
   max-width: 1920px; 
   position: relative;
-
 }
 /*End Parallax Sections*/
 
 /*Fetaures Div Styles*/
 #features {
   background-color: #f8f8f8;
-}
-
-#header-logo {
-  padding-top: 100px;
-  text-align: center;
-  font-size: 100px;
-  color: white;
 }
 
 .content {
@@ -115,7 +113,7 @@
 
 /*Dashboard Views Div*/
 .dashboard-content {
-  margin-top: 100px;
+  margin-top: 75px;
   margin-left: 600px;
   width: 600px;
   height: 400px;
@@ -123,8 +121,6 @@
   background-color: #f8f8f8;
   border-radius: 50px;
 }
-
-
 
 @media screen and (max-width: 1100px) {
   .dashboard-content{
@@ -160,6 +156,15 @@
   border-style: solid;
   border-color: white;
   border-width: 2px;
+}
+
+#team-header {
+  text-align: center;
+  font-size: 80px;
+  color: #008faa;
+  font-weight: bold;
+  padding-top: 65px;
+
 }
 
 
