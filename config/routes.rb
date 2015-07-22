@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
   put '/update_activity' => 'activities#update'
   get '/activity_tr' => 'activities#activity_tr'
-  get '/activity_display' => 'activities#display'
+  get '/calendar' => 'activities#display'
   get '/plan_of_action/:goal_id'  => 'weeks#plan_of_action', as: :plan_of_action
   post '/create_plan/:goal_id/' => 'weeks#create_plan', as: :create_plan
 

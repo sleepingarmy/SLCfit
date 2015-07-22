@@ -16,14 +16,14 @@ class ActivitiesController < ApplicationController
   def update
     activity = Activity.find_by(id: params[:id])
     date = params[:date]
-    activity.date= date
+    activity.date = date
     activity.day_of_week = date.to_date.strftime('%a').downcase
     activity.duration= params[:duration]
     activity.description= params[:description]
     activity.complete= true
     activity.save
-
     render :nothing => true
+    #redirect_to goal_weeks_path(@goal.id)
 
   end
 
@@ -55,7 +55,15 @@ class ActivitiesController < ApplicationController
   end
 
   def display
-   render partial: "activities_display", locals: {activities_not_complete: @activities_not_complete, activities_complete: @activities_complete}
+   render partial: "calendar", locals: {week: @week}
+  end
+
+  def progress
+    render partial: 'progress', locals: {week: @week} # ,index: index}
+  end
+
+  def bank
+    render partial: 'bank', locals: {week: @week} # ,index: index}
   end
 
   private
