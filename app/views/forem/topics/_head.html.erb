@@ -1,15 +1,15 @@
-<h2><%= link_to t('forem.forum.forums'), forem.forums_path %> &raquo; <%= link_to forem_emojify(topic.forum.title), [forem, topic.forum] %> </h2>
- <div class="forum-post"><h4>TITLE:</h4> <%= forem_emojify(topic.subject) %> Started By:
-  <br>
-  <br>
+<h4><%= link_to t('forem.forum.forums'), forem.forums_path %> &raquo; <%= link_to forem_emojify(topic.forum.title), [forem, topic.forum] %> </h4>
+<hr>
+ <div class="forum-post">
+  <h4>Subject:</h4><h3><%= forem_emojify(topic.subject).capitalize %></h3>
   <br>
   <div id='menu'>
     <div class='btn-group'>
       <% if @topic.can_be_replied_to? && can?(:reply, @topic) %>
-        <%= link_to t("Join Coversation"), forem.new_forum_topic_post_path(@forum, @topic), :class => "btn btn-primary btn-xs " %>
+        <%= link_to t("Join Coversation"), forem.new_forum_topic_post_path(@forum, @topic), :class => "btn btn-primary btn-xs forum-button" %>
       <% end %>
       <% if @topic.user == forem_user || forem_admin? %>
-        <%= link_to t(".delete"), forem.forum_topic_path(@forum, @topic), :method => :delete, data: { :confirm => t("are_you_sure") }, :class => "btn btn-danger" %>
+        <%= link_to t(".delete"), forem.forum_topic_path(@forum, @topic), :method => :delete, data: { :confirm => t("are_you_sure") }, :class => "btn btn-danger btn-xs" %>
       <% end %>
     </div>
     <% if forem_admin? %>
