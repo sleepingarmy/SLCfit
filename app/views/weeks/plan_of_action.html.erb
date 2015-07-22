@@ -1,5 +1,6 @@
-<center>
+<div class="col-sm-12 text-center">
 <h2>How are you going to obtain this goal?</h2>
+<hr>
 <h3>Your plan of action: </h3>
 
 <%= form_for :week,  url: create_plan_path(@goal.id) do |f| %>
@@ -32,3 +33,4 @@
 <br>
 <br>
 <%= link_to 'Finish', goal_weeks_path(@goal.id), class: "act-button btn btn-default btn-lg"  %>
+</div>
