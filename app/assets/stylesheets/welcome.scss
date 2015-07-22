@@ -48,7 +48,7 @@
 }
 
 #contact { 
-  background: url(running_dude_copy.png) 50% 0 repeat fixed; min-height: 1000px;
+  background: url(mountain.png) 50% 0 repeat fixed; min-height: 1000px;
   height: 100%; 
   margin: 0 auto; 
   width: 100%; 
@@ -126,6 +126,19 @@
 #dashboard-heading {
   text-align: center;
   padding-top: 20px;
+}
+
+#dashboard-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+}
+
+#dashboard-text {
+  padding-top: 20px;
+  margin-right: 565px;
+  margin-left: 10px;
 }
 /*Dashboard View End*/
 
