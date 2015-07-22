@@ -16,7 +16,7 @@
 /*Parallax Scrolling Sections*/
 #home { 
   background: url(SLC_view.png) 50% 0 repeat fixed; min-height: 1000px;
-  height: 1000px; 
+  height: 100%; 
   margin: 0 auto; 
   width: 100%; 
   max-width: 1920px; 
@@ -39,7 +39,7 @@
 
 #features-img { 
   background: url(YOGA_ori_copy.png) 50% 0 repeat fixed; min-height: 1000px;
-  height: 1000px; 
+  height: 100%; 
   margin: 0 auto; 
   width: 100%; 
   max-width: 1920px; 
@@ -49,7 +49,7 @@
 
 #contact { 
   background: url(running_dude_copy.png) 50% 0 repeat fixed; min-height: 1000px;
-  height: 1000px; 
+  height: 100%; 
   margin: 0 auto; 
   width: 100%; 
   max-width: 1920px; 
@@ -121,6 +121,11 @@
   height: 400px;
   background-color: #f8f8f8;
   border-radius: 50px;
+}
+
+#dashboard-heading {
+  text-align: center;
+  padding-top: 20px;
 }
 /*Dashboard View End*/
 
