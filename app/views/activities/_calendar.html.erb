@@ -4,10 +4,8 @@
       <div class="caption">
         <h5>monday</h5>
         <hr>
-        <p>blah blah blah</p>
         <% week.activities.complete.mon.each do |activity| %>
           <span class="<%= activity.icon %>"></span><br>
-          <span class="<%= activity.type %>"></span><br>
           <% end %>
       </div>
     </div>
@@ -15,10 +13,8 @@
       <div class="caption">
         <h5>tuesday</h5>
         <hr>
-        <p>blah blah blah</p>
         <p><% week.activities.complete.tues.each do |activity| %>
           <span class="<%= activity.icon %>"></span><br>
-          <span class="<%= activity.type %>"></span><br>
         <% end %></p>
       </div>
     </div>
@@ -26,10 +22,8 @@
         <div class="caption">
           <h5>wednesday</h5>
           <hr>
-          <p>blah blah blah</p>
           <p><% week.activities.complete.wed.each do |activity| %>
             <span class="<%= activity.icon %>"></span><br>
-            <span class="<%= activity.type %>"></span><br>
           <% end %></p>
       </div>
     </div>
@@ -37,10 +31,8 @@
       <div class="caption">
         <h5>thursday</h5>
         <hr>
-        <p>blah blah blah</p>
         <p><% week.activities.complete.thurs.each do |activity| %>
           <span class="<%= activity.icon %>"></span><br>
-          <span class="<%= activity.type %>"></span><br>
         <% end %></p>
       </div>
     </div>
@@ -48,10 +40,8 @@
       <div class="caption">
         <h5>friday</h5>
         <hr>
-        <p>blah blah blah</p>
         <p><% week.activities.complete.fri.each do |activity| %>
           <span class="<%= activity.icon %>"></span><br>
-          <span class="<%= activity.type %>"></span><br>
         <% end %></p>
       </div>
     </div>
@@ -59,10 +49,8 @@
       <div class="caption">
         <h5>saturday</h5>
         <hr>
-        <p>blah blah blah</p>
         <p><% week.activities.complete.sat.each do |activity| %>
           <span class="<%= activity.icon %>"></span><br>
-          <span class="<%= activity.type %>"></span><br>
         <% end %></p>
       </div>
     </div>
@@ -73,11 +61,13 @@
           <div class="caption">
             <h5>sunday</h5>
             <hr>
-            <p>blah blah blah</p>
+            <div class="row">
             <p><% week.activities.complete.sun.each do |activity| %>
-              <span class="<%= activity.icon %>"></span><br>
-              <span class="<%= activity.type %>"></span><br>
+                <div class="col-sm-4">
+                  <span class="<%= activity.icon %>"></span>
+                </div>
             <% end %></p>
+            </div>
           </div>
         </div>
       </div>
