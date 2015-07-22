@@ -16,11 +16,9 @@
           <% activities_complete = week.activities.complete %>
           <% activities_not_complete = week.activities.not_complete %>
           <%= render partial: "activities/activities_display", locals: {activities_not_complete: activities_not_complete, activities_complete: activities_complete, week: week, index: index} %>
-
           <%= link_to goal_week_activities_path(week.goal_id, week.id), class: 'week-item-link' do %>
           <% end %>
         </div>
-
 
           <!-- Add Activity Modal -->
           <div class="container-fluid">
