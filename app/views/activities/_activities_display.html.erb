@@ -1,11 +1,11 @@
-<h3 class=""><%= "Week #{index + 1}" %></h3>
+<h3 class=""><%="Week #{index + 1}"%></h3>
 <div class="col-sm-12">
   <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="<%= activities_complete.length / (activities_complete.length+activities_not_complete.length) %>" aria-valuemin="0" aria-valuemax="1" style="width: <%= "#{((activities_complete.length.to_f / (activities_complete.length + activities_not_complete.length).to_f) * 100)}%" %> ;">
-        <% if activities_complete.length != (activities_complete.length+activities_not_complete.length) %>
+        <% if activities_complete.length != (activities_complete.length+activities_not_complete.length) && activities_not_complete.length != 0 %>
           <center>My Progress</center>
         <% else %>
-          <center> Complete! </complete>
+          <center>Complete!</complete>
         <% end %>
     </div>
   </div>
@@ -13,7 +13,6 @@
 <br>
 <br>
 <br>
-
 <div class="container">
   <div class="row">
     <div class="col-sm-12 calender-week">
@@ -22,7 +21,7 @@
           Mon
         </p>
         <div id="mon">
-          <% week.activities.complete.mon.each do |activity| %>
+          <%week.activities.complete.mon.each do |activity| %>
             <span class="<%= activity.icon %>"></span><br>
           <% end %>
         </div>
@@ -94,7 +93,6 @@
 
 <button type="button" class="btn btn-default act-button" data-toggle="modal" data-target="#myModal<%= index %>">Add Activity</button>
 <button type="button" class="btn btn-default act-button" data-toggle="modal" data-target="#myModal">Log Activities</button>
-
 
 <div class="not-complete-container" style="padding-bottom: 25px;">
   <h3>Activity Bank</h3>

@@ -16,7 +16,7 @@ class ActivitiesController < ApplicationController
   def update
     activity = Activity.find_by(id: params[:id])
     date = params[:date]
-    activity.date= date
+    activity.date = date
     activity.day_of_week = date.to_date.strftime('%a').downcase
     activity.duration= params[:duration]
     activity.description= params[:description]
