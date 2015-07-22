@@ -119,8 +119,24 @@
   margin-left: 600px;
   width: 600px;
   height: 400px;
+  opacity: .85;
   background-color: #f8f8f8;
   border-radius: 50px;
+}
+
+
+
+@media screen and (max-width: 1100px) {
+  .dashboard-content{
+    margin-left: 360px;
+  }
+}
+
+@media screen and (max-width: 1099px) {
+  .dashboard-content{
+    width: 95%;
+    margin-left: 0;
+  }
 }
 
 #dashboard-heading {
@@ -135,12 +151,16 @@
   padding-top: 15px;
 }
 
-#dashboard-text {
-  padding-top: 20px;
-  margin-right: 565px;
-  margin-left: 10px;
+.p-padding {
+  margin: 0;
 }
 /*Dashboard View End*/
+
+.headshots {
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+}
 
 
 
