@@ -1,5 +1,5 @@
-<h3 class=""><%="Week #{index + 1}"%></h3>
 <div class="col-sm-12">
+<h3 class=""><%= "Week #{index + 1}" %></h3>
   <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="<%= activities_complete.length / (activities_complete.length+activities_not_complete.length) %>" aria-valuemin="0" aria-valuemax="1" style="width: <%= "#{((activities_complete.length.to_f / (activities_complete.length + activities_not_complete.length).to_f) * 100)}%" %> ;">
         <% if activities_complete.length != (activities_complete.length+activities_not_complete.length) && activities_not_complete.length != 0 %>
@@ -9,102 +9,115 @@
         <% end %>
     </div>
   </div>
-</div>
-<br>
-<br>
-<br>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 calender-week">
-      <div class="col-sm-1 col-xs-12 mon square">
-        <p class="underline">
-          Mon
-        </p>
-        <div id="mon">
-          <%week.activities.complete.mon.each do |activity| %>
-            <span class="<%= activity.icon %>"></span><br>
+
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail mon col-md-2">
+      <div class="caption">
+        <h5>monday</h5>
+        <hr>
+        <p>blah blah blah</p>
+        <% week.activities.complete.mon.each do |activity| %>
+          <span class="<%= activity.icon %>"></span><br>
+          <span class="<%= activity.type %>"></span><br>
           <% end %>
-        </div>
       </div>
-      <div class="col-sm-1 col-xs-12 tue square">
-        <p class="underline">
-          Tues
-        </p>
-        <div id="tues">
-          <% week.activities.complete.tues.each do |activity| %>
-            <span class="<%= activity.icon %>"></span><br>
-          <% end %>
-        </div>
+    </div>
+    <div class="thumbnail tue col-md-2">
+      <div class="caption">
+        <h5>tuesday</h5>
+        <hr>
+        <p>blah blah blah</p>
+        <p><% week.activities.complete.tues.each do |activity| %>
+          <span class="<%= activity.icon %>"></span><br>
+          <span class="<%= activity.type %>"></span><br>
+        <% end %></p>
       </div>
-      <div class="col-sm-1 col-xs-12 wed square">
-        <p class="underline">
-          Wed
-        </p>
-        <div id="wed">
-          <% week.activities.complete.wed.each do |activity| %>
+    </div>
+      <div class="thumbnail wed col-md-2">
+        <div class="caption">
+          <h5>wednesday</h5>
+          <hr>
+          <p>blah blah blah</p>
+          <p><% week.activities.complete.wed.each do |activity| %>
             <span class="<%= activity.icon %>"></span><br>
-          <% end %>
-        </div>
+            <span class="<%= activity.type %>"></span><br>
+          <% end %></p>
       </div>
-      <div class="col-sm-1 col-xs-12 thu square">
-        <p class="underline">
-          Thurs
-        </p>
-        <div id="thurs">
-          <% week.activities.complete.thurs.each do |activity| %>
-            <span class="<%= activity.icon %>"></span><br>
-          <% end %>
-        </div>
+    </div>
+    <div class="thumbnail thu col-md-2">
+      <div class="caption">
+        <h5>thursday</h5>
+        <hr>
+        <p>blah blah blah</p>
+        <p><% week.activities.complete.thurs.each do |activity| %>
+          <span class="<%= activity.icon %>"></span><br>
+          <span class="<%= activity.type %>"></span><br>
+        <% end %></p>
       </div>
-      <div class="col-sm-1 col-xs-12 fri square">
-        <p class="underline">
-          Fri
-        </p>
-        <div id="fri">
-          <% week.activities.complete.fri.each do |activity| %>
-            <span class="<%= activity.icon %>"></span><br>
-          <% end %>
-        </div>
+    </div>
+    <div class="thumbnail fri col-md-2">
+      <div class="caption">
+        <h5>friday</h5>
+        <hr>
+        <p>blah blah blah</p>
+        <p><% week.activities.complete.fri.each do |activity| %>
+          <span class="<%= activity.icon %>"></span><br>
+          <span class="<%= activity.type %>"></span><br>
+        <% end %></p>
       </div>
-      <div class="col-sm-1 col-xs-12 sat square">
-        <p class="underline">
-          Sat
-        </p>
-        <div id="sat">
-          <% week.activities.complete.sat.each do |activity| %>
-            <span class="<%= activity.icon %>"></span><br>
-          <% end %>
-        </div>
+    </div>
+     <div class="thumbnail sat col-md-2">
+      <div class="caption">
+        <h5>saturday</h5>
+        <hr>
+        <p>blah blah blah</p>
+        <p><% week.activities.complete.sat.each do |activity| %>
+          <span class="<%= activity.icon %>"></span><br>
+          <span class="<%= activity.type %>"></span><br>
+        <% end %></p>
       </div>
-      <div class="col-sm-1 col-xs-12 sun square">
-        <p class="underline">
-          Sun
-        </p>
-        <div id="sun">
-          <% week.activities.complete.sun.each do |activity| %>
-            <span class="<%= activity.icon %>"></span><br>
-          <% end %>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <div class="thumbnail sun sun-thumb">
+          <div class="caption">
+            <h5>sunday</h5>
+            <hr>
+            <p>blah blah blah</p>
+            <p><% week.activities.complete.sun.each do |activity| %>
+              <span class="<%= activity.icon %>"></span><br>
+              <span class="<%= activity.type %>"></span><br>
+            <% end %></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<br>
 
-<button type="button" class="btn btn-default act-button" data-toggle="modal" data-target="#myModal<%= index %>">Add Activity</button>
-<button type="button" class="btn btn-default act-button" data-toggle="modal" data-target="#myModal">Log Activities</button>
 
-<div class="not-complete-container" style="padding-bottom: 25px;">
-  <h3>Activity Bank</h3>
-  <hr>
-  <div class="row">
-    <% activities_not_complete.each do |activity|  %>
-      <div class="col-lg-3">
-        <input class="activity-check" data-activity-id="<%= activity.id %>" type="checkbox">
-        <div class="activity-type-text">
-          <%= activity.type %>
+  <div class="not-complete-container" style="padding-bottom: 25px;">
+    <h3>Activity Bank</h3>
+    <p>these are activities you have not completed.  select an activity to log it in your week, or add a new activity.</p>
+    <hr>
+    <div class="row">
+      <% activities_not_complete.each do |activity|  %>
+        <div class="col-lg-3">
+          <input class="activity-check" data-activity-id="<%= activity.id %>" type="checkbox">
+          <div class="activity-type-text">
+            <%= activity.type %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+    <br>
+    <div class="row">
+      <button type="button" class="btn btn-default act-button" data-toggle="modal" data-target="#myModal<%= index %>">Add Activity</button>
+      <button type="button" class="btn btn-default act-button" data-toggle="modal" data-target="#myModal">Log Activities</button>
+    </div>
+    <br>
+    <br>
   </div>
+
+</div>
 </div>
