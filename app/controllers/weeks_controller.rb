@@ -68,9 +68,4 @@ class WeeksController < ApplicationController
     end
   end
 
-  #do we need this?
-  # def activity_params
-  #   params.require(type.underscore.to_sym).permit(:type, :week_id)
-  # end
-
 end

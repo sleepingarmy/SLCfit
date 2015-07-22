@@ -68,18 +68,19 @@
     </div>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <div class="thumbnail sun sun-thumb">
-          <div class="caption">
-            <h5>sunday</h5>
-            <hr>
-            <p>blah blah blah</p>
-            <p><% week.activities.complete.sun.each do |activity| %>
-              <span class="<%= activity.icon %>"></span><br>
-              <span class="<%= activity.type %>"></span><br>
-            <% end %></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+     <div class="col-sm-12 col-md-12">
+       <div class="thumbnail sun sun-thumb">
+         <div class="caption">
+           <h5>sunday</h5>
+           <hr>
+            <div class="row">
+             <p><% week.activities.complete.sun.each do |activity| %>
+               <div class="col-sm-4">
+                 <span class="<%= activity.icon %>"></span>
+               </div>
+              <% end %></p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
