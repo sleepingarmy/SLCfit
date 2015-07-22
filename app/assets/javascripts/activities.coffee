@@ -22,13 +22,14 @@ $(document).ready ->
             console.log data
 
     $('#myModal').modal('hide')
-
-    $.ajax '/activity_display',
+    weekId = $('.week-id:first').val()
+    #console.log(weekId)
+    $.ajax '/calendar',
       type: 'GET'
       data:
-        week_id: $('.week-id:first').val()
+        week_id: weekId
       success: (data) ->
-        $("#activity_display").html(data)
+        $("#calendar-#{weekId}").html(data)
 
   $('#myModal').on 'shown.bs.modal', ->
     $activitiesHolder = $('#activities-holder')

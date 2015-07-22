@@ -1,0 +1,22 @@
+<div class="not-complete-container" style="padding-bottom: 25px;">
+  <h3>Activity Bank</h3>
+  <p>these are activities you have not completed.  select an activity to log it in your week, or add a new activity.</p>
+  <hr>
+  <div class="row">
+    <% week.activities.not_complete.each do |activity|  %>
+      <div class="col-lg-3">
+        <input class="activity-check" data-activity-id="<%= activity.id %>" type="checkbox">
+        <div class="activity-type-text">
+          <%= activity.type %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <div class="row">
+    <button type="button" class="btn btn-default act-button" data-toggle="modal" data-target="#myModal<%= index %>">Add Activity</button>
+    <button type="button" class="btn btn-default act-button" data-toggle="modal" data-target="#myModal">Log Activities</button>
+  </div>
+  <br>
+  <br>
+</div>
