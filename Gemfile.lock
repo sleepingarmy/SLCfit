@@ -161,6 +161,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.2.0)
+      byebug (~> 5.0)
+      pry (~> 0.10)
     pygments.rb (0.5.4)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
@@ -286,6 +289,7 @@ DEPENDENCIES
   paperclip (~> 4.3)
   pg
   pry
+  pry-byebug
   rails (= 4.2)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)

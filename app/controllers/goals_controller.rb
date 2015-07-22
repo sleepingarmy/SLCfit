@@ -25,6 +25,7 @@ class GoalsController < ApplicationController
 
   def create
     @goal = current_user.goals.new(goal_params)
+    binding.pry
     if @goal.save
         @goal.time_frame.times do
           week = @goal.weeks.new
