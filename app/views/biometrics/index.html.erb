@@ -47,6 +47,7 @@
       <p>track your progress!</p>
       <h3><%= flash[:error] %></h3>
       <hr>
+      <p><%= link_to 'New Biometric', main_app.new_biometric_path, class: "fa fa-plus-circle" %></p>
       <% if @biometrics %>
         <div class="row">
           <div class="col-sm-6">
