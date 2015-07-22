@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Week, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  it "determines true or false" do
+    activity1 =FactoryGirl.attributes_for(:activity)
+    activity2 =FactoryGirl.attributes_for(:activity)
+    expect(Week.is_complete?).to eq(true)
+  end
 end
