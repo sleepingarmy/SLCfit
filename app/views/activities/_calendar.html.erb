@@ -56,19 +56,20 @@
     </div>
     </div>
     <div class="row">
-     <div class="col-sm-12 col-md-12">
+     <div class="col-sm-4 col-xs-6">
        <div class="thumbnail sun sun-thumb">
          <div class="caption">
            <h5>sunday</h5>
            <hr>
-            <div class="row">
-             <p><% week.activities.complete.sun.each do |activity| %>
+           <p class='pull-left'><% week.activities.complete.sun.each do |activity| %>
+             <div class="row">
                <div class="col-sm-4">
                  <span class="<%= activity.icon %>"></span>
                </div>
-              <% end %></p>
-           </div>
+             </div>
+           <% end %></p>
          </div>
        </div>
      </div>
    </div>
+

@@ -4,5 +4,6 @@ FactoryGirl.define do
     name "test week"
     week_begin "monday test"
     week_end "sunday test"
+    
   end
 end
