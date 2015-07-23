@@ -2,6 +2,6 @@ FactoryGirl.define do
   factory :activity do
     week_id 1
     complete true
-    day_of_week "wed"
+    day_of_week nil
   end
 end
