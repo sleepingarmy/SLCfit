@@ -75,8 +75,10 @@ class BiometricsController < ApplicationController
   def new
     @biometric = Biometric.new
 
-    string_year = current_user.info.birthday.strftime "%Y" 
-    @year = string_year.to_i
+    if @info
+      string_year = current_user.info.birthday.strftime "%Y" 
+      @year = string_year.to_i
+    end
   end
 
   def create

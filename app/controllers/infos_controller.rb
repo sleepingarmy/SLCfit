@@ -21,7 +21,7 @@ class InfosController < ApplicationController
     else
       flash[:error] = "oops!"
     end
-    redirect_to goals_path
+    redirect_to new_biometric_path
   end
 
   def edit
