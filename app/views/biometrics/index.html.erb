@@ -3,8 +3,8 @@
   google.load("visualization", "1", {packages:["corechart"]});
   google.setOnLoadCallback(drawChart);
   function drawChart() {
-    var bio_data = <%=raw @bio_array %>;
-    var data = google.visualization.arrayToDataTable(bio_data);
+    var weight_data = <%=raw @weight_array %>;
+    var data = google.visualization.arrayToDataTable(weight_data);
 
     var options = {
       title: 'Weight Tracker',

@@ -7,18 +7,38 @@ class BiometricsController < ApplicationController
   def index
     @biometrics = Biometric.where(user_id: current_user.id).sort_by_created_at
 
-    unless @biometrics.count > 0
+    unless Biometric.count > 0
       redirect_to infos_path
     end
 
      # Biometric.create_arrays(@biometrics, current_user)
 
-     @bio_array = [['date', 'weight'], ]
+    # charts = %w[weight bmi speed strength]
+
+    # charts.map do |chart|
+    #   @biometrics.each do |bio|
+    #   binding.pry
+    #     chart_array = [['date', 'chart'], ]
+    #     biodate = bio.created_at.strftime "%a %D"
+    #     biochart = bio.weight
+
+    #     chart_array << [biodate, biochart]
+    #   end
+    # end
+
+    # @weight_array = =[['date', 'weight'], ]
+    # biodate=bio.created_at.strftime "%a %D"
+    # bioweight = bio.weight
+
+    # @weight_array << [biodate, bioweight]
+
+
+    @weight_array = [['date', 'weight'], ]
 
     @biometrics.each do |bio|
       biodate = bio.created_at.strftime "%a %D"
       bioweight = bio.weight
-      @bio_array << [biodate, bioweight]
+      @weight_array << [biodate, bioweight]
     end
 
     @bmi_array = [['date', 'bmi'], ]
@@ -29,21 +49,21 @@ class BiometricsController < ApplicationController
       @bmi_array << [biodate, biobmi]
     end
 
-    @speed_array = [['date', 'speed'], ]
+    # @speed_array = [['date', 'speed'], ]
 
-    @biometrics.each do |bio|
-      biodate = bio.created_at.strftime "%a %D"
-      speed = bio.mile_speed
-      @speed_array << [biodate, speed]
-    end
+    # @biometrics.each do |bio|
+    #   biodate = bio.created_at.strftime "%a %D"
+    #   speed = bio.mile_speed
+    #   @speed_array << [biodate, speed]
+    # end
 
-    @strength_array = [['date', 'strength'], ]
+    # @strength_array = [['date', 'strength'], ]
 
-    @biometrics.each do |bio|
-      biodate = bio.created_at.strftime "%a %D"
-      speed = bio.mile_speed
-      @speed_array << [biodate, speed]
-    end
+    # @biometrics.each do |bio|
+    #   biodate = bio.created_at.strftime "%a %D"
+    #   speed = bio.mile_speed
+    #   @speed_array << [biodate, speed]
+    # end
   end
 
   def show
