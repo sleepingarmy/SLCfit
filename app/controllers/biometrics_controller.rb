@@ -92,7 +92,8 @@ class BiometricsController < ApplicationController
   end
 
   def destroy
-    if @biometric.destroy
+   if @biometric.destroy
+   @biometric.destroy
       flash[:notice] = "Your biometric data has been destroyed."
       redirect_to biometrics_path
     else
@@ -103,7 +104,7 @@ class BiometricsController < ApplicationController
   private
 
   def bio_params
-    params.require(:biometric).permit(:birthday, :age, :height, :weight, :mile_speed, :lift_weight)
+    params.fetch(:biometric, {}).permit(:birthday, :age, :height, :weight, :mile_speed, :lift_weight)
   end
 
   def find_user
