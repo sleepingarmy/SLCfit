@@ -71,7 +71,7 @@
 .content {
   height: 430px; 
     @media screen and (max-width: 480px){
-      height: 730px;
+      height: 630px;
   }
 }
 
@@ -153,6 +153,8 @@
 /*Dashboard View End*/
 
 .headshots {
+  margin-left: auto;
+  margin-right: auto;
   border-style: solid;
   border-color: white;
   border-width: 2px;
@@ -167,8 +169,28 @@
 
 }
 
+.bottom-img {
+  padding-top: 50px;
+}
 
+.top-img {
+  padding-top: 30px;
+}
 
+.text-div {
+  margin: auto;
+  height: 200px;
+  width: 400px;
+  opacity: .80;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.text-center {
+  padding-top: 10px;
+  text-align: center;
+
+}
 
 
 

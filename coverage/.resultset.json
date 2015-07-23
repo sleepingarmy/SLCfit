@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/controllers/application_controller.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/controllers/application_controller.rb": [
         1,
         1,
         null,
@@ -37,11 +37,11 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/application_helper.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/activities_helper.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/helpers/activities_helper.rb": [
         1,
         null,
         1,
@@ -59,33 +59,33 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/biometrics_helper.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/helpers/biometrics_helper.rb": [
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/goals_helper.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/helpers/goals_helper.rb": [
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/infos_helper.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/helpers/infos_helper.rb": [
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/users_helper.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/weeks_helper.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/helpers/weeks_helper.rb": [
         1,
         null,
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/helpers/welcome_helper.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/models/user.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/models/user.rb": [
         1,
         null,
         null,
@@ -106,7 +106,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/controllers/activities_controller.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/controllers/activities_controller.rb": [
         1,
         1,
         1,
@@ -131,18 +131,12 @@
         0,
         0,
         0,
-        null,
         0,
+        null,
         null,
         null,
         null,
         1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
         0,
         0,
         null,
@@ -152,11 +146,25 @@
         0,
         0,
         null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
         0,
         0,
         null,
         0,
         null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
         null,
         null,
         1,
@@ -195,7 +203,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/controllers/biometrics_controller.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/controllers/biometrics_controller.rb": [
         1,
         1,
         1,
@@ -300,7 +308,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/controllers/goals_controller.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/controllers/goals_controller.rb": [
         1,
         1,
         1,
@@ -361,7 +369,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/controllers/infos_controller.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/controllers/infos_controller.rb": [
         1,
         1,
         1,
@@ -419,7 +427,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/controllers/weeks_controller.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/controllers/weeks_controller.rb": [
         1,
         1,
         1,
@@ -497,7 +505,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/controllers/welcome_controller.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/controllers/welcome_controller.rb": [
         1,
         1,
         1,
@@ -507,7 +515,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/mailers/contact.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/mailers/contact.rb": [
         1,
         1,
         1,
@@ -541,13 +549,13 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/mailers/application_mailer.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/mailers/application_mailer.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/models/activity.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/models/activity.rb": [
         1,
         1,
         1,
@@ -618,7 +626,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/models/biometric.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/models/biometric.rb": [
         1,
         1,
         null,
@@ -662,18 +670,18 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/models/goal.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/models/goal.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/models/info.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/models/info.rb": [
         1,
         1,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/models/soccer.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/models/soccer.rb": [
         1,
         null,
         1,
@@ -682,7 +690,7 @@
         null,
         null
       ],
-      "/Users/rosemarythomas/Dropbox/devpoint/projects/SLCfit/app/models/week.rb": [
+      "/Users/grizlette/dev/rails/SLCfit/app/models/week.rb": [
         1,
         1,
         1,
@@ -696,6 +704,6 @@
         null
       ]
     },
-    "timestamp": 1437599166
+    "timestamp": 1437673279
   }
 }
