@@ -14,14 +14,14 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-23T11:41:19-06:00">2015-07-23T11:41:19-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-23T15:49:33-06:00">2015-07-23T15:49:33-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">63.44%</span></span>
+    (<span class="covered_percent"><span class="red">63.25%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>24</b> files in total.
-    <b>331</b> relevant lines. 
+    <b>332</b> relevant lines. 
     <span class="green"><b>210</b> lines covered</span> and
-    <span class="red"><b>121</b> lines missed </span>
+    <span class="red"><b>122</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -72,11 +72,11 @@
       
       <tr>
         <td class="strong"><a href="#f54044723c3eebd427798167689b8f69a9a0d81c" class="src_link" title="app/controllers/biometrics_controller.rb">app/controllers/biometrics_controller.rb</a></td>
-        <td class="red strong">35.09 %</td>
-        <td>103</td>
-        <td>57</td>
+        <td class="red strong">34.48 %</td>
+        <td>105</td>
+        <td>58</td>
         <td>20</td>
-        <td>37</td>
+        <td>38</td>
         <td>0.4</td>
       </tr>
       
@@ -299,7 +299,7 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">58.75%</span></span>
+    (<span class="covered_percent"><span class="red">58.51%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -310,9 +310,9 @@
   <a name="Controllers"></a>
   <div>
     <b>7</b> files in total.
-    <b>240</b> relevant lines. 
+    <b>241</b> relevant lines. 
     <span class="green"><b>141</b> lines covered</span> and
-    <span class="red"><b>99</b> lines missed </span>
+    <span class="red"><b>100</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -350,11 +350,11 @@
       
       <tr>
         <td class="strong"><a href="#f54044723c3eebd427798167689b8f69a9a0d81c" class="src_link" title="app/controllers/biometrics_controller.rb">app/controllers/biometrics_controller.rb</a></td>
-        <td class="red strong">35.09 %</td>
-        <td>103</td>
-        <td>57</td>
+        <td class="red strong">34.48 %</td>
+        <td>105</td>
+        <td>58</td>
         <td>20</td>
-        <td>37</td>
+        <td>38</td>
         <td>0.4</td>
       </tr>
       
@@ -1544,11 +1544,11 @@
         <div class="source_table" id="f54044723c3eebd427798167689b8f69a9a0d81c">
   <div class="header">
     <h3>app/controllers/biometrics_controller.rb</h3>
-    <h4><span class="red">35.09 %</span> covered</h4>
+    <h4><span class="red">34.48 %</span> covered</h4>
     <div>
-      <b>57</b> relevant lines. 
+      <b>58</b> relevant lines. 
       <span class="green"><b>20</b> lines covered</span> and
-      <span class="red"><b>37</b> lines missed.</span>
+      <span class="red"><b>38</b> lines missed.</span>
     </div>
   </div>
   
@@ -1900,145 +1900,145 @@
         <li class="missed" data-hits="0" data-linenumber="58">
           
           
-          <code class="ruby">    string_year = current_user.info.birthday.strftime &quot;%Y&quot; </code>
+          <code class="ruby">    if @info</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="59">
           
           
-          <code class="ruby">    @year = string_year.to_i</code>
+          <code class="ruby">      string_year = current_user.info.birthday.strftime &quot;%Y&quot; </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="missed" data-hits="0" data-linenumber="60">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      @year = string_year.to_i</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="61">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="62">
+        <li class="covered" data-hits="1" data-linenumber="64">
           <span class="hits">1</span>
           
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="63">
+        <li class="missed" data-hits="0" data-linenumber="65">
           
           
           <code class="ruby">    @biometric = current_user.biometrics.new(bio_params)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="64">
+        <li class="missed" data-hits="0" data-linenumber="66">
           
           
           <code class="ruby">    if @biometric.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="65">
+        <li class="missed" data-hits="0" data-linenumber="67">
           
           
           <code class="ruby">      flash[:notice] = &quot;your biometric for today has been saved!&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="67">
-          
-          
-          <code class="ruby">      flash[:error] = &quot;oops! you missed some data.  please try again.&quot;</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="68">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    else</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="69">
           
           
-          <code class="ruby">    redirect_to biometrics_path</code>
+          <code class="ruby">      flash[:error] = &quot;oops! you missed some data.  please try again.&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="70">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="71">
+          
+          
+          <code class="ruby">    redirect_to biometrics_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="72">
+        <li class="covered" data-hits="1" data-linenumber="74">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="73">
+        <li class="missed" data-hits="0" data-linenumber="75">
           
           
           <code class="ruby">    if @biometric.destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="74">
+        <li class="missed" data-hits="0" data-linenumber="76">
           
           
           <code class="ruby">      flash[:notice] = &quot;Your biometric data has been destroyed.&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="75">
+        <li class="missed" data-hits="0" data-linenumber="77">
           
           
           <code class="ruby">      redirect_to biometrics_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="77">
+        <li class="missed" data-hits="0" data-linenumber="79">
           
           
           <code class="ruby">      flash[:error] = &quot;We couldn&#39;t destroy your data!&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="never" data-hits="" data-linenumber="80">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="80">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="81">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  private</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
@@ -2050,124 +2050,136 @@
         <li class="covered" data-hits="1" data-linenumber="83">
           <span class="hits">1</span>
           
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="85">
+          <span class="hits">1</span>
+          
           <code class="ruby">  def bio_params</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="84">
+        <li class="missed" data-hits="0" data-linenumber="86">
           
           
           <code class="ruby">    params.require(:biometric).permit(:birthday, :age, :height, :weight, :mile_speed, :lift_weight)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
+        <li class="never" data-hits="" data-linenumber="87">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="86">
+        <li class="never" data-hits="" data-linenumber="88">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="87">
+        <li class="covered" data-hits="1" data-linenumber="89">
           <span class="hits">1</span>
           
           <code class="ruby">  def find_user</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="88">
+        <li class="covered" data-hits="2" data-linenumber="90">
           <span class="hits">2</span>
           
           <code class="ruby">    @user = current_user</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="89">
+        <li class="covered" data-hits="2" data-linenumber="91">
           <span class="hits">2</span>
           
           <code class="ruby">    unless @user</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="90">
+        <li class="covered" data-hits="2" data-linenumber="92">
           <span class="hits">2</span>
           
           <code class="ruby">      redirect_to root_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="91">
+        <li class="never" data-hits="" data-linenumber="93">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="92">
+        <li class="never" data-hits="" data-linenumber="94">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="95">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="94">
+        <li class="never" data-hits="" data-linenumber="96">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="95">
+        <li class="covered" data-hits="1" data-linenumber="97">
           <span class="hits">1</span>
           
           <code class="ruby">  def find_biometric</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="96">
+        <li class="covered" data-hits="1" data-linenumber="98">
           <span class="hits">1</span>
           
           <code class="ruby">    @biometric = Biometric.find_by(id: params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="97">
+        <li class="never" data-hits="" data-linenumber="99">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="never" data-hits="" data-linenumber="100">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="99">
+        <li class="covered" data-hits="1" data-linenumber="101">
           <span class="hits">1</span>
           
           <code class="ruby">  def find_info </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="100">
+        <li class="missed" data-hits="0" data-linenumber="102">
           
           
           <code class="ruby">    @info = Info.find_by(user_id: current_user.id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="101">
+        <li class="never" data-hits="" data-linenumber="103">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="102">
+        <li class="never" data-hits="" data-linenumber="104">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="103">
+        <li class="never" data-hits="" data-linenumber="105">
           
           
           <code class="ruby"></code>
@@ -2704,7 +2716,7 @@
         <li class="missed" data-hits="0" data-linenumber="24">
           
           
-          <code class="ruby">    redirect_to goals_path</code>
+          <code class="ruby">    redirect_to new_biometric_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
