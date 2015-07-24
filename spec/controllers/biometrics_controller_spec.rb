@@ -13,11 +13,16 @@ RSpec.describe BiometricsController, type: :controller do
       expect(response).to have_http_status(:redirect)
     end
 
-    it "returns http redirect when no biometrics" do
+    it "redirects without biometrics" do
       sign_in(user)
       biometric
       get :index
       expect(response).to have_http_status(:success)
+    end
+
+    it "redirects without user" do
+      get :index
+      expect(response).to have_http_status(:redirect)
     end
   end
 

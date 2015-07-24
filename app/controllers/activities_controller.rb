@@ -29,7 +29,7 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity.destroy
-    redirect_to activities_url
+    redirect_to goal_week_activities_path
   end
 
   def _new
@@ -84,7 +84,7 @@ class ActivitiesController < ApplicationController
     end
 
     def activity_params
-      params.require(type.underscore.to_sym).permit(:type, :week_id, :day_of_week)
+      params.fetch(type.underscore.to_sym, {}).permit(:type, :week_id, :day_of_week)
     end
 
     def activity_data

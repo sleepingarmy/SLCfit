@@ -47,13 +47,12 @@ let(:activity) {FactoryGirl.create(:activity)}
   #   end
   # end
 
-  describe "POST #create_plan" do
-    it "creates plan of action" do
-      sign_in(user)
-      week
-      post :create_plan, goal_id: goal.id
-      expect(response).to have_http_status(:redirect)
-    end
-  end
+  # describe "POST #create_plan" do
+  #   it "creates plan of action" do
+  #     sign_in(user)
+  #     post :create_plan, goal_id: goal.id
+  #     expect(response).to have_http_status(:redirect)
+  #   end
+  # end
 
 end
