@@ -48,4 +48,21 @@ let(:user) {FactoryGirl.create(:user)}
     end
   end
 
+  describe "GET #activity_tr" do
+    it "renders activity_tr partial" do
+      sign_in(user)
+      get :activity_tr
+      exepct(response).to redirect_to(template: 'activity_tr')
+    end
+  end
+
+  describe "GET #display" do
+    it "renders calendar partial" do
+      sign_in(user)
+      activity
+      get :display
+      exepct(response).to render_partial('calendar')
+    end
+  end
+
 end
