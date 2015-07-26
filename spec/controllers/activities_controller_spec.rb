@@ -35,7 +35,6 @@ let(:user) {FactoryGirl.create(:user)}
     it "fails to create activity" do
       sign_in(user)
       post :create, week_id: week.id, goal_id: goal.id
-      binding.pry
       expect(response).to redirect_to(action: 'new')
     end
   end
