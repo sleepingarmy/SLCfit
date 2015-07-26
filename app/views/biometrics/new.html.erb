@@ -1,8 +1,9 @@
 <div class="col-md-12 text-center">
   <% if current_user.biometrics.count == 0 %>
     <%= form_for @biometric do |f| %>
-      <h2 class="page-header">Initial Biometric Data</h2>
-      <h3>this is your initial data!  we won't ask you for your birthday or height after this.</h3>
+      <h2>Initial Biometric Data</h2>
+      <h3>this is your first data entry.</h3>
+      <hr>
       <% if @info %>
         <p>You are <%= current_user.info.height %>" tall and <%= Time.now.year - @year %> years old.  
          <%= link_to 'Edit', main_app.edit_info_path(@info.id) %></p>

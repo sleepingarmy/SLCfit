@@ -21,7 +21,7 @@
 
     <div class="carousel-inner" role="listbox">
       <% @weeks.each_with_index do |week, index| %>
-        <div class="item week-item-container text-center <%= index.zero? ? 'active' : '' %>">
+        <div id="carousel-week" data-index-id="<%= index %>" class="item week-item-container text-center <%= index.zero? ? 'active' : '' %>">
           <% activities_complete = week.activities.complete %>
           <% activities_not_complete = week.activities.not_complete %>
           <%= render partial: "activities/activities_display", locals: {activities_not_complete: activities_not_complete, activities_complete: activities_complete, week: week, index: index} %>
