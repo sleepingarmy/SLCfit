@@ -1,78 +1,82 @@
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <h2><%= @goal.description %></h2>
+    <hr>
+    <div id="carousel-example-generic" class="text-center carousel slide data-interval= "false"" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <% @weeks.count.times do |num|%>
+          <li data-target="#carousel-example-generic"data-slide-to="<%= num.to_s %>"class="<%= num.zero? ? 'active' : '' %>"></li>
+        <% end %>
+      </ol>
 
-  <h3><%= @goal.description %></h3>
-  <div id="carousel-example-generic" class="text-center carousel slide data-interval= "false"" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <% @weeks.count.times do |num|%>
-        <li data-target="#carousel-example-generic"data-slide-to="<%= num.to_s %>"class="<%= num.zero? ? 'active' : '' %>"></li>
-      <% end %>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <a class="left" href="#carousel-example-generic" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-
-     <a class="right" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+      <!-- Wrapper for slides -->
+      <a class="left" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
       </a>
 
-    <div class="carousel-inner" role="listbox">
-      <% @weeks.each_with_index do |week, index| %>
-        <div id="carousel-week" data-index-id="<%= index %>" class="item week-item-container text-center <%= index.zero? ? 'active' : '' %>">
-          <% activities_complete = week.activities.complete %>
-          <% activities_not_complete = week.activities.not_complete %>
-          <%= render partial: "activities/activities_display", locals: {activities_not_complete: activities_not_complete, activities_complete: activities_complete, week: week, index: index} %>
+       <a class="right" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
 
-          <%= link_to goal_week_activities_path(week.goal_id, week.id), class: 'week-item-link' do %>
-          <% end %>
-        </div>
+      <div class="carousel-inner" role="listbox">
+        <% @weeks.each_with_index do |week, index| %>
+          <div id="carousel-week" data-index-id="<%= index %>" class="item week-item-container text-center <%= index.zero? ? 'active' : '' %>">
+            <% activities_complete = week.activities.complete %>
+            <% activities_not_complete = week.activities.not_complete %>
+            <%= render partial: "activities/activities_display", locals: {activities_not_complete: activities_not_complete, activities_complete: activities_complete, week: week, index: index} %>
+
+            <%= link_to goal_week_activities_path(week.goal_id, week.id), class: 'week-item-link' do %>
+            <% end %>
+          </div>
 
 
-          <!-- Add Activity Modal -->
-          <div class="container-fluid">
-            <div class="modal fade" id="myModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Add Activities</h4>
-                  </div>
-                  <div class="modal-body">
-                    <%= render "activities/new", locals: {week_id: week.id} %>
-                  </div>
-                  <div class="modal-footer">
+            <!-- Add Activity Modal -->
+            <div class="container-fluid">
+              <div class="modal fade" id="myModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Add Activities</h4>
+                    </div>
+                    <div class="modal-body">
+                      <%= render "activities/new", locals: {week_id: week.id} %>
+                    </div>
+                    <div class="modal-footer">
 
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-      <% end %>
+        <% end %>
 
-      <!-- Log Modal -->
-      <div class="container-fluid">
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Log Activities</h4>
-              </div>
-              <div class="modal-body">
-                <div id="activities-holder">
-
+        <!-- Log Modal -->
+        <div class="container-fluid">
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Log Activities</h4>
                 </div>
-                <button type="button" id="log-activities-button" class="btn btn-default">Sumbit Log</button>
-              </div>
-              <div class="modal-footer">
+                <div class="modal-body">
+                  <div id="activities-holder">
+
+                  </div>
+                  <button type="button" id="log-activities-button" class="btn btn-default">Sumbit Log</button>
+                </div>
+                <div class="modal-footer">
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- Controls -->
       </div>
-      <!-- Controls -->
     </div>
   </div>
+</div>
