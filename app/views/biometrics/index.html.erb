@@ -3,8 +3,8 @@
   google.load("visualization", "1", {packages:["corechart"]});
   google.setOnLoadCallback(drawChart);
   function drawChart() {
-    var bio_data = <%=raw @bio_array %>;
-    var data = google.visualization.arrayToDataTable(bio_data);
+    var weight_data = <%=raw @weight_array %>;
+    var data = google.visualization.arrayToDataTable(weight_data);
 
     var options = {
       title: 'Weight Tracker',
@@ -45,27 +45,24 @@
 <div class="row">
   <div class="col-sm-12 text-center">
     <h3><%= link_to ' ', main_app.new_biometric_path, class: "fa fa-plus-circle fa-3x", data: {toggle: "tooltip", placement: "top"}, title: "new biometric"%></h3>
-        <h2>My Data</h2>
-        <p>track your progress!</p>
-        <h3><%= flash[:error] %></h3>
-        <hr>
-      </div>
-      <div class="col-sm-12">
-      <% if @biometrics %>
-        <div class="row">
-          <div class="col-sm-6">
-            <div id="chart_div" style="width: 500px; height: 500px;"></div>
-          </div>
-          <div class="col-sm-6">
-            <div id="bmi_chart_div" style="width: 500px; height: 500px;"></div>
-          </div>
+    <h2>My Data</h2>
+    <p>track your progress!</p>
+    <h3><%= flash[:error] %></h3>
+    <hr>
+    <% if @biometrics %>
+      <div class="row">
+        <div class="col-sm-6">
+          <div id="chart_div" style="width: 500px; height: 500px;"></div>
         </div>
-      <% else %>
-        <p>please create a new biometric!</p>
-      <% end %>
-      <hr>
-    <!-- </div> -->
-    <!-- <div class="row"> -->
+        <div class="col-sm-6">
+          <div id="bmi_chart_div" style="width: 500px; height: 500px;"></div>
+        </div>
+      </div>
+    <% else %>
+      <p>please create a new biometric!</p>
+    <% end %>
+    <hr>
+    <div class="row">
       <% @biometrics.each do |bio| %>
         <div class="col-sm-3 text-left">
           <h4>metrics for <%= bio.created_at.strftime "%a %D" %></h4>
@@ -77,13 +74,13 @@
             <p>you can run a mile in <%= bio.mile_speed %>minutes.</p>
           <% end %>
           <% if bio.lift_weight != nil %>
-            <p>you can lift <%= bio.lift_weight %>lbs. (oooh, so strong.)</p>
+            <p>you can lift <%= bio.lift_weight %>lbs.</p>
           <% end %>
           <%= link_to 'Delete', biometric_path(bio.id), method: :delete, data: {confirm: "Are you sure?"}%>
           <br>
           <br>
         </div>
       <% end %>
-    <!-- </div> -->
+    </div>
   </div>
 </div>

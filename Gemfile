@@ -47,12 +47,14 @@ group :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'simplecov', :require => false
+  gem 'capybara'
 end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'pry'
+  gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.0'
   gem 'sendgrid'
   gem 'better_errors'

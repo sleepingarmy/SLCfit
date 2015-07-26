@@ -8,17 +8,36 @@ class BiometricsController < ApplicationController
     @biometrics = Biometric.where(user_id: current_user.id).sort_by_created_at
 
     unless @biometrics.count > 0
-      redirect_to infos_path
+      redirect_to new_info_path
     end
 
      # Biometric.create_arrays(@biometrics, current_user)
 
-     @bio_array = [['date', 'weight'], ]
+    # charts = %w[weight bmi speed strength]
+
+    # charts.map do |chart|
+    #   @biometrics.each do |bio|
+    #     chart_array = [['date', 'chart'], ]
+    #     biodate = bio.created_at.strftime "%a %D"
+    #     biochart = bio.weight
+
+    #     chart_array << [biodate, biochart]
+    #   end
+    # end
+
+    # @weight_array = =[['date', 'weight'], ]
+    # biodate=bio.created_at.strftime "%a %D"
+    # bioweight = bio.weight
+
+    # @weight_array << [biodate, bioweight]
+
+
+    @weight_array = [['date', 'weight'], ]
 
     @biometrics.each do |bio|
       biodate = bio.created_at.strftime "%a %D"
       bioweight = bio.weight
-      @bio_array << [biodate, bioweight]
+      @weight_array << [biodate, bioweight]
     end
 
     @bmi_array = [['date', 'bmi'], ]
@@ -29,21 +48,21 @@ class BiometricsController < ApplicationController
       @bmi_array << [biodate, biobmi]
     end
 
-    @speed_array = [['date', 'speed'], ]
+    # @speed_array = [['date', 'speed'], ]
 
-    @biometrics.each do |bio|
-      biodate = bio.created_at.strftime "%a %D"
-      speed = bio.mile_speed
-      @speed_array << [biodate, speed]
-    end
+    # @biometrics.each do |bio|
+    #   biodate = bio.created_at.strftime "%a %D"
+    #   speed = bio.mile_speed
+    #   @speed_array << [biodate, speed]
+    # end
 
-    @strength_array = [['date', 'strength'], ]
+    # @strength_array = [['date', 'strength'], ]
 
-    @biometrics.each do |bio|
-      biodate = bio.created_at.strftime "%a %D"
-      speed = bio.mile_speed
-      @speed_array << [biodate, speed]
-    end
+    # @biometrics.each do |bio|
+    #   biodate = bio.created_at.strftime "%a %D"
+    #   speed = bio.mile_speed
+    #   @speed_array << [biodate, speed]
+    # end
   end
 
   def show
@@ -55,8 +74,10 @@ class BiometricsController < ApplicationController
   def new
     @biometric = Biometric.new
 
-    string_year = current_user.info.birthday.strftime "%Y" 
-    @year = string_year.to_i
+    if @info
+      string_year = current_user.info.birthday.strftime "%Y" 
+      @year = string_year.to_i
+    end
   end
 
   def create
@@ -70,7 +91,8 @@ class BiometricsController < ApplicationController
   end
 
   def destroy
-    if @biometric.destroy
+   if @biometric.destroy
+   @biometric.destroy
       flash[:notice] = "Your biometric data has been destroyed."
       redirect_to biometrics_path
     else
@@ -81,7 +103,7 @@ class BiometricsController < ApplicationController
   private
 
   def bio_params
-    params.require(:biometric).permit(:birthday, :age, :height, :weight, :mile_speed, :lift_weight)
+    params.fetch(:biometric, {}).permit(:birthday, :age, :height, :weight, :mile_speed, :lift_weight)
   end
 
   def find_user

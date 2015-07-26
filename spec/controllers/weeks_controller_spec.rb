@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe WeeksController, type: :controller do
 let(:goal) {FactoryGirl.create(:goal)}
 let(:week) {FactoryGirl.create(:week)}
+let(:user) {FactoryGirl.create(:user)}
+let(:activity) {FactoryGirl.create(:activity)}
 
   describe "GET #index" do
     it "returns http success" do
@@ -32,17 +34,25 @@ let(:week) {FactoryGirl.create(:week)}
 
   describe "PUT #update" do
     it "udpates week" do
+      sign_in(user)
       put :update, goal_id: goal.id, id: week.id 
       expect(response).to have_http_status(:redirect)
     end
-
-    it "fails to update" do
-      put :update, goal_id: goal.id, id: week.id, week: {name: nil}
-      expect(flash[:error]).to be_present
-    end
   end
 
+  # describe "GET #plan_of_action" do
+  #   it "gets plan of action" do
+  #     get :plan_of_action
+  #     expect(response).to have_http_status(:redirect)
+  #   end
+  # end
 
-
+  # describe "POST #create_plan" do
+  #   it "creates plan of action" do
+  #     sign_in(user)
+  #     post :create_plan, goal_id: goal.id
+  #     expect(response).to have_http_status(:redirect)
+  #   end
+  # end
 
 end

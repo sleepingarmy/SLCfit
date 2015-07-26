@@ -172,3 +172,36 @@ body {
   margin: 0;
 
 }
+
+#carousel-example-generic > div > a.left.carousel-control > span.glyphicon.glyphicon-chevron-left {
+  top: 2%;
+}
+
+#carousel-example-generic > div > a.right.carousel-control > span.glyphicon.glyphicon-chevron-right {
+  top: 2%;
+}
+.carousel-indicators {
+  z-index: 1;
+  margin-top: 10px;
+}
+#carousel-example-generic > ol > li {
+  border: 1px solid #403871;
+}
+
+#carousel-example-generic > ol > li.active {
+  background-color: #403871;  
+}
+
+
+
+
+/*.left {
+  height: 50px;
+  width: 300px;
+  bottom: 0;
+}
+
+.right {
+  height: 50px;
+  width: 300px;
+}*/

@@ -1,4 +1,3 @@
-<h1>Infos#index</h1>
-<h3>it seems you don't have any biometric data!  create new biometric data to start tracking your progress.</h3>
-<p>Find me in app/views/infos/index.html.erb</p>
+<h3>it looks like you don't have any biometric data!  create new biometric data to start tracking your progress.</h3>
+<h3><%= link_to ' ', main_app.new_biometric_path, class: "fa fa-plus-circle fa-3x", data: {toggle: "tooltip", placement: "top"}, title: "new biometric"%></h3>
 

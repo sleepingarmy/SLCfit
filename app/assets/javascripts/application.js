@@ -40,6 +40,14 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
+$('.left').click(function() {
+  $('.carousel').carousel('right');
+});
+
+$('.right').click(function() {
+  $('.carousel').carousel('left');
+});
+
 
 
 // Smooth scroll

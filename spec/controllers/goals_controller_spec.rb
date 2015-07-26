@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe GoalsController, type: :controller do
 let(:goal) {FactoryGirl.create(:goal)}
 let(:user) {FactoryGirl.create(:user)}
+let(:week) {FactoryGirl.create(:week)}
+goal1 =FactoryGirl.attributes_for(:goal)
 
   describe "GET #index" do
     it "returns http success" do
@@ -34,7 +36,7 @@ let(:user) {FactoryGirl.create(:user)}
   describe "POST #create" do
     it "creates new goal" do
       sign_in(user)
-      post :create
+      post :create, {goal: goal1}
       expect(flash[:notice]).to be_present
     end
   end
@@ -45,7 +47,4 @@ let(:user) {FactoryGirl.create(:user)}
       expect(response).to have_http_status(:redirect)
     end
   end
-
-
-
 end

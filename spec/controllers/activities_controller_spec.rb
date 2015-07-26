@@ -4,30 +4,63 @@ RSpec.describe ActivitiesController, type: :controller do
 let(:activity) {FactoryGirl.create(:activity)}
 let(:week) {FactoryGirl.create(:week)}
 let(:goal) {FactoryGirl.create(:goal)}
+let(:user) {FactoryGirl.create(:user)}
 
   describe "GET #index" do
     it "returns http success" do
+      sign_in(user)
+      goal
+      week
       get :index, goal_id: goal.id, week_id: week.id
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "PUT #update" do
-    it "udpates activity" do
-      put :update, id: activity.id, goal_id: 1, week_id: 1, activity: {type: "running"}
+  # describe "GET #new" do
+  #   it "gets new page" do
+  #     sign_in(user)
+  #     get :new, goal_id: goal.id, week_id: week.id
+  #     expect(response).to have_http_status(:success)
+  #   end
+  # end
+
+  describe "POST #create" do
+    it "creates new activity" do
+      sign_in(user)
+      activity
+      post :create, week_id: week.id, goal_id: goal.id
       expect(response).to have_http_status(:redirect)
     end
 
-    it "fails to update" do
-      put :update, id: activity.id, goal_id: 1, week_id: activity.week_id, activity: {type: nil}
-      expect(response).to have_http_status(:render)
+    it "fails to create activity" do
+      sign_in(user)
+      post :create, week_id: week.id, goal_id: goal.id
+      expect(response).to redirect_to(action: 'new')
     end
   end
 
   describe "GET #destroy" do
     it "returns http redirect" do
-      delete :destroy, id: activity.id, goal_id: 1, week_id: activity.week_id
+      sign_in(user)
+      delete :destroy, id: activity.id, goal_id: goal.id, week_id: activity.week_id
       expect(response).to have_http_status(:redirect)
+    end
+  end
+
+  describe "GET #activity_tr" do
+    it "renders activity_tr partial" do
+      sign_in(user)
+      get :activity_tr
+      exepct(response).to redirect_to(template: 'activity_tr')
+    end
+  end
+
+  describe "GET #display" do
+    it "renders calendar partial" do
+      sign_in(user)
+      activity
+      get :display
+      exepct(response).to render_partial('calendar')
     end
   end
 

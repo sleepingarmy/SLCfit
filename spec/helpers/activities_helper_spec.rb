@@ -14,7 +14,7 @@ RSpec.describe ActivitiesHelper, type: :helper do
   let(:activity) {FactoryGirl.create(:item)}
 
   describe "#format_action" do
-    it "returns correct formatted aciton" do
+    it "returns correct formatted action" do
       expect(helper.format_action("test")).to eq("test_")
     end
   end

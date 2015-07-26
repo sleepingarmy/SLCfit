@@ -10,26 +10,6 @@ class Activity < ActiveRecord::Base
      %w(Running Biking Swimming Hiking Soccer)
    end
 
-   def self.soccer
-     where(type: 'Soccer')
-   end
-
-   def self.running
-     where(type: 'Running')
-   end
-
-   def self.biking
-     where(type: 'Biking')
-   end
-
-   def self.swimming
-     where(type: 'Swimming')
-   end
-
-   def self.hiking
-     where(type: 'Hiking')
-   end
-
    def self.mon
      where(day_of_week: 'mon' )
    end
@@ -40,6 +20,7 @@ class Activity < ActiveRecord::Base
 
    def self.wed
      where(day_of_week: 'wed')
+     #returns all activities that are logged on wed
    end
 
    def self.thurs

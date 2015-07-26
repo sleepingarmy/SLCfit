@@ -1,6 +1,6 @@
 class WeeksController < ApplicationController
   before_action :find_user
-  before_action :find_week, only: [:show, :update]
+  before_action :find_week, only: [:show, :update, :create_plan]
   before_action :find_goal
 
   def index
@@ -19,9 +19,9 @@ class WeeksController < ApplicationController
   def update
     if @week.update(week_params)
       redirect_to (goal_week_path(@goal.id, @week.id))
-    else
-      render :new, status: 400
-      flash[:error] = "week failed to update due to nil name"
+    # else
+    #   render :new, status: 400
+    #   flash[:error] = "week failed to update due to nil name"
     end
   end
 
@@ -44,7 +44,6 @@ class WeeksController < ApplicationController
       end
     end
     redirect_to plan_of_action_path(@goal.id)
-
   end
 
   private
@@ -67,10 +66,6 @@ class WeeksController < ApplicationController
     unless @week
       render(text: 'Week not found', status: 404)
     end
-  end
-
-  def activity_params
-    params.require(type.underscore.to_sym).permit(:type, :week_id)
   end
 
 end
