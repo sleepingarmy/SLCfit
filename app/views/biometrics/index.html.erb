@@ -49,38 +49,40 @@
     <p>track your progress!</p>
     <h3><%= flash[:error] %></h3>
     <hr>
-    <% if @biometrics %>
-      <div class="row">
-        <div class="col-sm-6">
-          <div id="chart_div" style="width: 500px; height: 500px;"></div>
-        </div>
-        <div class="col-sm-6">
-          <div id="bmi_chart_div" style="width: 500px; height: 500px;"></div>
-        </div>
-      </div>
-    <% else %>
-      <p>please create a new biometric!</p>
-    <% end %>
-    <hr>
-    <div class="row">
-      <% @biometrics.each do |bio| %>
-        <div class="col-sm-3 text-left">
-          <h4>metrics for <%= bio.created_at.strftime "%a %D" %></h4>
-          <hr>
-          <p>weight: <%= bio.weight %>lbs.</p>
-          <p>height: <%= current_user.info.height %>"</p>
-          <p>body mass index: <%= (bio.weight * 703) / (current_user.info.height ** 2) %></p>
-          <% if bio.mile_speed != nil %>
-            <p>you can run a mile in <%= bio.mile_speed %>minutes.</p>
-          <% end %>
-          <% if bio.lift_weight != nil %>
-            <p>you can lift <%= bio.lift_weight %>lbs.</p>
-          <% end %>
-          <%= link_to 'Delete', biometric_path(bio.id), method: :delete, data: {confirm: "Are you sure?"}%>
-          <br>
-          <br>
-        </div>
-      <% end %>
-    </div>
   </div>
 </div>
+<% if @biometrics %>
+  <div class="row">
+    <div class="col-sm-6">
+      <div id="chart_div" style="width: 500px; height: 500px;"></div>
+    </div>
+    <div class="col-sm-6">
+      <div id="bmi_chart_div" style="width: 500px; height: 500px;"></div>
+    </div>
+  </div>
+<% else %>
+  <p>please create a new biometric!</p>
+<% end %>
+<hr>
+<% @biometrics.in_groups_of(4, false).each do |group| %>
+  <div class="row">
+    <% group.each do |bio| %>
+      <div class="col-sm-3 text-left">
+        <h4>metrics for <%= bio.created_at.strftime "%a %D" %></h4>
+        <hr>
+        <p>weight: <%= bio.weight %>lbs.</p>
+        <p>height: <%= current_user.info.height %>"</p>
+        <p>body mass index: <%= (bio.weight * 703) / (current_user.info.height ** 2) %></p>
+        <% if bio.mile_speed != nil %>
+          <p>you can run a mile in <%= bio.mile_speed %>minutes.</p>
+        <% end %>
+        <% if bio.lift_weight != nil %>
+          <p>you can lift <%= bio.lift_weight %>lbs.</p>
+        <% end %>
+        <%= link_to 'Delete', biometric_path(bio.id), method: :delete, data: {confirm: "Are you sure?"}%>
+        <br>
+        <br>
+      </div>
+    <% end %>
+  </div>
+<% end %>
