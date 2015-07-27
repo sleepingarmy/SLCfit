@@ -41,6 +41,9 @@ $(document).ready ->
       success: (data) ->
         $("#calendar-#{weekId}").html(data)
 
+    $("#myModal#{weekId}").modal('hide')
+    console.log('done')
+
 
   $('#myModal').on 'shown.bs.modal', ->
     $activitiesHolder = $('#activities-holder')
