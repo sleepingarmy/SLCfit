@@ -228,7 +228,13 @@ body {
   margin-top: 100px;
 }
 
+#page-content-wrapper > div > div:nth-child(3) > div {
+  padding-bottom: 20px;
+}
 
+#page-content-wrapper {
+  padding-bottom: 40px;
+}
 
 /*.left {
   height: 50px;
