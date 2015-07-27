@@ -1,7 +1,7 @@
 class Running < Activity
 
   def icon
-    return "fi fi-foot large"
+    return "fi-foot large-icon"
   end
 
 end
