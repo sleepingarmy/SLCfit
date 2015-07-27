@@ -54,7 +54,7 @@
 }
 
 #contact { 
-  background: url(mountain.png) 50% 0 repeat fixed; min-height: 1000px;
+  background: url(mountain_bright.png) 50% 0 repeat fixed; min-height: 1000px;
   height: 100%; 
   margin: 0 auto; 
   width: 100%; 
@@ -155,8 +155,7 @@
 .headshots {
   margin-left: auto;
   margin-right: auto;
-  border-style: solid;
-  border-color: white;
+  border-color: #20293f;
   border-width: 2px;
 }
 
@@ -183,7 +182,7 @@
   width: 400px;
   opacity: .80;
   background-color: white;
-  border-radius: 50px;
+  border-radius:4px;
 }
 
 .text-center {
@@ -193,6 +192,16 @@
 
 }
 
+.corner-edge {
+  margin: auto;
+  height: 200px;
+  display: block;
+  position: relative;
+  width: 200px;
+  padding: 20px;
+  background: #20293f;
+  border-radius: 50% 50% 50% 4px;
+}
 
 
 
