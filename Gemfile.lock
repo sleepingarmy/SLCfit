@@ -126,6 +126,9 @@ GEM
       railties (>= 3.0.0)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
+    foundation-icons-sass-rails (3.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     friendly_id (5.0.5)
       activerecord (>= 4.0.0)
     gemoji (2.1.0)
@@ -292,6 +295,7 @@ DEPENDENCIES
   forem!
   forem-bootstrap!
   forem-redcarpet!
+  foundation-icons-sass-rails
   jbuilder (~> 2.0)
   jquery-rails
   momentjs-rails

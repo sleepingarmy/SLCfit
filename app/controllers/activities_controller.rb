@@ -23,8 +23,6 @@ class ActivitiesController < ApplicationController
     activity.complete= true
     activity.save
     render :nothing => true
-    #redirect_to goal_weeks_path(@goal.id)
-
   end
 
   def destroy
