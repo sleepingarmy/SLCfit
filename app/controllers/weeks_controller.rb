@@ -1,11 +1,11 @@
 class WeeksController < ApplicationController
   before_action :find_user
-  before_action :find_week, only: [:show, :update, :create_plan]
+  before_action :find_week, only: [:show, :update]
   before_action :find_goal
 
   def index
     @weeks = @goal.weeks
-    
+
   end
 
   def show

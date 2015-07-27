@@ -17,7 +17,6 @@ class BiometricsController < ApplicationController
 
     # charts.map do |chart|
     #   @biometrics.each do |bio|
-    #   binding.pry
     #     chart_array = [['date', 'chart'], ]
     #     biodate = bio.created_at.strftime "%a %D"
     #     biochart = bio.weight

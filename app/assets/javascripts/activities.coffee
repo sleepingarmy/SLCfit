@@ -23,13 +23,27 @@ $(document).ready ->
 
     $('#myModal').modal('hide')
     weekId = $('.week-id:first').val()
-    #console.log(weekId)
+    index = $("#carousel-week:visible").data.indexId
+    console.log(index)
+
+    $.ajax '/bank',
+      type: 'GET'
+      data:
+        week_id: weekId
+        index: index
+      success: (data) ->
+        $("#not-complete-#{weekId}").html(data)
+
     $.ajax '/calendar',
       type: 'GET'
       data:
         week_id: weekId
       success: (data) ->
         $("#calendar-#{weekId}").html(data)
+
+    $("#myModal#{weekId}").modal('hide')
+    console.log('done')
+
 
   $('#myModal').on 'shown.bs.modal', ->
     $activitiesHolder = $('#activities-holder')

@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
   before_action :set_type
   before_action :set_activity, only: [:show, :edit, :destroy, :complete, :activity_tr]
-  before_action :activity_data, only: [:index, :display]
+  before_action :activity_data, only: [:index, :display, :bank, :progress]
 
   def index
     @goal= Goal.find_by(id: params[:goal_id])
@@ -59,11 +59,12 @@ class ActivitiesController < ApplicationController
   end
 
   def progress
-    render partial: 'progress', locals: {week: @week} # ,index: index}
+    render partial: 'progress', locals: {week: @week}
   end
 
   def bank
-    render partial: 'bank', locals: {week: @week} # ,index: index}
+    #binding.pry
+    render partial: 'bank', locals: {week: @week, index: params[:index]}
   end
 
   private

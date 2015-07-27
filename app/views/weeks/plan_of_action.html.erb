@@ -1,23 +1,27 @@
 <div class="col-sm-12 text-center">
 <h2>How are you going to obtain this goal?</h2>
 <hr>
-<h3>Your plan of action: </h3>
+<h3>Lets add some activities to help you achieve your goal </h3>
 
 <%= form_for :week,  url: create_plan_path(@goal.id) do |f| %>
 
+<h5>First Choose a type of activity that you would like to do during the week</h5>
   <div class="form-group">
     <%=  f.label('Type') %>
     <br>
     <%= f.select :type, Activity.types %>
   </div>
 
+<h5>Then choose how many times you want to do this activity per week</h5>
   <div class="form-group">
     <%=  f.label('Times Per Week') %>
     <br>
     <%= f.select :per_week, (1..7).to_a %>
   </div>
 
+  <h5>Continue to add activities until you are satisfied </h5>
   <button type="submit" class="btn btn-default">Add Activity</button>
+  <h5>When you all done, click "Finish"</h5>
 
 <% end %>
 
@@ -26,8 +30,6 @@
     You have added <%= activity %>
   </p>
 <% end %>
-<br>
-<br>
 <br>
 <br>
 <br>
