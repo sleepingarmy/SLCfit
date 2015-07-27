@@ -63,6 +63,7 @@ class ActivitiesController < ApplicationController
   end
 
   def bank
+    #binding.pry
     render partial: 'bank', locals: {week: @week, index: params[:index]}
   end
 
