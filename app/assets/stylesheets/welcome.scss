@@ -203,6 +203,35 @@
 
 }
 
+.sign-up-page {
+  text-align: center;
+  margin-top: 1%;
+  margin-left: 25%;
+  width: 50%;
+  height: 20%;
+  opacity: .95;
+  background-color: #f8f8f8;
+  border-radius: 50px;
+}
+
+.sign-up-page {
+  text-align: center;
+  margin-top: 1%;
+  margin-left: 25%;
+  width: 50%;
+  height: 20%;
+  opacity: .95;
+  background-color: #f8f8f8;
+  border-radius: 50px;
+}
+#user_image {
+  display: inline-block;
+}
+
+#new_user > span > span > div.container > a {
+  display: inherit;
+  padding-right: 50%;
+}
 .corner-edge {
   margin: auto;
   height: 200px;
@@ -214,6 +243,16 @@
   border-radius: 50% 50% 50% 4px;
 }
 
+#home > div > div > a:nth-child(1) {
+  display: inherit;
+  padding-right: 50%;
+}
+
+#home > div > div > a:nth-child(3) {
+  display: inherit;
+  padding-right: 50%;
+
+}
 
 
 
