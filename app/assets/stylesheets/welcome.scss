@@ -152,6 +152,17 @@
 }
 /*Dashboard View End*/
 
+#testimonial-content {
+  height: 430px; 
+    @media screen and (max-width: 480px){
+      height: 730px;
+  }
+}
+
+.padding-above {
+  padding-top: 20px;
+}
+
 .headshots {
   margin-left: auto;
   margin-right: auto;
