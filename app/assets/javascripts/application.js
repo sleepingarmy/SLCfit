@@ -48,6 +48,13 @@ $('.right').click(function() {
   $('.carousel').carousel('left');
 });
 
+$(function() {
+  $('.carousel').each(function() {
+    $(this).carousel({
+      interval: false
+    });
+  });
+});
 
 
 // Smooth scroll
