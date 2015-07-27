@@ -24,7 +24,6 @@ $(document).ready ->
     $('#myModal').modal('hide')
     weekId = $('.week-id:first').val()
     index = $("#carousel-week:visible").data.indexId
-    console.log(index)
 
     $.ajax '/bank',
       type: 'GET'
@@ -40,10 +39,16 @@ $(document).ready ->
         week_id: weekId
       success: (data) ->
         $("#calendar-#{weekId}").html(data)
+        $('[data-toggle="tooltip"]').tooltip()
 
-    $("#myModal#{weekId}").modal('hide')
-    console.log('done')
+    $.ajax '/progress',
+      type: 'GET'
+      data:
+        week_id: weekId
+      success: (data) ->
+        $("#progress-#{weekId}").html(data)
 
+    $(window).scrollTop 0
 
   $('#myModal').on 'shown.bs.modal', ->
     $activitiesHolder = $('#activities-holder')
