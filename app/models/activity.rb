@@ -7,7 +7,7 @@ class Activity < ActiveRecord::Base
   end
 
    def self.types
-     %w(Running Biking Swimming Hiking Soccer)
+     %w(Running Biking Swimming Hiking Custom DogWalking Yoga Gym)
    end
 
    def self.mon
