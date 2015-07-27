@@ -15,7 +15,7 @@
 
 /*Parallax Scrolling Sections*/
 #home { 
-  background: url(SLC_view.png) 50% 0 repeat fixed; min-height: 1000px;
+  background: asset-url('SLC_view.png') 50% 0 repeat fixed; min-height: 1000px;
   height: 100%; 
   margin: 0 auto; 
   width: 100%; 
