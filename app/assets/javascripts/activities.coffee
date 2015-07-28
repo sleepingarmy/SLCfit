@@ -59,4 +59,4 @@ $(document).ready ->
         data:
           id: $(@).data().activityId
         success: (data) ->
-          $activitiesHolder.append(data) 
+          $activitiesHolder.append(data)
