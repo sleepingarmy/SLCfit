@@ -1,0 +1,5 @@
+consumer_key: 'your yelp consumer key'
+consumer_secret: 'your yelp consumer secret'
+token: 'your yelp token'
+token_secret: 'your yelp secret token'
+

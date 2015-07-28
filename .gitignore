@@ -13,3 +13,6 @@
 /tmp
 /coverage
 /config/email.yml
+
+#ignore yelp api keys
+/config/initializers/yelp.rb

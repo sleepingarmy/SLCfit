@@ -17,6 +17,12 @@
     </li>
     <li><%= link_to 'Forum', forem.forums_path %></li>
     <li><%= link_to 'Account Settings', main_app.edit_user_registration_path %></li>
+    <li><%= form_tag search_results_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :term, params[:term] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+      <% end %></li>
     <br>
     <br>
     <br>

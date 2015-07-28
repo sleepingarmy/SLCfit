@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   def forem_user
     current_user
   end
+
   helper_method :forem_user
 
   # Prevent CSRF attacks by raising an exception.
@@ -24,6 +25,8 @@ class ApplicationController < ActionController::Base
       'application'
     elsif  params[:controller] == "forem"
       Forem.layout
+    elsif params[:controller] == 'welcome' && action_name == 'search'
+      'application'
     elsif devise_controller? && action_name != 'edit' || params[:controller] == "welcome"
       "splash"
     else

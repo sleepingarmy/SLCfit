@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   post '/create_plan/:goal_id/' => 'weeks#create_plan', as: :create_plan
   get '/bank' => 'activities#bank'
 
+  get '/search_results' => 'welcome#search', as: :search_results
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

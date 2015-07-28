@@ -1,10 +1,9 @@
-require 'yelp'
-
-Yelp.client.configure do |config|
-  config.consumer_key = 'J6MaSweSbpmvVHW10R1vdA'
-  config.consumer_secret = 'jGSRMUnuQJ6Ji-KPz2s1xTKFIvM'
-  config.token = '2ERgnKXxN-cNl6uJmfqdUiAbKKYPjKNG'
-  config.token_secret = '6kJObB1JVx7XzJwKygKdGgfHX7g'
+if Rails.env.development?
+  begin
+    settings_config = YAML.load_file('config/yelp.yml')
+    settings_config.each {|key, value| ENV[key] = value}
+  rescue
+    raise "yelp.yml not found in config directory"
+  end
 end
 
-Yelp.client.search('Salt Lake City', { term: 'gyms' })
