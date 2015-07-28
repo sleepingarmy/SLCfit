@@ -130,6 +130,8 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    figaro (1.1.1)
+      thor (~> 0.14)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
     foundation-icons-sass-rails (3.0.0)
@@ -312,6 +314,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   factory_girl_rails
+  figaro
   font-awesome-rails
   forem!
   forem-bootstrap!
