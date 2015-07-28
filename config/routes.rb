@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   get '/plan_of_action/:goal_id'  => 'weeks#plan_of_action', as: :plan_of_action
   post '/create_plan/:goal_id/' => 'weeks#create_plan', as: :create_plan
   get '/bank' => 'activities#bank'
+
+  get '/search_results' => 'welcome#search', as: :search_results
   get '/progress' => 'activities#progress'
 
   # Example of regular route:
