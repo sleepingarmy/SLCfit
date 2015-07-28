@@ -7,6 +7,7 @@ gem "paperclip", "~> 4.3"
 gem 'momentjs-rails'
 gem "font-awesome-rails"
 gem 'rails_12factor'
+gem 'aws-sdk'
 
 # Forum stuff
 gem 'forem', :github => "radar/forem", :branch => "rails4"
