@@ -39,6 +39,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'gmaps4rails'
 gem 'yelp', require: 'yelp'
 
+
 gem 'foundation-icons-sass-rails'
 
 # Use ActiveModel has_secure_password

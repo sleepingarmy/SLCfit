@@ -330,8 +330,8 @@ DEPENDENCIES
   forem!
   forem-bootstrap!
   forem-redcarpet!
-  gmaps4rails
   foundation-icons-sass-rails
+  gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
   momentjs-rails
