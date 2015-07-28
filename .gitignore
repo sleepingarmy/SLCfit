@@ -13,3 +13,5 @@
 /tmp
 /coverage
 /config/email.yml
+# Ignore application configuration
+/config/application.yml

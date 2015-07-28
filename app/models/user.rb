@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
     username
   end
 
+  def send_welcome_email
+    user = User.new
+  end
+
 end
