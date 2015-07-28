@@ -16,7 +16,7 @@ Rails.application.configure do
      :path => '/:class/:attahment/:id_partition/:style/:filename'
    }
 
-   
+   config.action_mailer.default_url_options = { :host => "www.slcfit.herokuapp.com" }
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
