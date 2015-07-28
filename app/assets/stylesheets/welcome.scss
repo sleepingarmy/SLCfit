@@ -23,6 +23,10 @@
   position: relative;
 }
 
+#home {
+  width: auto;
+}
+
 #slc-logo-img {
 
   display: block;
@@ -32,7 +36,7 @@
 }
 
 #header-logo {
-  padding-top: 100px;
+  padding-top: 20px;
   text-align: center;
   font-size: 100px;
   color: white;
@@ -226,6 +230,7 @@
 }
 #user_image {
   display: inline-block;
+  margin-left: 75px;
 }
 
 #new_user > span > span > div.container > a {
@@ -239,13 +244,12 @@
   position: relative;
   width: 200px;
   padding: 20px;
-  background: #20293f;
+  background: #403871;
   border-radius: 50% 50% 50% 4px;
 }
 
-#home > div > div > a:nth-child(1) {
-  display: inherit;
-  padding-right: 50%;
+.login-link {
+  padding-bottom: 30px;
 }
 
 #home > div > div > a:nth-child(3) {
@@ -257,13 +261,6 @@
 .yelp {
   color: white;
 }
-
-
-
-
-
-
-
 
 
 

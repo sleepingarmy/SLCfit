@@ -1,6 +1,7 @@
+<h3 class=""><%= "Week #{index + 1}" %></h3>
 <div class="col-sm-12">
-  <div class="bank-<%= week.id %>">
-    <%= render partial: 'activities/progress', locals: {week: week, index: index} %>
+  <div id="progress-<%= week.id %>">
+    <%= render partial: 'activities/progress', locals: {week: week} %>
   </div>
 
   <div id="calendar-<%= week.id %>">

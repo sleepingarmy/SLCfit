@@ -19,9 +19,6 @@ class WeeksController < ApplicationController
   def update
     if @week.update(week_params)
       redirect_to (goal_week_path(@goal.id, @week.id))
-    # else
-    #   render :new, status: 400
-    #   flash[:error] = "week failed to update due to nil name"
     end
   end
 

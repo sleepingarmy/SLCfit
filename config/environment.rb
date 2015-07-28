@@ -9,5 +9,6 @@ ActionMailer::Base.smtp_settings = {
   :domain => "www.devpointlabs.com",
   :authentication => :plain,
   :user_name => ENV["sendgrd_username"],
-  :password => ENV["sendgrid_password"]
+  :password => ENV["sendgrid_password"],
+  :enable_starttls_auto => true
 }

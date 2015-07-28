@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   get '/bank' => 'activities#bank'
 
   get '/search_results' => 'welcome#search', as: :search_results
+  get '/progress' => 'activities#progress'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

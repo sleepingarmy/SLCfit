@@ -1,12 +1,11 @@
-<h3 class=""><%= "Week #{index + 1}" %></h3>
-  <div class="progress">
-    <% if week.activities.length != 0 %>
-      <div class="progress-bar" role="progressbar" aria-valuenow="<%= week.activities.complete.length / (week.activities.complete.length+week.activities.not_complete.length) %>" aria-valuemin="0" aria-valuemax="1" style="width: <%= "#{((week.activities.complete.length.to_f / (week.activities.complete.length + week.activities.not_complete.length).to_f) * 100)}%" %> ;">
-        <% if week.activities.complete.length != (week.activities.complete.length + week.activities.not_complete.length) && week.activities.not_complete.length != 0 %>
-          <center>My Progress</center>
-        <% else %>
-          <center>Complete!</complete>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+<div class="progress">
+  <% if week.activities.length != 0 %>
+    <div class="progress-bar" role="progressbar" aria-valuenow="<%= week.activities.complete.length / (week.activities.complete.length+week.activities.not_complete.length) %>" aria-valuemin="0" aria-valuemax="1" style="width: <%= "#{((week.activities.complete.length.to_f / (week.activities.complete.length + week.activities.not_complete.length).to_f) * 100)}%" %> ;">
+      <% if week.activities.complete.length != (week.activities.complete.length + week.activities.not_complete.length) && week.activities.not_complete.length != 0 %>
+        <center>My Progress</center>
+      <% else %>
+        <center>Complete!</center>
+      <% end %>
+    </div>
+  <% end %>
+</div>
