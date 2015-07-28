@@ -60,3 +60,16 @@ $(document).ready ->
           id: $(@).data().activityId
         success: (data) ->
           $activitiesHolder.append(data)
+
+
+  $("#activity_type").change ->
+    if $("#activity_type").val() is "Custom"
+      $("#custom-activity-text").show()
+    else
+      $("#custom-activity-text").hide()
+
+  $("#week_type").change ->
+    if $("#week_type").val() is "Custom"
+       $("#custom-activity-text").show()
+    else
+       $("#custom-activity-text").hide()
