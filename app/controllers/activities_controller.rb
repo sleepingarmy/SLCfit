@@ -57,7 +57,6 @@ class ActivitiesController < ApplicationController
   end
 
   def progress
-    #binding.pry
     render partial: 'progress', locals: {week: @week}
   end
 
