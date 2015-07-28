@@ -8,7 +8,7 @@ Rails.application.configure do
    :storage => :s3,
    :s3_credentials => {
      :s3_endpoint => 's3-us-west-2.amazonaws.com',
-     :bucket => ENV['S3_BUCKET'],
+     :bucket => ENV['S3_BUCKET_NAME'],
      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
      },
@@ -16,6 +16,8 @@ Rails.application.configure do
      :path => '/:class/:attahment/:id_partition/:style/:filename'
    }
 
+  # config.action_mailer.default_url_options = { :host => "www.slcfit.herokuapp.com" }
+  config.action_mailer.delivery_method = :smtp
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.

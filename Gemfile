@@ -7,7 +7,7 @@ gem "paperclip", "~> 4.3"
 gem 'momentjs-rails'
 gem "font-awesome-rails"
 gem 'rails_12factor'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.61.0'
 gem "figaro"
 
 # Forum stuff

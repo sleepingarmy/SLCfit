@@ -36,7 +36,7 @@ class WeeksController < ApplicationController
     per_week = params[:week][:per_week].to_i
     @goal.weeks.each do |week|
       per_week.times do
-        activity = week.activities.new(type: params[:week][:type])
+        activity = week.activities.new(type: params[:week][:type], name: params[:week][:name])
         activity.save
       end
     end

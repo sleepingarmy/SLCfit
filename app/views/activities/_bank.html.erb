@@ -7,7 +7,7 @@
       <div class="col-lg-3">
         <input class="activity-check" data-activity-id="<%= activity.id %>" type="checkbox">
         <div class="activity-type-text">
-          <%= activity.type %>
+          <%= activity.name ? activity.name : activity.type %>
         </div>
       </div>
     <% end %>
