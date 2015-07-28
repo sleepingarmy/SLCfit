@@ -2,9 +2,13 @@ class Activity < ActiveRecord::Base
   belongs_to :week, dependent: :destroy
   self.inheritance_column = :type
 
-  def icon
+   def icon
 
-  end
+   end
+
+   def title
+     self.type != "Custom" ? "#{self.type} for #{self.duration} minutes: '#{self.description}'" :  "#{self.name} for #{self.duration} minutes: '#{self.description}'"
+   end
 
    def self.types
      %w(Running Biking Swimming Hiking Custom DogWalking Yoga Gym Skiing)

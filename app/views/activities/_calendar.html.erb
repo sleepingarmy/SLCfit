@@ -5,8 +5,8 @@
         <h5>monday</h5>
         <hr>
         <% week.activities.complete.mon.each do |activity| %>
-        <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= "#{activity.type} for #{activity.duration} minutes: '#{activity.description}''" %>"></span><br>
-          <% end %>
+        <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= activity.title %>"></span><br>
+        <% end %>
       </div>
     </div>
     <div class="thumbnail tue col-md-2">
@@ -14,7 +14,7 @@
         <h5>tuesday</h5>
         <hr>
         <p><% week.activities.complete.tues.each do |activity| %>
-          <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= "#{activity.type} for #{activity.duration} minutes: '#{activity.description}'" %>"></span><br>
+          <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= activity.title %>"></span><br>
         <% end %></p>
       </div>
     </div>
@@ -23,7 +23,7 @@
           <h5>wednesday</h5>
           <hr>
           <p><% week.activities.complete.wed.each do |activity| %>
-            <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= "#{activity.type} for #{activity.duration} minutes: '#{activity.description}'" %>"></span><br>
+            <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= activity.title %>"></span><br>
           <% end %></p>
       </div>
     </div>
@@ -32,7 +32,7 @@
         <h5>thursday</h5>
         <hr>
         <p><% week.activities.complete.thurs.each do |activity| %>
-          <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= "#{activity.type} for #{activity.duration} minutes: '#{activity.description}'" %>"></span><br>
+          <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= activity.title %>"></span><br>
         <% end %></p>
       </div>
     </div>
@@ -41,7 +41,7 @@
         <h5>friday</h5>
         <hr>
         <p><% week.activities.complete.fri.each do |activity| %>
-          <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= "#{activity.type} for #{activity.duration} minutes: '#{activity.description}'" %>"></span><br>
+          <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= activity.title %>"></span><br>
         <% end %></p>
       </div>
     </div>
@@ -50,7 +50,7 @@
         <h5>saturday</h5>
         <hr>
         <p><% week.activities.complete.sat.each do |activity| %>
-          <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= "#{activity.type} for #{activity.duration} minutes: '#{activity.description}'" %>"></span><br>
+          <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= activity.title %>"></span><br>
         <% end %></p>
       </div>
     </div>
@@ -65,7 +65,7 @@
             <div class="row">
             <p><% week.activities.complete.sun.each do |activity| %>
                 <div class="col-sm-4 col-xs-6">
-                  <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= "#{activity.type} for #{activity.duration} minutes: '#{activity.description}" %>"></span><br>
+                  <span class="<%= activity.icon %>" data-toggle="tooltip" data-placement="top" title="<%= activity.title %>"></span><br>
                 </div>
               <% end %></p>
               </div>

@@ -22,9 +22,9 @@
     <div class="container-fluid header">
       <header class="header">
         <% if user_signed_in? %>
+            <%= render(partial: 'shared/side_nav') %>
             <marquee id="weather" class="col-sm-2 banner text-center" style="margin-left: 2.5%"></marquee>
             <div id="weather" class="pull-right col-sm-2"></div>
-            <%= render(partial: 'shared/side_nav') %>
 <!--             <%#= render(partial: 'shared/flash') %>
  -->        <% end %>
       </header>

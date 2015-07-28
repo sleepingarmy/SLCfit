@@ -252,8 +252,15 @@
   padding-bottom: 30px;
 }
 
+#home > div > div > a:nth-child(3) {
+  display: inherit;
+  padding-right: 50%;
 
+}
 
+.yelp {
+  color: white;
+}
 
 
 

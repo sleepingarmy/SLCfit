@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <h2>Yelp Search</h2>
+    <p>showing 12 results</p>
+    <hr>
+      
+    <div class="row">
+    <% @search_results["businesses"].each do |business| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <%= image_tag business["image_url"] %>
+          <div class="caption">
+          <h3><%= link_to business["name"], url: business["url"] %></h3>
+            <p><%= image_tag business["rating_img_url"] %></p>
+            <p><%= business["display_phone"] %></p>
+            <p><%= business["location"]["display_address"].join(", ") %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+
+
+
+    <!-- Hey Rosie! Have fun with this tomorrow! You'll figure it out :) -->
+    <!-- You need to parse @search_results to display everything -->
+    <!-- Essentially you'll iterate through the results -->
+    <!-- Good luck! You can Slack me! -->
+    <!-- Also slack Will! -->
+
+  </div>
+</div>
+
+<!-- 
+region
+total
+businesses - image_url, name, rating_image_url_large, review_count, is_closed, display_phone, location[:display_address]
+ -->
+
+ <!-- {
+  "businesses"=>[{
+    "is_claimed"=>true, 
+    "rating"=>5.0, 
+    "mobile_url"=>"http://m.yelp.com/biz/burn-salt-lake-city", 
+    "rating_img_url"=>"http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png", 
+    "review_count"=>5, 
+    "name"=>"BURN", 
+    "snippet_image_url"=>"http://s3-media2.fl.yelpcdn.com/photo/UMIZ-njsTeHt3Gn_PHmTDw/ms.jpg", "rating_img_url_small"=>"http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png", 
+    "url"=>"http://www.yelp.com/biz/burn-salt-lake-city", 
+    "phone"=>"8014486461", 
+    "snippet_text"=>"How have I not put a shout out to Burn on here? The place is the best gym in the world. The instructors are all incredible and the classes are small. The...", 
+    "image_url"=>"http://s3-media1.fl.yelpcdn.com/bphoto/A5dO6g_qgthEWWVUUShJhg/ms.jpg", 
+    "categories"=>[
+      ["Pilates", "pilates"], 
+      ["Gyms", "gyms"], 
+      ["Trainers", "healthtrainers"]], 
+    "display_phone"=>"+1-801-448-6461", 
+    "rating_img_url_large"=>"http://s3-media3.fl.yelpcdn.com/assets/2/www/img/22affc4e6c38/ico/stars/v1/stars_large_5.png", 
+    "id"=>"burn-salt-lake-city", 
+    "is_closed"=>false, 
+    "location"=>{
+      "city"=>"Salt Lake City", 
+      "display_address"=>["2120 S 700 E", "Ste F", "Salt Lake City", "Salt Lake City, UT 84106"], 
+      "geo_accuracy"=>8.0, 
+      "neighborhoods"=>["Salt Lake City", 
+      "Sugar House"], "postal_code"=>"84106", "country_code"=>"US", "address"=>["2120 S 700 E", "Ste F"], 
+      "coordinate"=>{"latitude"=>40.7249107, 
+      "longitude"=>-111.8713455}, 
+      "state_code"=>"UT"}}, 
+
+    {"is_claimed"=>true, "rating"=>3.5, "mobile_url"=>"http://m.yelp.com/biz/24-hour-fitness-salt-lake-city-4", "rating_img_url"=>"http://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png", "review_count"=>24, "name"=>"24 Hour Fitness", "snippet_image_url"=>"http://s3-media4.fl.yelpcdn.com/photo/JXFlDMWUQQZ-jDV8GYz6dQ/ms.jpg", "rating_img_url_small"=>"http://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png", "url"=>"http://www.yelp.com/biz/24-hour-fitness-salt-lake-city-4", "phone"=>"8017411124", "snippet_text"=>"great place to train!!! was in for just a day because of work and was treated very good. excellent customer service!! if I lived here no doubt I would...", "image_url"=>"http://s3-media4.fl.yelpcdn.com/bphoto/yhxNIdMZKOxLJbwU_Fb37Q/ms.jpg", "categories"=>[["Trainers", "healthtrainers"], ["Gyms", "gyms"]], "display_phone"=>"+1-801-741-1124", "rating_img_url_large"=>"http://s3-media3.fl.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/v1/stars_large_3_half.png", "id"=>"24-hour-fitness-salt-lake-city-4", "is_closed"=>false, "location"=>{"city"=>"Salt Lake City", "display_address"=>["515 S 700 E", "Salt Lake City", "Salt Lake City, UT 84102"], "geo_accuracy"=>8.0, "neighborhoods"=>["Salt Lake City", "East Central"], "postal_code"=>"84102", "country_code"=>"US", "address"=>["515 S 700 E"], "coordinate"=>{"latitude"=>40.7578812, "longitude"=>-111.870163}, "state_code"=>"UT"}}, 
+
+    {"is_claimed"=>false, "rating"=>5.0, "mobile_url"=>"http://m.yelp.com/biz/northwest-north-salt-lake", "rating_img_url"=>"http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png", "review_count"=>4, "name"=>"Northwest", "snippet_image_url"=>"http://s3-media2.fl.yelpcdn.com/photo/PKETiCyEouP04_A8pgBujw/ms.jpg", "rating_img_url_small"=>"http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png", "url"=>"http://www.yelp.com/biz/northwest-north-salt-lake", "phone"=>"3854681305", "snippet_text"=>"I recently moved into the neighborhood and I had to say this rec center is a joy to have just a few blocks away. \n\nThe facility itself is nice and new. I've...", "image_url"=>"http://s3-media1.fl.yelpcdn.com/bphoto/jxaSZcs14bRrke5rf1aUdw/ms.jpg", "categories"=>[["Gyms", "gyms"]], "display_phone"=>"+1-385-468-1305", "rating_img_url_large"=>"http://s3-media3.fl.yelpcdn.com/assets/2/www/img/22affc4e6c38/ico/stars/v1/stars_large_5.png", "id"=>"northwest-north-salt-lake", "is_closed"=>false, "location"=>{"city"=>"North Salt Lake", "display_address"=>["1250 W Clark Ave", "Salt Lake City", "North Salt Lake, UT 84116"], "geo_accuracy"=>8.0, "neighborhoods"=>["Salt Lake City", "Fairpark"], "postal_code"=>"84116", "country_code"=>"US", "address"=>["1250 W Clark Ave"], "coordinate"=>{"latitude"=>40.7763977050781, "longitude"=>-111.926445007324}, "state_code"=>"UT"}
+
+    }]
+  }
+
+ -->
