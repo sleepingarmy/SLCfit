@@ -10,6 +10,10 @@
     <%=  f.label('Type') %>
     <br>
     <%= f.select :type, Activity.types %>
+    <div style='display: none' id="custom-activity-text">
+      <%=  f.label('Name') %><br>
+      <%= f.text_field :name %>
+    </div>
   </div>
 
 <h5>Then choose how many times you want to do this activity per week</h5>

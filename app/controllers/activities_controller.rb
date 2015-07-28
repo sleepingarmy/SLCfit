@@ -82,7 +82,7 @@ class ActivitiesController < ApplicationController
     end
 
     def activity_params
-      params.fetch(type.underscore.to_sym, {}).permit(:type, :week_id, :day_of_week)
+      params.fetch(type.underscore.to_sym, {}).permit(:type, :week_id, :day_of_week, :name)
     end
 
     def activity_data
