@@ -22,13 +22,13 @@
 (function(){
 
   var parallax = document.querySelectorAll(".parallax"),
-      speed = 0.5;
+  speed = 0.5;
 
   window.onscroll = function(){
     [].slice.call(parallax).forEach(function(el,i){
 
       var windowYOffset = window.pageYOffset,
-          elBackgrounPos = "50% " + (windowYOffset * speed) + "px";
+      elBackgrounPos = "50% " + (windowYOffset * speed) + "px";
 
       el.style.backgroundPosition = elBackgrounPos;
 
@@ -48,6 +48,13 @@ $('.right').click(function() {
   $('.carousel').carousel('left');
 });
 
+$(function() {
+  $('.carousel').each(function() {
+    $(this).carousel({
+      interval: false
+    });
+  });
+});
 
 
 // Smooth scroll
