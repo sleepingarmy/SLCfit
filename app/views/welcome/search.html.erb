@@ -10,7 +10,7 @@
         <div class="thumbnail">
           <%= image_tag business["image_url"] %>
           <div class="caption">
-          <h3><%= link_to business["name"], url: business["url"] %></h3>
+          <h3><a href="<%= business['url']%>" target='blank'><%= business["name"] %></a></h3>
             <p><%= image_tag business["rating_img_url"] %></p>
             <p><%= business["display_phone"] %></p>
             <p><%= business["location"]["display_address"].join(", ") %></p>
