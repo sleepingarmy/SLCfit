@@ -23,8 +23,6 @@ class ActivitiesController < ApplicationController
     activity.complete= true
     activity.save
     render :nothing => true
-    #redirect_to goal_weeks_path(@goal.id)
-
   end
 
   def destroy
@@ -59,11 +57,11 @@ class ActivitiesController < ApplicationController
   end
 
   def progress
+    #binding.pry
     render partial: 'progress', locals: {week: @week}
   end
 
   def bank
-    #binding.pry
     render partial: 'bank', locals: {week: @week, index: params[:index]}
   end
 

@@ -1,7 +1,7 @@
 class Hiking < Activity
 
   def icon
-    return "glyphicon glyphicon-tree-conifer"
+    return "fi-mountains large-icon"
   end
 
 

@@ -43,3 +43,19 @@ textarea.description {
 .calender-week {
   width: 100%;
 }
+
+.large-icon {
+  font-size: 35px
+}
+
+.swimming:before {
+  content: url(swimming_icon_small.png);
+}
+
+.yoga:before {
+  content: url(yoga_ico.png);
+}
+
+.gym:before {
+  content: url(gym_ico.png);
+}

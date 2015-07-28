@@ -126,6 +126,9 @@ GEM
       railties (>= 3.0.0)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
+    foundation-icons-sass-rails (3.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     friendly_id (5.0.5)
       activerecord (>= 4.0.0)
     gemoji (2.1.0)
@@ -170,6 +173,8 @@ GEM
     pry-byebug (3.2.0)
       byebug (~> 5.0)
       pry (~> 0.10)
+    puma (2.11.3)
+      rack (>= 1.1, < 2.0)
     pygments.rb (0.5.4)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
@@ -195,6 +200,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     railties (4.2.0)
       actionpack (= 4.2.0)
       activesupport (= 4.2.0)
@@ -292,6 +302,7 @@ DEPENDENCIES
   forem!
   forem-bootstrap!
   forem-redcarpet!
+  foundation-icons-sass-rails
   jbuilder (~> 2.0)
   jquery-rails
   momentjs-rails
@@ -299,7 +310,9 @@ DEPENDENCIES
   pg
   pry
   pry-byebug
+  puma
   rails (= 4.2)
+  rails_12factor
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

@@ -5,18 +5,22 @@
        <h2 class="page-header">New Goal</h2>
 
          <div>
-           <p><%= f.label("what's your goal?") %></p>
+           <h3>Whats your goal?</h3>
+           <p><%= f.label('I want to...') %></p>
            <p><%= f.text_area :description, class: "custom-input"%></p>
          </div>
 
          <div>
-           <p><%= f.label('why do you want to achieve this goal?') %></p>
+           <h3>Reason</h3>
+           <p><%= f.label('Why do I want to achieve this goal?') %></p>
            <p><%= f.text_area :reason, class: "custom-input" %></p>
          </div>
 
          <div>
-           <%= f.label('time frame (weeks)') %>
+           <h3>Time Frame</h3>
+           <%= f.label('I will have acheived my goal in...') %>
            <%= f.select :time_frame, options_for_select(1..52), class: "form-control custom-input" %>
+           <%= f.label(' weeks') %>
          </div>
 
          <div class="form-group">
