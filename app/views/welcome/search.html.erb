@@ -1,23 +1,24 @@
-<div class="row text-center">
-  <div class="col-sm-12">
-
-    
 <div class="row">
-<% @search_results["businesses"].each do |business| %>
-  <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <%= image_tag business["image_url"] %>
-      <div class="caption">
-      <h3><%= link_to business["name"], url: business["url"] %></h3>
-        <p><%= image_tag business["rating_img_url"] %></p>
-        <p><%= business["review_count"]%> reviews </p>
-        <p><%= business["display_phone"] %></p>
-        <p><%= business["location"]["display_address"].join(", ") %></p>
+  <div class="col-sm-12 text-center">
+    <h2>Yelp Search</h2>
+    <p>showing 12 results</p>
+    <hr>
+      
+    <div class="row">
+    <% @search_results["businesses"].each do |business| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <%= image_tag business["image_url"] %>
+          <div class="caption">
+          <h3><%= link_to business["name"], url: business["url"] %></h3>
+            <p><%= image_tag business["rating_img_url"] %></p>
+            <p><%= business["display_phone"] %></p>
+            <p><%= business["location"]["display_address"].join(", ") %></p>
+          </div>
+        </div>
       </div>
+    <% end %>
     </div>
-  </div>
-<% end %>
-</div>
 
 
 
@@ -45,7 +46,8 @@ businesses - image_url, name, rating_image_url_large, review_count, is_closed, d
     "review_count"=>5, 
     "name"=>"BURN", 
     "snippet_image_url"=>"http://s3-media2.fl.yelpcdn.com/photo/UMIZ-njsTeHt3Gn_PHmTDw/ms.jpg", "rating_img_url_small"=>"http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png", 
-    "url"=>"http://www.yelp.com/biz/burn-salt-lake-city", "phone"=>"8014486461", 
+    "url"=>"http://www.yelp.com/biz/burn-salt-lake-city", 
+    "phone"=>"8014486461", 
     "snippet_text"=>"How have I not put a shout out to Burn on here? The place is the best gym in the world. The instructors are all incredible and the classes are small. The...", 
     "image_url"=>"http://s3-media1.fl.yelpcdn.com/bphoto/A5dO6g_qgthEWWVUUShJhg/ms.jpg", 
     "categories"=>[

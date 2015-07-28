@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  layout 'splash'
+  # layout 'splash'
 
   def index
     if user_signed_in?
@@ -14,7 +14,7 @@ class WelcomeController < ApplicationController
                         token_secret: ENV['token_secret']
                       })
 
-    parameters = { term: params[:term], limit: 10 }
+    parameters = { term: params[:term], limit: 12 }
     @search_results = JSON.parse(@client.search('Salt Lake City', parameters).to_json)
   end
 end
