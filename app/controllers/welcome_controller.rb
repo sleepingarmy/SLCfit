@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  layout 'splash'
+  # layout 'splash'
 
   def index
     if user_signed_in?
@@ -7,4 +7,14 @@ class WelcomeController < ApplicationController
     end
   end
 
+  def search
+   @client = Yelp::Client.new({ consumer_key: ENV['consumer_key'],
+                        consumer_secret: ENV['consumer_secret'],
+                        token: ENV['token'],
+                        token_secret: ENV['token_secret']
+                      })
+
+    parameters = { term: params[:term], limit: 12 }
+    @search_results = JSON.parse(@client.search(params[:location], parameters).to_json)
+  end
 end
