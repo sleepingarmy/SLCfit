@@ -11,13 +11,14 @@ class User < ActiveRecord::Base
   has_many :biometrics, dependent: :destroy
   has_one :info, dependent: :destroy
 
+  after_create :send_welcome_email
 
   def forem_name
     username
   end
 
   def send_welcome_email
-    user = User.new
+    UserMailer.signup_email(self).deliver_now
   end
 
 end
