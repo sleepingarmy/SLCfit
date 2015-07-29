@@ -16,15 +16,7 @@ Rails.application.configure do
      :path => '/:class/:attahment/:id_partition/:style/:filename'
    }
 
-Rails.application.initialize!
-ActionMailer::Base.smtp_settings = {
-  :address => "smtp.sendgrid.net",
-  :port => 25,
-  :domain => "slcfit.herokuapp.com",
-  :authentication => :plain,
-  :user_name => ENV["SENDGRID_USERNAME"],
-  :password => ENV["SENDGRID_PASSWORD"]
-}
+
 
   # config.action_mailer.default_url_options = { :host => "www.slcfit.herokuapp.com" }
   config.action_mailer.delivery_method = :smtp
