@@ -7,22 +7,14 @@ class WelcomeController < ApplicationController
     end
   end
 
-
   def search
-    parameters = { term: params[:term], limit: 12 }
-    @search = client.search(params[:location], parameters)
-    # @search_results = JSON.parse(client.search(params[:location], parameters).to_json)
-    binding.pry
-  end
-
-private
-
-  def client
-    @client = Yelp::Client.new({ consumer_key: ENV['CONSUMER_KEY'],
-                        consumer_secret: ENV['CONSUMER_KEY'],
-                        token: ENV['TOKEN'],
-                        token_secret: ENV['TOKEN_SECRET']
+   @client = Yelp::Client.new({ consumer_key: ENV['consumer_key'],
+                        consumer_secret: ENV['consumer_secret'],
+                        token: ENV['token'],
+                        token_secret: ENV['token_secret']
                       })
-    
+
+    parameters = { term: params[:term], limit: 12 }
+    @search_results = JSON.parse(@client.search(params[:location], parameters).to_json)
   end
 end
