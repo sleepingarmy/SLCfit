@@ -8,10 +8,10 @@ class WelcomeController < ApplicationController
   end
 
   def search
-   @client = Yelp::Client.new({ consumer_key: ENV['CONSUMER_KEY'],
-                        consumer_secret: ENV['CONSUMER_KEY'],
-                        token: ENV['TOKEN'],
-                        token_secret: ENV['TOKEN_SECRET']
+   @client = Yelp::Client.new({ consumer_key: ENV['consumer_key'],
+                        consumer_secret: ENV['consumer_secret'],
+                        token: ENV['token'],
+                        token_secret: ENV['token_secret']
                       })
 
     parameters = { term: params[:term], limit: 12 }
