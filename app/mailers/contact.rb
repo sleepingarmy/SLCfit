@@ -10,7 +10,7 @@ class Contact < ApplicationMailer
 
   def email_with_args_and_instance_vars(first_name, last_name)
     @username = username
-    mail :to => "megangrisley@gmail.com",
+    mail :to => "megan.slcfit@gmail.com",
          :subject => "Test Subject"
   end
 
