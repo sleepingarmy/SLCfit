@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  # layout 'splash'
+  layout 'splash'
 
   def index
     if user_signed_in?
