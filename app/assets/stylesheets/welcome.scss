@@ -104,6 +104,10 @@
   padding-bottom: 20px;
 }
 
+#btm-row {
+  padding-top: 15px;
+}
+
 .header-splash {
   min-height: 20px;
 }
@@ -140,8 +144,19 @@
   .dashboard-content{
     width: 95%;
     margin-left: 0;
+
+  }
+  .bio-content{
+    width: 82%;
+    margin-left: 0;
+
   }
 }
+
+.bio-content {
+  margin-left: 30px;
+}
+
 
 .dashboard-heading {
   text-align: center;
@@ -159,20 +174,12 @@
   margin: 0;
 }
 
-#activities-view {
-  margin-left: 90px;
-  width: 600px;
-  height: 400px;
-  opacity: .85;
-  background-color: #f8f8f8;
-  border-radius: 50px;
-}
 /*Dashboard View End*/
 
 #testimonial-content {
   height: 430px; 
     @media screen and (max-width: 480px){
-      height: 730px;
+      height: 760px;
   }
 }
 
