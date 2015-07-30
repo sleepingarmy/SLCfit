@@ -116,7 +116,7 @@
 /*End Features div*/
 
 /*Dashboard Views Div*/
-#dashboard-content {
+.dashboard-content {
   margin-top: 75px;
   margin-left: 600px;
   width: 600px;
@@ -206,7 +206,7 @@
 
 .text-div {
   margin: auto;
-  height: 200px;
+  height: 240px;
   width: 400px;
   opacity: .80;
   background-color: white;
@@ -218,6 +218,14 @@
   padding-top: 10px;
   text-align: center;
 
+}
+
+.fa-github {
+  padding-right: 15px;
+}
+
+.email-link {
+  text-align: center;
 }
 
 .sign-up-page {
@@ -262,7 +270,7 @@
 }
 
 .personal-statements {
-  margin: 15px 15px 15px 15px;
+  margin: 15px 15px 0px 15px;
 }
 
 .quote-name {
