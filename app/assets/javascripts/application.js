@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require moment
-//= require forem
 //= require_tree .
 
 

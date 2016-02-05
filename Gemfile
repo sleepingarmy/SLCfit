@@ -10,12 +10,6 @@ gem 'rails_12factor'
 gem 'aws-sdk', '~> 1.61.0'
 gem "figaro"
 
-# Forum stuff
-gem 'forem', :github => "radar/forem", :branch => "rails4"
-gem 'will_paginate'
-gem 'forem-bootstrap', github: "radar/forem-bootstrap"
-gem 'forem-redcarpet', github: "radar/forem-redcarpet"
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2'
 # Use postgresql as the database for Active Record

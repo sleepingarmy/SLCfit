@@ -13,10 +13,6 @@ class User < ActiveRecord::Base
 
   after_create :send_welcome_email
 
-  def forem_name
-    username
-  end
-
   def send_welcome_email
     UserMailer.signup_email(self).deliver_now
   end
