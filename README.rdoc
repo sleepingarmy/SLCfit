@@ -1,28 +1,16 @@
-== README
+== SLCfit - refactor
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This SLCfit repository was forked from the original.  I hope to clean up and refactor what exists, including the following:
 
-Things you may want to cover:
+* Remove all Forem gem stuff - DONE
 
-* Ruby version
+* Update Paperclip
 
-* System dependencies
+* Refactor biometrics charts and switch to High Charts with React
 
-* Configuration
+* Change activity functionality to React
 
-* Database creation
+* Update styling
 
-* Database initialization
+* Add new features!
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
